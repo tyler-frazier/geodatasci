@@ -1,4 +1,4 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [Geospatial Data Science with R](README.md)
 

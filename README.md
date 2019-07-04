@@ -2,7 +2,7 @@
 description: test description
 ---
 
-# Initial page
+# Geospatial Data Science with R
 
 beginning some content for this book
 
