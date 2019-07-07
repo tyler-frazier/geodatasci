@@ -39,7 +39,7 @@ Following are two video tutorials that will also assist you to install **R** on 
 
 ## Installing RStudio
 
-RStudio is a type of software that operates in tandem with your R framework in order to assist you with coding, executing commands, saving plots and a number of other different functions.  This type of extensions of the basic programming framework is often called an integrated development environment \(IDE\). RStudio is an IDE that will help you take better control of your programming.  While the two are closely aligned in design and function, it is important to recognizing that RStudio is a separate program, which depends on **R** first having been installed.
+RStudio is an integrated developer environment that provides an optional front end, graphic user interface \(GUI\) that "sits on top" of the R statistical framework. In simple terms, RStudio will make your programming experience much easier, and is typically a good way for beginners to start off with a programmer langauge such as R.  RStudio assists with coding, executing commands, saving plots and a number of other different functions.  While the two are closely aligned in design and function, it is important to recognizing that RStudio is a separate program, which depends on **R** having first been installed.
 
 To install RStudio go to the following webpage and download the appropriate installer for your operating system.  
 
