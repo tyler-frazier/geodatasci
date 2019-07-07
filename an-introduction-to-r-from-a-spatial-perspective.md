@@ -27,7 +27,7 @@ Following are two video tutorials that will also assist you to install **R** on 
 
 {% embed url="https://www.youtube.com/watch?v=1A-xvxNhd2w" caption="Video tutorial of how to install R on Windows" %}
 
-
+Install R Studio
 
 
 
