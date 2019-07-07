@@ -1,12 +1,12 @@
 # Installing R and R Studio on your Computer
 
-## What is R
+## What is R?
 
 R is a free software environment for statistical computing and graphics that compiles and runs on a wide variety of UNIX platforms, Windows and MacOS.  It is a very capable programming environment for offering a good introduction to data science methods.  R is also extensible for executing some of the most poweful, advanced, and state of the art statistical and machine language functions within the context of a wide variety of disciplines and applications.  Using R is capable of working with big data, high dimension data, spatial data, temporal data, as well as data at pretty much any imaginable scale available, from the to the quark and everywhere in between.
 
-R is an interpreter
+The statistical programming language R can be considered as different from machine languages such a **C** or **Java**.  R is often described as an interpreted programming language, where commands and their arguments are interpreted prior to being compiled by the programming engine.  Interpreted languages are generally more accessible since the commands are often more readily understandable.  For example, commands such as `plot`, `read.csv()`, or `cbind()` can be fairly easily understood as the commands for plotting an object, importing a `.csv` file or binding together columns of data. 
 
-R can function within an IDE
+**R** can also function stand alone, or you have the option of installing what is called an integrated developer environment \(IDE\).  One of the most popular IDEs for **R** is called RStudio.  In order for RStudio to function properly, you will first need to install your R programming framework, before installing the IDE.
 
 ## Installing R
 
