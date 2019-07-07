@@ -8,9 +8,7 @@ The statistical programming language R is often called an interpreted programmin
 
 ![An introduction to open source solutions by Hengl, Wheeler &amp; MacMillan](https://peerj.com/preprints/27127.pdf)
 
-
-
-
+In addition to being an open source programming framework, learning to use **R** also fullfills one of the fundamental principals of the scientific method, reproducibility.  A reproducible programming environment functions by always keeping source data in its original state external from the R framework.  Data is then imported to the work session and all changes occur within the framework through the code as it is sequentially executed.  In this manner, any code one writes is perfectly reproducible not only an unlimited number of times you choose to run it as well as by any other person who has access to your code \(unless you are incorporating probabilities type methods in your code\).  Compare this reproducible workflow concept to software that employs a graphic user interface \(GUI\), where commands are executed by selecting a pull down menu and following a series of preset options associated with each command.  Excel, Pages, ArgGIS  Reproducing ones work session i
 
 **R** can also function stand alone, or you have the option of installing what is called an integrated developer environment \(IDE\).  One of the most popular IDEs for **R** is called RStudio.  In order for RStudio to function properly, you will first need to install your R programming framework, before installing the IDE.
 
