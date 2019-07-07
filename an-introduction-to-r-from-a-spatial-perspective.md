@@ -1,4 +1,4 @@
-# An Introduction to R from a Spatial Perspective
+# Installing R and R Studio on your Computer
 
 ## What is R and how to install it
 
@@ -21,15 +21,13 @@ Find the **download** link and click on it.  If this is the first time you have 
 2. Click on the **XQuartz** link and download the latest release of `XQuartz.dmg` .  It is recommended to update your XQuartz system each time you install or update **R**.
 3. Click on the **tools** link and download the latest `clang.pkg` and `gfortran.pkg`. Install both.
 
+Following are two video tutorials that will also assist you to install **R** on your personal computer.  The first one is for installing **R** on a Mac, while the second video will guide you through the process on Windows.
+
+{% embed url="https://www.youtube.com/watch?v=V2x\_SWJCd1A&t=11s" caption="Video tutorial of how to install R on a Mac" %}
+
+{% embed url="https://www.youtube.com/watch?v=1A-xvxNhd2w" caption="Video tutorial of how to install R on Windows" %}
 
 
-{% page-ref page="an-introduction-to-r-from-a-spatial-perspective.md" %}
 
-Install on Mac OS X
 
-Install XQuartz
-
-Install tools: clang & gfortran
-
-How to install R Studio
 
