@@ -1,8 +1,14 @@
 # Installing R and R Studio on your Computer
 
-## What is R and how to install it
+## What is R
 
 R is a free software environment for statistical computing and graphics that compiles and runs on a wide variety of UNIX platforms, Windows and MacOS.  It is a very capable programming environment for offering a good introduction to data science methods.  R is also extensible for executing some of the most poweful, advanced, and state of the art statistical and machine language functions within the context of a wide variety of disciplines and applications.  Using R is capable of working with big data, high dimension data, spatial data, temporal data, as well as data at pretty much any imaginable scale available, from the to the quark and everywhere in between.
+
+R is an interpreter
+
+R can function within an IDE
+
+## Installing R
 
 Before installing R on your operating system, it is a good idea to briefly assess the state of your computer and its constituent hardware as well as the state of your operating system.  Prior to installing a new software environment, such as R, I always recommend the following.
 
@@ -27,7 +33,15 @@ Following are two video tutorials that will also assist you to install **R** on 
 
 {% embed url="https://www.youtube.com/watch?v=1A-xvxNhd2w" caption="Video tutorial of how to install R on Windows" %}
 
-Install R Studio
+## Installing RStudio
+
+RStudio is a type of software that operates in tandem with your R framework in order to assist you with coding, executing commands, saving plots and a number of other different functions.  This type of extensions of the basic programming framework is often called an integrated development environment \(IDE\). RStudio is an IDE that will help you take better control of your programming.  While the two are closely aligned in design and function, it is important to recognizing that RStudio is a separate program, which depends on **R** first having been installed.
+
+To install RStudio go to the following webpage and download the appropriate installer for your operating system.  
+
+{% embed url="https://www.rstudio.com/products/rstudio/download/\#download" %}
+
+
 
 
 
