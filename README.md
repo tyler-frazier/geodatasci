@@ -4,7 +4,7 @@ description: >-
   simulate global human development patterns and processes.
 ---
 
-# Geospatial Data Science with R
+# Investigating Geospatial Human Development Processes with R
 
 beginning some content for this book
 
