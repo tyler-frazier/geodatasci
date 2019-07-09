@@ -24,5 +24,5 @@ Now that your script has content, you should save the file.  Select the **&gt;Fi
 
 ![State of your RStudio workspace after setting the working directory and saving your script](.gitbook/assets/rstudio1.png)
 
-
+One noteworthy observation regarding the command `setwd()`, notice how the path to the working directory is specified within quotation marks.  In general, whenever RStudio is communicating with your operating system \(OS\) or any entity outside of its workspace, what ever is being sent to that computer will be included within quotation marks.  For example `setwd("the/path/to_my/working/directory")` is contained within quotation marks in order for RStudio to traverse the path  as defined by your OS to that location on your computer.
 
