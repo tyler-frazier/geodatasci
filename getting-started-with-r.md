@@ -22,7 +22,7 @@ You should notice that R returns the path from the working directory you just de
 
 Now that your script has content, you should save the file.  Select the **&gt;File&gt;Save** command from the drop down window and choose the data subdirectory you created within your project folder.  Name your script file and then select save.  Your RStudio work space should appear similar to the following image.
 
-![RStudio workspace after setting the working directory and saving your script](.gitbook/assets/rstudio1.png)
+![State of your RStudio workspace after setting the working directory and saving your script](.gitbook/assets/rstudio1.png)
 
 
 
