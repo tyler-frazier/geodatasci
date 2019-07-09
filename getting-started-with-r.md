@@ -18,7 +18,11 @@ By using the RStudio IDE GUI you have just executed your first command.  You can
 
 `getwd()`
 
-You should notice that R returns the path from the working directory you just designated.  Instead of setting your working directory using the drop down menu, the preferred method is to designate that path by using code in R.  Fortunately, RStudio has already specified the command for you, so just go ahead and copy the `setwd()` command from above and paste it into your script file in the top left hand corner of your RStudio work session.  You could also retype it, but in general, copying and pasting is going to be much more efficient.  On a Mac copying and pasting is accomplished by using the **⌘C** & **⌘V** keys or on Windows **control-C** and **control-V**. ****  After copying and pasting that line of code within your script, go ahead and execute the function again, except this time, send the command directly from your script to the console.  To do this use, move the cursor to the line where you pasted the code and then select **⌘return** on a Mac or **control-return** on Windows.
+You should notice that R returns the path from the working directory you just designated.  Instead of setting your working directory using the drop down menu, the preferred method is to designate that path by using code in R.  Fortunately, RStudio has already specified the command for you, so just go ahead and copy the `setwd()` command from above and paste it into your script file in the top left hand corner of your RStudio work session.  You could also retype it, but in general, copying and pasting is going to be much more efficient.  On a Mac copying and pasting is accomplished by using the **⌘C** & **⌘V** keys or on Windows **control-C** and **control-V**. ****  After copying and pasting that line of code within your script, go ahead and execute the function again, except this time, send the command directly from your script to the console.  To do this use, move the cursor to the line where you pasted the code and then select **⌘return** on a Mac or **control-return** on Windows.  Congratulations! You have just written and executed your first line of code.
+
+Now that your script has content, you should save the file.  Select the **&gt;File&gt;Save** command from the drop down window and choose the data subdirectory you created within your project folder.  Name your script file and then select save.  Your RStudio work space should appear similar to the following image.
+
+
 
 
 
