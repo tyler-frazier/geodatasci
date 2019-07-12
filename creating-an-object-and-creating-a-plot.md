@@ -38,11 +38,12 @@ or alternatively a plot with both a line and points over that line.
 
 ![A plot produced using the &quot;over&quot; specification in the argument ](.gitbook/assets/rplot02.png)
 
-We can also add some description to our plot in order to better communicate our results.  We can begin by adding a title as well as labels for both the x and y axes.
+We can also add some description to our plot in order to better communicate our results.  We can begin by adding a title, indicating the units of measurement while also adding labels for both the x and y axes.
 
 ```
 plot(x, y, type = "o", 
-main = "The Path of a Running Boy", 
+main = "The Path of a Running Boy",
+sub = "units of distance = meters",
 xlab = "longitude", 
 ylab = "latitude")
 ```
