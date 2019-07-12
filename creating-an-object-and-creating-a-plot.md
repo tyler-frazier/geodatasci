@@ -40,7 +40,7 @@ or alternatively a plot with both a line and points over that line.
 
 We can also add some description to our plot in order to better communicate our results.  We can begin by adding a title, indicating the units of measurement while also adding labels for both the x and y axes.
 
-```
+```r
 plot(x, y, type = "o", 
 main = "The Path of a Running Boy",
 sub = "units of distance = meters",
@@ -48,7 +48,23 @@ xlab = "longitude",
 ylab = "latitude")
 ```
 
+![Plot with a Title, Sub-Title and Axes Labels](.gitbook/assets/rplot03.png)
 
+We can also change the linetype by specifying the `lty =` argument or set the lineweight by using the `lwd =` argument.  The color of our line can be changed using the `col = "some_color"` argument, while the point symbol itself can be modified by using the `pch =` argument.  Scale of the symbol is increased or descreased using `cex =`.  Have a look at the [Quick-R](https://www.statmethods.net/advgraphs/parameters.html) website for a comprehensive list of some available graphical parameters.
+
+```r
+plot(x, y, type = "b", main = "The Path of a Running Boy", 
+     sub = "units of distance = meters", 
+     xlab = "longitude", 
+     ylab = "latitude",
+     lty = 2,
+     lwd = .75,
+     col = "blue",
+     pch = 0,
+     cex = 1.5)
+```
+
+![A Plot with Some Point and Line Type Modifications](.gitbook/assets/rplot04.png)
 
 
 
