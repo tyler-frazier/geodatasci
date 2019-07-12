@@ -26,7 +26,28 @@ We can see that our earlier use of the colon in `x <- 1:10` created an object na
 
 `plot(x,y)`
 
-
-
 ![A plot of x increasing while y is decreasing](.gitbook/assets/rplot01.png)
+
+We can continue to describe our plot by adding an argument to our command by specifying the plot type as a line and not simply points
+
+`plot(x, y, type = "l")`
+
+or alternatively a plot with both a line and points over that line.
+
+`plot(x, y, type = "o")`
+
+![A plot produced using the &quot;over&quot; specification in the argument ](.gitbook/assets/rplot02.png)
+
+We can also add some description to our plot in order to better communicate our results.  We can begin by adding a title as well as labels for both the x and y axes.
+
+```
+plot(x, y, type = "o", 
+main = "The Path of a Running Boy", 
+xlab = "longitude", 
+ylab = "latitude")
+```
+
+
+
+
 
