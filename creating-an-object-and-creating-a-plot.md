@@ -135,10 +135,23 @@ symbols(sample(x, 10, replace = TRUE),
 Thus far we have only created R objects that are of the vector class.  We can review the class of one of the objects we have created by typing `class(east)` directly into the console and observe that R informs us that the object is a vector of integers.  Now let's create a new class of an object called a data frame that contains a series of rows and columns where each row represents an observation while each column represents a different variable.  We can start with the coordinates that represent the center point of each square.
 
 ```r
-dwellings <- cbind.data.frame(east, north)
+dwellings <- cbind.data.frame(id = 1:10, east, north)
 ```
 
-In this case, we are using the `cbind.data.frame()` command to column bind together the two integer vectors named `east` & `north` into the newly formed data frame named `dwellings`.  After executing the above command, you can type the name of your data frame directly into the console to review its content.  Within the environment pane in the top right hand window, under the data tabe, you can also use your mouse to click on the data frame symbol that is off to the right of the `dwellings` data object.
+In this case, we are using the `cbind.data.frame()` command to column bind together the newly created variable named `id` with our two integer vectors `east` & `north` into a newly formed data frame named `dwellings`.  After executing the above command, you can type the name of your data frame directly into the console to review its content.  Within the environment pane in the top right hand window, under the data tab, you can also use your mouse to click on the data frame symbol that is off to the right of the `dwellings` data object.
 
+|  | id | east | north |
+| :--- | :--- | :--- | :--- |
+| 1 | 1 | 48 | 64 |
+| 2 | 2 | 25 | 74 |
+| 3 | 3 | 59 | 10 |
+| 4 | 4 | 37 | 83 |
+| 5 | 5 | 97 | 29 |
+| 6 | 6 | 74 | 92 |
+| 7 | 7 | 84 | 16 |
+| 8 | 8 | 17 | 98 |
+| 9 | 9 | 70 | 21 |
+| 10 | 10 | 33 | 69 |
 
+You'll notice that R also provides row numbers that in this case are identical to the identification number we have assigned to each square.  Instead of assigning our `id` variable manually, we could have just as easily used `id = row.numbers(dwellings)` in order to achieve the same result.  
 
