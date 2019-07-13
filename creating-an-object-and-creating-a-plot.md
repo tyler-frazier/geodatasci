@@ -140,3 +140,5 @@ dwellings <- cbind.data.frame(east, north)
 
 In this case, we are using the `cbind.data.frame()` command to column bind together the two integer vectors named `east` & `north` into the newly formed data frame named `dwellings`.  After executing the above command, you can type the name of your data frame directly into the console to review its content.  Within the environment pane in the top right hand window, under the data tabe, you can also use your mouse to click on the data frame symbol that is off to the right of the `dwellings` data object.
 
+
+
