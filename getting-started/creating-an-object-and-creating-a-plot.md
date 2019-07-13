@@ -153,7 +153,7 @@ In this case, we are using the `cbind.data.frame()` command to column bind toget
 | 9 | 9 | 70 | 21 |
 | 10 | 10 | 33 | 69 |
 
-You'll notice that R also provides row numbers that in this case are identical to the identification number we have assigned to each square.  Instead of assigning our `id` variable manually, we could have just as easily used `id = row.numbers(dwellings)` in order to achieve the same result.
+You'll notice that R also provides row numbers that in this case are identical to the identification number we have assigned to each square.  Instead of assigning our `id` variable manually, we could have just as easily used `id = row.numbers(dwellings)` in order to achieve the same result, if the object `dwellings` already exists.
 
 Now let's add a line that represents some type of transportation activity between each of the different dwelling units we have represented within our plot as squares.  We can add lines to the plot with the `lines()` command.  In order to identify the beginning and ending point of each line we set the `x =` argument to the `east` variable within the `dwellings` data frame.  Likewise we set the the `y =` argument to the `north` variable also witin the `dwellings` data frame.  One manner of informing R which variable is needed within a data frame is to use the `$` operator.  In general terms, the form to call a variable is `my_data_frame$my_variable`.  Following is an example, which should produce something similar to the subsequent plot.
 
