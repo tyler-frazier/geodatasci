@@ -66,5 +66,69 @@ plot(x, y, type = "b", main = "The Path of a Running Boy",
 
 ![A Plot with Some Point and Line Type Modifications](.gitbook/assets/rplot04.png)
 
+## Creating a More Complicated Plot while also creating and then using a Data Frame
 
+Now lets make your plot a bit more complicated than simply a line with points.  First increase the scale of our plot area by increasing the range of values for both the x & y axes.
+
+```r
+x <- 1:100
+y <- 1:100
+```
+
+Now instead of using those values, let's randomly select from both `x` & `y` in order to produce a random series of x & y coordinates.
+
+```r
+east <- sample(x, size = 10, replace = TRUE)
+north <- sample(y, size = 10, replace = TRUE)
+```
+
+The above command `sample()` will randomly select in a uniform manner, one number from `x` and then also `y`, 10 times, creating the vector objects `east` & `north`.  I have also included the `replace = TRUE` argument, such that each time a number is selected, it is returned and potentially can be selected again in the next draw.  Now, lets take each value and use it as the coordinates for the center point of a number of squares.  We will use the `symbols()` command in order to add additional specifications to our command.
+
+```r
+symbols(east, north, squares = rep(.75,10), inches = FALSE)
+```
+
+Following is one possible outcome produced by the randomly produced coordinates.  While the squares produced in your plot will be in different locations, the number of squares as well as the size of each, should be very similar.  Lets also consider the additional arguments in the `symbols()` command.  In the `squares =` argument within the command, I have also used the `rep()` function, which will repeat the length of each square, `.75` in this case, 10 times, or 1 time for each square.  I have also added the `inches = FALSE` argument so the units are considered to be similar to the axes.
+
+![Squares within a Defined Area](.gitbook/assets/rplot01%20%281%29.png)
+
+Now lets add some circles to our plot.  This time, instead of assigning an object a permanent value by randomly selecting from a series of numbers, lets randomly select values as part of creating the plot with the `symbol()` function.
+
+```text
+symbols(sample(x, 10, replace = TRUE), 
+        sample(y, 10, replace = TRUE), 
+        circles = rep(.75,10), 
+        inches = FALSE,
+        fg = "green",
+        add = TRUE)
+```
+
+Where as before I created two objects and plotted their values as x & y coordinates, this time I have nested the `sample()` command within the `symbols()` function, in the place where R is looking for the x & y value coordinates.  In this manner, each time I execute the command, 10 circles will be randomly placed throughout the defined area, each with a radius of `.75`.  I have also included the `add = TRUE` argument within the command, in order to add the circles to our previous plot of square.  The `fg =` argument permits us to select a color for each circle.
+
+![Squares with Randomly Placed Circles within a Defined Area](.gitbook/assets/rplot02%20%281%29.png)
+
+Let's also add some larger trees and specify their color as well.  Again we will randomly place them while using the `add = TRUE` argument so they are added to our previous plot.  Also, consider a wider range of colors to use as the outline for each circle, while also filling each circle with a color.  In order to determine how to fill the circle with a color, use the `?` followed by the command you are interested in learning more about in order to view all of the available options.  In this case you can type `?symbols` directly in the console in order to see all of the arguments possible.  If you scroll down in the help window, you will see that `fg =` is used to specify the color or your symbol border, while `bg =`  is used to indicate the color for your symbol's fill.  You may also be interested to know which colors are available to select.  In order to review a list of all available colors, simply type `colors()` directly into your console.  Running the following chunk of commands will then produce a plot similar to the following image.
+
+```text
+symbols(east, north, squares = rep(.75,10), inches = FALSE)
+
+symbols(sample(x, 10, replace = TRUE), 
+        sample(y, 10, replace = TRUE), 
+        circles = rep(.75,10), 
+        inches = FALSE,
+        fg = "green1",
+        bg = "beige",
+        add = TRUE)
+
+symbols(sample(x, 10, replace = TRUE), 
+        sample(y, 10, replace = TRUE), 
+        circles = rep(1.5,10), 
+        inches = FALSE,
+        fg = "green4",
+        bg = "beige",
+        add = TRUE)
+
+```
+
+![Squares with Two Types of Circles within a Defined Area](.gitbook/assets/rplot03%20%281%29.png)
 
