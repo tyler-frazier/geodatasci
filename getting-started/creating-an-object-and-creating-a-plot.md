@@ -195,3 +195,30 @@ lines(x = dwellings[locs, 2],
       col = "blue")
 ```
 
+Alternatively I could have also specified `x = dwellings[locs, ]$east` and `y = dwellings[locs, ]$north` in order to achieve the same result.  The following snippet demonstrates how that is accomplished while adding text in order to annotate each house with its id.
+
+```r
+# text(x = dwellings$east,
+#      y = dwellings$north + 3,
+#      labels = dwellings$id)
+
+text(x = dwellings[locs, ]$east, 
+     y = dwellings[locs, ]$north + 3,
+     labels = dwellings[locs, ]$id)
+```
+
+You'll notice in the previous snippet of code that the `#` sign has been added to the first character space on lines 1, 2, & 3.  Adding the `#` sign enables you to comment out that line of code so R will ignore it.  In the above example, I have commented out the lines of code we produced earlier where we labeled all 10 houses, and followed it with out code that serves to label only the 3 units that were randomly selected.  At this point our plot should appear similar to the following image.
+
+![Paths between 3 Identified Homes](../.gitbook/assets/rplot06.png)
+
+Now instead of using a straight line, let's use a spline to represent a more continuous path betweem each of the selected locations along the persons travel path.  Comment out the previous `lines()` command and instead use the `xspline()` command to identify the path.  I will set the `shape = -1` in order to interpolate all points while crossing each dwelling unit.
+
+```text
+xspline(x = dwellings[locs, 2],
+      y = dwellings[locs, 3],
+      shape = -1,
+      lty = 2)
+```
+
+![The Path of a Traveling Sales Person](../.gitbook/assets/rplot07.png)
+
