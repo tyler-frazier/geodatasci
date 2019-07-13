@@ -1,4 +1,13 @@
-# Creating an object & creating a plot
+---
+description: >-
+  In this exercise you will learn how to create vector and data frame objects,
+  use the sample function and generate a plot that includes different types of
+  squares, circles and lines.
+---
+
+# Creating and Plotting Objects
+
+## Creating an object & creating a plot
 
 Since you have already set your working directory in the previous step, now you can create your first object.  Do so by writing the following command in your script.
 
@@ -235,6 +244,6 @@ Create a similar plot as the one produced above, but instead meet the following 
 * Randomly select 7 homes from the 50 total, and use a dashed spline to describe the path between each labeled dwelling unit.
 * Title your plot.
 
-![One version of the plot produced by the Challenge Question](../.gitbook/assets/rplot08.png)
+![One version of the plot produced by following the Challenge Question Specifications](../.gitbook/assets/rplot08.png)
 
 * * * 
