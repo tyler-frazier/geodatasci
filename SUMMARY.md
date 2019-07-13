@@ -2,7 +2,7 @@
 
 * [Investigating Geospatial Human Development Processes with R](README.md)
 
-## Getting Started with Objects and Plots <a id="getting-started"></a>
+## Getting Started with Objects & Plots <a id="getting-started"></a>
 
 * [Installing R and R Studio on your Computer](getting-started/an-introduction-to-r-from-a-spatial-perspective.md)
 * [Getting Started with RStudio & R](getting-started/getting-started-with-r.md)
