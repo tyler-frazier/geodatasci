@@ -132,3 +132,11 @@ symbols(sample(x, 10, replace = TRUE),
 
 ![Squares with Two Types of Circles within a Defined Area](.gitbook/assets/rplot03%20%281%29.png)
 
+Thus far we have only created R objects that are of the vector class.  We can review the class of one of the objects we have created by typing `class(east)` directly into the console and observe that R informs us that the object is a vector of integers.  Now let's create a new class of an object called a data frame that contains a series of rows and columns where each row represents an observation while each column represents a different variable.  We can start with the coordinates that represent the center point of each square.
+
+```r
+dwellings <- cbind.data.frame(east, north)
+```
+
+In this case, we are using the `cbind.data.frame()` command to column bind together the two integer vectors named `east` & `north` into the newly formed data frame named `dwellings`.  After executing the above command, you can type the name of your data frame directly into the console to review its content.  Within the environment pane in the top right hand window, under the data tabe, you can also use your mouse to click on the data frame symbol that is off to the right of the `dwellings` data object.
+
