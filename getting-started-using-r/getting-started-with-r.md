@@ -6,7 +6,7 @@ Once you have finished the installation process, run the RStudio IDE, which will
 
 If both R and RStudio were properly installed, then the start up for RStudio should appear something like the following image.
 
-![A new RStudio work session at initial startup](.gitbook/assets/rstudio.png)
+![A new RStudio work session at initial startup](../.gitbook/assets/rstudio.png)
 
 One of the first things to note at start up is the bottom left hand pane, which is essentially a window to the R interpreter.  RStudio reports the version of R that has been installed on your computer.  Next go to the pull down menu for **File &gt; New Script &gt; R Script** and select that option.  This will create a new R Script that will appear in the top left pane of your R Studio IDE.  One can think of the script as the location where all computer code will be written and saved, in a manner somewhat analogous to writing a letter or essay with a work processor.  Below the script in RStudio is the console or the location where your commands are sent and responses from R will be returned.  You can think of the **&gt;** symbol in the console as R somewhat figuratively waiting for your command and subsequently also the location where R will respond.
 
@@ -22,7 +22,7 @@ You should notice that R returns the path from the working directory you just de
 
 Now that your script has content, you should save the file.  Select the **&gt;File&gt;Save** command from the drop down window and choose the data subdirectory you created within your project folder.  Name your script file and then select save.  Your RStudio work space should appear similar to the following image.
 
-![State of your RStudio workspace after setting the working directory and saving your script](.gitbook/assets/rstudio1.png)
+![State of your RStudio workspace after setting the working directory and saving your script](../.gitbook/assets/rstudio1.png)
 
 One noteworthy observation regarding the command `setwd()`, notice how the path to the working directory is specified within quotation marks.  In general, whenever RStudio is communicating with your operating system \(OS\) or any entity outside of its workspace, what ever is being sent to that computer will be included within quotation marks.  For example `setwd("the/path/to_my/working/directory")` is contained within quotation marks in order for RStudio to traverse the path  as defined by your OS to that location on your computer.
 

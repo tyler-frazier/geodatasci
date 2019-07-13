@@ -26,7 +26,7 @@ We can see that our earlier use of the colon in `x <- 1:10` created an object na
 
 `plot(x,y)`
 
-![A plot of x increasing while y is decreasing](.gitbook/assets/rplot01.png)
+![A plot of x increasing while y is decreasing](../.gitbook/assets/rplot01.png)
 
 We can continue to describe our plot by adding an argument to our command by specifying the plot type as a line and not simply points
 
@@ -36,7 +36,7 @@ or alternatively a plot with both a line and points over that line.
 
 `plot(x, y, type = "o")`
 
-![A plot produced using the &quot;over&quot; specification in the argument ](.gitbook/assets/rplot02.png)
+![A plot produced using the &quot;over&quot; specification in the argument ](../.gitbook/assets/rplot02.png)
 
 We can also add some description to our plot in order to better communicate our results.  We can begin by adding a title, indicating the units of measurement while also adding labels for both the x and y axes.
 
@@ -48,7 +48,7 @@ xlab = "longitude",
 ylab = "latitude")
 ```
 
-![Plot with a Title, Sub-Title and Axes Labels](.gitbook/assets/rplot03.png)
+![Plot with a Title, Sub-Title and Axes Labels](../.gitbook/assets/rplot03.png)
 
 We can also change the linetype by specifying the `lty =` argument or set the lineweight by using the `lwd =` argument.  The color of our line can be changed using the `col = "some_color"` argument, while the point symbol itself can be modified by using the `pch =` argument.  Scale of the symbol is increased or descreased using `cex =`.  Have a look at the [Quick-R](https://www.statmethods.net/advgraphs/parameters.html) website for a comprehensive list of some available graphical parameters.
 
@@ -64,7 +64,7 @@ plot(x, y, type = "b", main = "The Path of a Running Boy",
      cex = 1.5)
 ```
 
-![A Plot with Some Point and Line Type Modifications](.gitbook/assets/rplot04%20%281%29.png)
+![A Plot with Some Point and Line Type Modifications](../.gitbook/assets/rplot04%20%281%29.png)
 
 ## Creating a More Complicated Plot while also creating and then using a Data Frame
 
@@ -90,7 +90,7 @@ symbols(east, north, squares = rep(.75,10), inches = FALSE)
 
 Following is one possible outcome produced by the randomly produced coordinates.  While the squares produced in your plot will be in different locations, the number of squares as well as the size of each, should be very similar.  Lets also consider the additional arguments in the `symbols()` command.  In the `squares =` argument within the command, I have also used the `rep()` function, which will repeat the length of each square, `.75` in this case, 10 times, or 1 time for each square.  I have also added the `inches = FALSE` argument so the units are considered to be similar to the axes.
 
-![Squares within a Defined Area](.gitbook/assets/rplot01%20%281%29.png)
+![Squares within a Defined Area](../.gitbook/assets/rplot01%20%281%29.png)
 
 Now lets add some circles to our plot.  This time, instead of assigning an object a permanent value by randomly selecting from a series of numbers, lets randomly select values as part of creating the plot with the `symbol()` function.
 
@@ -105,7 +105,7 @@ symbols(sample(x, 10, replace = TRUE),
 
 Where as before I created two objects and plotted their values as x & y coordinates, this time I have nested the `sample()` command within the `symbols()` function, in the place where R is looking for the x & y value coordinates.  In this manner, each time I execute the command, 10 circles will be randomly placed throughout the defined area, each with a radius of `.75`.  I have also included the `add = TRUE` argument within the command, in order to add the circles to our previous plot of square.  The `fg =` argument permits us to select a color for each circle.
 
-![Squares with Randomly Placed Circles within a Defined Area](.gitbook/assets/rplot02%20%281%29.png)
+![Squares with Randomly Placed Circles within a Defined Area](../.gitbook/assets/rplot02%20%281%29.png)
 
 Let's also add some larger trees and specify their color as well.  Again we will randomly place them while using the `add = TRUE` argument so they are added to our previous plot.  Also, consider a wider range of colors to use as the outline for each circle, while also filling each circle with a color.  In order to determine how to fill the circle with a color, use the `?` followed by the command you are interested in learning more about in order to view all of the available options.  In this case you can type `?symbols` directly in the console in order to see all of the arguments possible.  If you scroll down in the help window, you will see that `fg =` is used to specify the color or your symbol border, while `bg =`  is used to indicate the color for your symbol's fill.  You may also be interested to know which colors are available to select.  In order to review a list of all available colors, simply type `colors()` directly into your console.  Running the following chunk of commands will then produce a plot similar to the following image.
 
@@ -130,7 +130,7 @@ symbols(sample(x, 10, replace = TRUE),
 
 ```
 
-![Squares with Two Types of Circles within a Defined Area](.gitbook/assets/rplot03%20%281%29.png)
+![Squares with Two Types of Circles within a Defined Area](../.gitbook/assets/rplot03%20%281%29.png)
 
 Thus far we have only created R objects that are of the vector class.  We can review the class of one of the objects we have created by typing `class(east)` directly into the console and observe that R informs us that the object is a vector of integers.  Now let's create a new class of an object called a data frame that contains a series of rows and columns where each row represents an observation while each column represents a different variable.  We can start with the coordinates that represent the center point of each square.
 
@@ -165,5 +165,5 @@ lines(x = dwellings$east,
       col = "blue")
 ```
 
-![Paths travelled from House to House](.gitbook/assets/rplot04.png)
+![Paths travelled from House to House](../.gitbook/assets/rplot04.png)
 
