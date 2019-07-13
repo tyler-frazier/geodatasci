@@ -167,3 +167,31 @@ lines(x = dwellings$east,
 
 ![Paths travelled from House to House](../.gitbook/assets/rplot04.png)
 
+You'll notice that unlike the previous commands, it wasn't necessary to include `add = TRUE` in order to add the lines to the plot.  Perhaps it would also be helpful to add some text to annotate each household.  We can accomplish this using the `text()` command.  As with `lines()`, we also do not need to use the `add = TRUE` argument.  The `text()` function also requires identifying the location of the text you will use to annotate each dwelling unit.  That is accomplished through using the `labels =` argument.  Again, identify the variable where the id is located within the data frame using the `my_data_frame$my_variable` format.
+
+```r
+text(x = dwellings$east,
+     y = dwellings$north,
+     labels = dwellings$id)
+```
+
+ Since label coordinates are the same as the center point for each square, reading the labels is confounded.  Instead of placing the label directly on top of the dwelling unit, add a few units north to the `y =` argument in order to displace each label a bit in the northerly direction.
+
+![Paths &amp; House Numbers](../.gitbook/assets/rplot05.png)
+
+Now perhaps instead of traversing a path between each house sequentially, our traveling person selected on 3 of the dwellings and moved between each of those buildings.  First we will randomly select 3 numbers that will be used to identify the chosen homes.  This time, set the `replace =` argument to `FALSE` since our traveling person will only visit each dwelling unit one time.
+
+```r
+locs <- sample(1:10, 3, replace = FALSE)
+```
+
+Now instead of using the `lines()` command to identify the `x =` and `y =` coordinates of each dwelling unit's center point, we will select only 3 building locations.  To do this, we wil lintroduce another method of traversing and selecting rows and/or columns from a data frame for use in an command and its arguments.  The `[` and `]` symbols are extremely powerful operators and can be used to subscript from within a function or argument.  Subscripting operators follow the format of first selecting the rows followed by a comma and then columns in this `[row_numbers, column_numbers]` format.  If either the rows space or columns space is left blank, then R assumes ALL rows and/or columns should be selected.  In the following command, I am using these subscripting operators to first select the 3 rows from the data frame that were randomly identified and then also include either column 2 for the easterly coordinate, or column 3 for the northerly coordinate.
+
+```r
+lines(x = dwellings[locs, 2],
+      y = dwellings[locs, 3],
+      lty = 2,
+      lwd = .75,
+      col = "blue")
+```
+
