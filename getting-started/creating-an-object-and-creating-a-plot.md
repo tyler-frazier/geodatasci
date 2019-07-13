@@ -220,5 +220,21 @@ xspline(x = dwellings[locs, 2],
       lty = 2)
 ```
 
-![The Path of a Traveling Sales Person](../.gitbook/assets/rplot07.png)
+![The Path of a Person en route between Homes](../.gitbook/assets/rplot07.png)
 
+Finally, add a title to your plot using `title(main="A Person's path between Homes")`.
+
+## Challenge Question
+
+Create a similar plot as the one produced above, but instead meet the following specifications.
+
+* Increase the minimum and maximum limits of your area from 1 to 1000 in both the `x` & `y` dimension.
+* Randomly place 50 dwelling units throughout the 1000 x 1000 dimensioned area. Size each square appropriately.
+* Randomly place 40 small circles \(trees\) throughout the 1000 x 1000 dimensioned area.  Set the diameter of each circle to the same or approximately the same as the width of each home.
+* Randomly place 12 large trees throughout the defined area, such that each tree is almot twice the diameter as each homes width.
+* Randomly select 7 homes from the 50 total, use a dashed spline to describe the path between each labeled home
+* Title your plot
+
+![One version of the plot produced by the Challenge Question](../.gitbook/assets/rplot08.png)
+
+* * * 
