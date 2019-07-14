@@ -246,4 +246,4 @@ Create a similar plot as the one produced above, but instead meet the following 
 
 ![One version of the plot produced by following the Challenge Question Specifications](../.gitbook/assets/rplot08.png)
 
-* * * 
+* 
