@@ -7,6 +7,7 @@
 * [Installing R and R Studio on your Computer](getting-started/an-introduction-to-r-from-a-spatial-perspective.md)
 * [Getting Started with RStudio & R](getting-started/getting-started-with-r.md)
 * [Creating and Plotting Objects](getting-started/creating-an-object-and-creating-a-plot.md)
+* [An Introduction to Spatial Data](getting-started/an-introduction-to-spatial-data.md)
 
 ## test
 
