@@ -6,7 +6,7 @@ Since we have had a bit of practice with creating a theoretical environment, let
 install.packages("tidyverse")
 ```
 
-In the above command we are installing a collection of packages designed for data science, where all packages share an underlying design philosophy, grammar, and data structures.  Once RStudio has informed you that the package has been installed, you may then execute the command that makes the library function available for use during your current work session.
+In the above command we are installing a collection of packages designed for data science, where all packages share an common design.  Once RStudio has informed you that the package has been installed, you may then execute the command that makes the library function available for use during your current work session.
 
 ```text
 library(tidyverse)
@@ -16,5 +16,5 @@ After executing the library command, R may inform you about the current version 
 
 The tidyverse is not one library of functions, but is in fact a suite of packages where each one conforms to an underlying design philosphy, grammar and data structure.  In the previous exercise we used commands from the base R package, but in this exercise we will begin to consider the more recent development of the tidyverse syntax nomenclature that emerged from the gramar of graphics \(ggplot2\).  The [tidyverse](https://www.tidyverse.org/) is arguably a more coherent, effective and powerful approach to data science programming in R.
 
-
+After installing and loading 
 
