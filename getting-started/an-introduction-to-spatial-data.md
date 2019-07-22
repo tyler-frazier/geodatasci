@@ -22,7 +22,7 @@ After installing and loading the `tidyverse` suite of packages, let's install ye
 install.packages("sf", dependencies = TRUE)
 ```
 
-This will install the `sf` package,  or simple features, which like the tidyverse is a recent, arguable more effective implementation of a design philosphopy for using spatial data in R.  The `sf` package also has been designed to integrate with the `tidyverse` syntax.  After installing sf, then as before run the `library()` function to load the library of functions contained within the package for use in your current R worksession.
+This will install the `sf` package,  or [simple features](https://r-spatial.github.io/sf/), which like the tidyverse is a recent, arguable more effective implementation of a design philosphopy for using spatial data in R.  The `sf` package also has been designed to integrate with the `tidyverse` syntax.  After installing sf, then as before run the `library()` function to load the library of functions contained within the package for use in your current R worksession.
 
 ```text
 # install.packages("tidyverse", dependencies = TRUE)
@@ -32,5 +32,7 @@ library(tidyverse)
 library(sf)
 ```
 
-Your R script to this point should appear as above.  You will also notice that I have commented out lines 1 & 2 in the above snippet of code.  Running the `install.package()` is only necessary one time, in order to retrieve the package from a remote location and install it on your local machine, but it is necessary to run the `library()` command each time you open R and wish to access a function from within that library.
+Your R script to this point should appear as above.  You will also notice that I have commented out lines 1 & 2 in the above snippet of code.  Running the `install.package()` is only necessary one time, in order to retrieve the package from a remote location and install it on your local machine, but it is necessary to run the `library()` command each time you open R and wish to access a function from within that library.  Therefor, as we did in the previous exercise, I have used the `#` sign to comment out those two lines of code, so R will ignore it.
+
+
 
