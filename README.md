@@ -6,5 +6,3 @@ description: >-
 
 # Investigating Geospatial Human Development Processes with R
 
-beginning some content for this book
-
