@@ -121,3 +121,65 @@ One final argument that has been provided at the end of the `text()` command is 
 
 ![Liberia and its counties](../.gitbook/assets/screen-shot-2019-09-07-at-2.53.39-pm.png)
 
+After adding the counties go back and add the second level of administrative subdivisions, or districts.  Again use `read_sf()` to import that shapefile as a simple feature object into your RStudio workspace.  Again use the `plot(st_geometry(lbr_adm2), lwd = ???, border = "some_color", add = TRUE` in order to add that layer to your previous two layers.  Again use the `text()` command with `st_coordinates(st_centroid(adm2_obj_name))` while also using the `labels =  my_adm2_sf_ob$variable_name`argument with the `cex = some_even_smaller_value`in order to plot those value.
+
+```r
+rm(list=ls(all=TRUE))
+
+# install.packages("tidyverse", dependencies = TRUE)
+# install.packages("sf", dependencies = TRUE)
+
+library(tidyverse)
+library(sf)
+
+setwd("~/Tresors/teaching/project_folder/data")
+
+lbr_int  <- read_sf("lbr_admbnda_admint_ocha/lbr_admbnda_admint_ocha.shp")
+lbr_adm1  <- read_sf("lbr_admbnda_adm1_ocha/lbr_admbnda_adm1_ocha.shp")
+lbr_adm2  <- read_sf("lbr_admbnda_adm2_ocha/lbr_admbnda_adm2_ocha.shp")
+#lbr_stl  <- read_sf("lbr_plp_ocha/lbr_plp_ocha.shp")
+lbr_rds  <- read_sf("lbr_rdsl_unmil/lbr_rdsl_unmil.shp")
+#lbr_hcf  <- read_sf("lbr_health_facilities/healthsites.shp")
+
+
+#pdf("liberia.pdf", width = 8, height = 8)
+
+plot(st_geometry(lbr_int), lwd = 3)
+plot(st_geometry(lbr_adm1), lwd = 1.25, border = "gray", add = TRUE)
+plot(st_geometry(lbr_adm2), lwd = .25, border = "gray", add = TRUE)
+# plot(st_geometry(lbr_stl), cex = .025, col = "gray", add = TRUE)
+# plot(st_geometry(lbr_hcf), cex = .025, col = "red", add = TRUE)
+
+#plot(st_geometry(lbr_rds))
+#plot(lbr_rds["CATEGORY"]) 
+
+plot(st_geometry(subset(lbr_rds, CATEGORY == "Primary Routes" | CATEGORY == "Paved")),
+     lwd = 1.25,
+     lty = 6,
+     col = "orange",
+     add = TRUE)
+
+#x <- st_coordinates(st_centroid(lbr_adm1))
+
+text(st_coordinates(st_centroid(lbr_adm1)), labels = lbr_adm1$admin1name, cex = .45)
+text(st_coordinates(st_centroid(lbr_adm2)), labels = lbr_adm2$admin2Name, cex = .125)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
