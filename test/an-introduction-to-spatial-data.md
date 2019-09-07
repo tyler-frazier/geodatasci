@@ -72,7 +72,15 @@ The `sf::` package also includes a function called `st_geometry()` that will ena
 
 After using the `st_geometry()` command with our `lbr_int` object, RStudio provides us with a basic description that includes the geometry type \(polygons in this case\), the x & y minimum and maximum values or also know as the bounnding box, the epsg spatial reference identifier \(a number used to identify the projection\) and finally the projection string , which provides additional information about the projection used.
 
+Now that we have conducted a cursory investigation of our simple feature object geometry, let's plot it.  To plot, nest the object's geometry output using the same `st_geometry(lbr_int)` command, within the `plot()` command.
 
+```r
+first_command(second_command(sf_object))
+```
+
+An image in the bottom right pane of your RStudio environment should appear, and that image should be a single polygon that is describing the international border of Liberia.
+
+![Liberia&apos;s international border](../.gitbook/assets/screen-shot-2019-09-07-at-1.53.31-pm.png)
 
 
 
