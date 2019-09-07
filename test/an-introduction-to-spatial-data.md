@@ -88,5 +88,17 @@ You can further specify the lineweight used when plotting this border by adding 
 plot(st_geometry(your_sf_object), lwd = some_value)
 ```
 
+You have successfully created a simple feature object that represents Liberia's border, as well as plotted it.  Good job!  Now continue with the first level of administrative subdivisions for Liberia, counties.  In order to do this, return to your use of the `read_sf()` command in order to import and create an object named `lbr_adm1`.   
+
+```r
+lbr_adm1  <- your_command("folder_where_adm1_is_located/lbr_admbnda_adm1_ocha.shp")
+```
+
+As before you could use data pane in the top right corner to view attribute data.  You can also use the `st_geometry()` command to have a first look at your newly created simple features object that represents Liberia's administrsative subdividion of counties.
+
+![Attribute data for Liberia&apos;s adm1 simple features object](../.gitbook/assets/screen-shot-2019-09-07-at-2.06.49-pm.png)
+
+![Geometry of Liberia&apos;s counties](../.gitbook/assets/screen-shot-2019-09-07-at-2.07.03-pm.png)
+
 
 
