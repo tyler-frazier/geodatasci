@@ -28,7 +28,29 @@ After running the `install.packages()` command successfully, you should add a \#
 
 Another helpful command to add at the beginning of your script is `rm(list=ls(all=TRUE))` , which will delete everything from your R workspace from the outset. By running this line of code first in your script, you will be working with what John Locke called a tabula rasa or a clean slate from the outset. After adding the remove all function as your first line of code but after installing your packages and loading those libraries, be sure to set your working directory. While it's fine to use the drop down menu to find the location of your working directory, the first time, it is always a good idea to copy that line of code into your script, so the `setwd()` command can be executed programmatically instead of through the GUI \(which will save you time\). At this point your script should look like the following snippet of code.
 
+```r
+rm(list=ls(all=TRUE))
 
+# install.packages("tidyverse", dependencies = TRUE)
+# install.packages("sf", dependencies = TRUE)
+
+library(tidyverse)
+library(sf)
+
+setwd("the/path/to_my/working/directory")
+```
+
+The next step is to visit the [Humanitarian Data Exchange](https://data.humdata.org) website and begin to become familiar with all of the data available through that portal.  The front page of HDX offers a **Find Data** search tool on the right hand side towards the top.  As an example, enter **Liberia** into the find data search field and press enter.
+
+![The Main Page for the HDX Website -- Notice the Find Data Search Field](../.gitbook/assets/screen-shot-2019-09-06-at-9.47.46-pm.png)
+
+The HDX website should return 125 or so datasets for the West African country of Liberia. Included in the search results will be data describing Liberia's healthsites, settlements, roads, population, pregnancies, births, and a number of other local dimensions of human development.  Scroll through the results until you find a data set that provides a spatial description of Liberia's administrative boundaries.  The administrative boundaries refers to the national border as well as all of the regional, district and local government subdivisions of that country.  Every country employs a unique nomenclature in order to describe its administrative subdivisions.  For example, in the United States, our nation is first subdivided into states and then each state is subdivided into counties.  In comparison, Liberia is first subdivided into _counties_ with each county further subdivided into _districts_.  Each of Liberia's _districts_ is then further subdivided into what is called a _clan area_.
+
+Once you have found the **Liberia Administrative Boundaries** link, click on it and follow it to a web page where a number of files will be made available to you under a **Data and Resources** tab.  
+
+![Administrative Boundaries spatial data for Liberia made available by OCHA through HDX](../.gitbook/assets/screen-shot-2019-09-06-at-10.04.39-pm.png)
+
+For our purposes, we want to obtain the national boundary \(admint\), first level administrstive subdivisions \(adm1\) and second level administrative subdivisions \(adm2\).  Download each of these folders by clicking on the download tab off to the right of each file name.
 
 
 
@@ -36,15 +58,9 @@ Another helpful command to add at the beginning of your script is `rm(list=ls(al
 
 
 
-Your R script to this point should appear as above.  You will also notice that I have commented out lines 1 & 2 in the above snippet of code.  Running the `install.package()` is only necessary one time, in order to retrieve the package from a remote location and install it on your local machine, but it is necessary to run the `library()` command each time you open R and wish to access a function from within that library.  Therefor, as we did in the previous exercise, I have used the `#` sign to comment out those two lines of code, so R will ignore it.
 
 
 
-```text
-# install.packages("tidyverse", dependencies = TRUE)
-# install.packages("sf", dependencies = TRUE)
 
-library(tidyverse)
-library(sf)
-```
+
 
