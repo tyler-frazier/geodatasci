@@ -62,8 +62,9 @@ In order to import a shapefile into RStudio we are going to use a command from t
 
 ```r
 lbr_int  <- your_command("folder_where_admint_is_located/lbr_admbnda_admint_ocha.shp")
-
 ```
+
+Once you have successfully executed the above function using the `sf::read_sf()` command, you should observe a new object named `lbr_int`appearing in the top right data pane within your RStudio environment.  To the right of your newly created object there is a small gridded box that you will be able to click on in order to view individual attributes associated with this simple feature class spatial object.  You will also notice that within the data pane, RStudio also provides you with some basic information about the object, in this case 1 observation that has 7 variables.
 
 
 
