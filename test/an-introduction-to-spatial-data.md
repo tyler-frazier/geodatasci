@@ -151,7 +151,13 @@ Once you have produced the output, you can use the **export** tab in the bottom 
 
 ![Liberia, its counties and districts](../.gitbook/assets/screen-shot-2019-09-07-at-3.17.24-pm.png)
 
+## Challenge Question
 
+Follow the steps from above that you used to produce your plot of Liberia, but instead use the LMIC country you have selected to investigate further during the course of the semester.  Go back to the HDX website and find the administrative boundaries for the LMIC country you have selected.  Plot and label the internation border, the first level of administrative subdivisions and the second level of administrative subdivisions.
+
+## Stretch Goal
+
+Go to the GADM website and download the shapefiles for your selected country.  Compare their administrative subdivisions to those obtained from HDX.  Are they the same?  Are there any differences?  Which source do you think more closely describes to the local political reality in your selected LMIC?
 
 
 
