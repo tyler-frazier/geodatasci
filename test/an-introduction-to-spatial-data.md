@@ -114,14 +114,14 @@ In addition to spatially desribing the national border and all 15 of Liberia's c
 You will notice that within your `sf` object named `lbr_adm1` the variable `admin1name` contains the names of each county.  In order to properly set the `labels =`  argument, you will need to specify both the simple feature object name as well as the variable within that object using the `$` operator.
 
 ```r
-text(st_coordinates(st_centroid(lbr_adm1)), labels = lbr_adm1$admin1name, cex = .45)
+text(st_coordinates(st_centroid(your_adm1_obj)), labels = your_adm1_obj$variable_name, cex = ???)
 ```
 
 One final argument that has been provided at the end of the `text()` command is  `cex =` .  The `cex =`  argument will scaled the size of each label in accordance with the value provided.  For example, above I have set `cex = .45`  which will scale the size of each label to be 45% smaller than the base value.  You could also set `cex =` values that are more than 1 in order to increase the proportionate size of the labels.
 
 ![Liberia and its counties](../.gitbook/assets/screen-shot-2019-09-07-at-2.53.39-pm.png)
 
-After adding the counties go back and add the second level of administrative subdivisions, or districts.  Again use `read_sf()` to import that shapefile as a simple feature object into your RStudio workspace.  Again use the `plot(st_geometry(lbr_adm2), lwd = ???, border = "some_color", add = TRUE` in order to add that layer to your previous two layers.  Again use the `text()` command with `st_coordinates(st_centroid(adm2_obj_name))` while also using the `labels =  my_adm2_sf_ob$variable_name`argument with the `cex = some_even_smaller_value`in order to plot those value.
+After adding the counties go back and add the second level of administrative subdivisions, or districts.  Again use `read_sf()` to import that shapefile as a simple feature object into your RStudio workspace.  Again use the `plot(st_geometry(lbr_adm2), lwd = ???, border = "some_color", add = TRUE` in order to add that layer to your previous two layers.  Again use the `text()` command with `st_coordinates(st_centroid(adm2_obj_name))` while also using the `labels =  my_adm2_sf_ob$variable_name`argument with the `cex = some_even_smaller_value`in order to plot those value.  At this point, your script should look similar to the following.
 
 ```r
 rm(list=ls(all=TRUE))
@@ -132,37 +132,19 @@ rm(list=ls(all=TRUE))
 library(tidyverse)
 library(sf)
 
-setwd("~/Tresors/teaching/project_folder/data")
+setwd("the/path/to_my/working/directory")
 
-lbr_int  <- read_sf("lbr_admbnda_admint_ocha/lbr_admbnda_admint_ocha.shp")
-lbr_adm1  <- read_sf("lbr_admbnda_adm1_ocha/lbr_admbnda_adm1_ocha.shp")
-lbr_adm2  <- read_sf("lbr_admbnda_adm2_ocha/lbr_admbnda_adm2_ocha.shp")
-#lbr_stl  <- read_sf("lbr_plp_ocha/lbr_plp_ocha.shp")
-lbr_rds  <- read_sf("lbr_rdsl_unmil/lbr_rdsl_unmil.shp")
-#lbr_hcf  <- read_sf("lbr_health_facilities/healthsites.shp")
+lbr_int  <- your_command("folder_where_admint_is_located/lbr_admbnda_admint_ocha.shp")
+lbr_adm1  <- your_command("folder_where_adm1_is_located/lbr_admbnda_adm1_ocha.shp")
+lbr_adm2  <- your_command("folder_where_adm2_is_located/lbr_admbnda_adm2_ocha.shp")
 
+plot(st_geometry(your_intl_border_obj), lwd = ?)
+plot(st_geometry(your_adm1_obj), lwd = ?, border = "add_color_here", add = TRUE)
+plot(st_geometry(your_adm2_obj), lwd = ?, border = "add_color_here", add = TRUE)
 
-#pdf("liberia.pdf", width = 8, height = 8)
+text(st_coordinates(st_centroid(your_adm1_obj)), labels = your_adm1_obj$variable_with_county_names, cex = ???)
+text(st_coordinates(st_centroid(your_adm2_obj)), labels = your_adm2_obj$variable_with_district_names, cex = ???)
 
-plot(st_geometry(lbr_int), lwd = 3)
-plot(st_geometry(lbr_adm1), lwd = 1.25, border = "gray", add = TRUE)
-plot(st_geometry(lbr_adm2), lwd = .25, border = "gray", add = TRUE)
-# plot(st_geometry(lbr_stl), cex = .025, col = "gray", add = TRUE)
-# plot(st_geometry(lbr_hcf), cex = .025, col = "red", add = TRUE)
-
-#plot(st_geometry(lbr_rds))
-#plot(lbr_rds["CATEGORY"]) 
-
-plot(st_geometry(subset(lbr_rds, CATEGORY == "Primary Routes" | CATEGORY == "Paved")),
-     lwd = 1.25,
-     lty = 6,
-     col = "orange",
-     add = TRUE)
-
-#x <- st_coordinates(st_centroid(lbr_adm1))
-
-text(st_coordinates(st_centroid(lbr_adm1)), labels = lbr_adm1$admin1name, cex = .45)
-text(st_coordinates(st_centroid(lbr_adm2)), labels = lbr_adm2$admin2Name, cex = .125)
 ```
 
 
