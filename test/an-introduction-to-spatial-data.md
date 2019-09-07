@@ -107,5 +107,7 @@ plot(st_geometry(your_intl_border_obj), lwd = ?)
 plot(st_geometry(your_adm1_obj), lwd = ?, border = "add_color_here", add = TRUE)
 ```
 
+You may also add a color to the administrative subdivisions in order to graphically display the are a subdividions of the larger nation.  In the above example I have set `border = gray` .  You are welcome to use any color that seemingly works best for you.  Use the `color()` command directly in the console to view a list of all 650 or so colors that are available in base R.
+
 
 
