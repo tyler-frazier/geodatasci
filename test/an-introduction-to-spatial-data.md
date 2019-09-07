@@ -107,7 +107,7 @@ plot(st_geometry(your_intl_border_obj), lwd = ?)
 plot(st_geometry(your_adm1_obj), lwd = ?, border = "add_color_here", add = TRUE)
 ```
 
-You may also add a color to the administrative subdivisions in order to graphically display the are a subdividions of the larger nation.  In the above example I have set `border = gray` .  You are welcome to use any color that seemingly works best for you.  Use the `color()` command directly in the console to view a list of all 650 or so colors that are available in base R.
+You may also add a lighter color to the administrative subdivisions in order to graphically display counties as subdividions of the larger nation.  In the above example I have set `border = gray` .  You are welcome to use any color that seemingly works best for you, although gray scales often achieve the task quite well.  Use the `color()` command directly in the console to view a list of all 650 or so colors that are available in base R.
 
-
+In addition to spatially desribing the national border and all 15 of Liberia's counties, it would also be helpful to add some text that identifies the name of each county.  To do this we will use the `text()` command on a separate line of code within our script after our two `plot()` commands.  The `text()` command will require us to provide, first the location where each annotation is to be plotted and second the label to be plotted at each of those locations.  This time instead of just using the `st_geometry()` we will further nest inside of that command the `st_centroid()` command in order to provide the coordinates for the center point of each county or the location where each label will be placed.  Additionally, we will set the `labels =`  argument to the variable within our `lbr_adm1` object that provides the name of each county.   
 
