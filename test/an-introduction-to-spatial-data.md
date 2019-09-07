@@ -68,9 +68,9 @@ Once you have successfully executed the above function using the `sf::read_sf()`
 
 The `sf::` package also includes a function called `st_geometry()` that will enable you to view some of the basic geometry associated with the object you have named `lbr_int`.  Type the name of your object within the `st_geometry()` command so that RStudio will return some basic geometric information about our spatial object that describes Liberia's international border.
 
+![Some basic R commands](../.gitbook/assets/screen-shot-2019-09-07-at-1.32.41-pm.png)
 
-
-
+After using the `st_geometry()` command with our `lbr_int` object, RStudio provides us with a basic description that includes the geometry type \(polygons in this case\), the x & y minimum and maximum values or also know as the bounnding box, the epsg spatial reference identifier \(a number used to identify the projection\) and finally the projection string , which provides additional information about the projection used.
 
 
 
