@@ -147,7 +147,7 @@ text(st_coordinates(st_centroid(your_adm2_obj)), labels = your_adm2_obj$variable
 
 ```
 
-Once you have produced the output, you can use the **export** tab in the bottom right RStudio pane where plots are produced.  Save as an image to your working directory.  Your spatial plot describing the political geography of Liberia should appear similar to the following image.
+Once you have produced the output, you can use the **export** tab in the bottom right RStudio pane where plots are produced.  Use either the **Save as Image** or **Save as PDF** tab in order to save your plot to your working directory.  Your spatial plot describing the political geography of Liberia should appear similar to the following image.
 
 ![Liberia, its counties and districts](../.gitbook/assets/screen-shot-2019-09-07-at-3.17.24-pm.png)
 
