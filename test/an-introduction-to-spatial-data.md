@@ -100,5 +100,12 @@ As before you could use data pane in the top right corner to view attribute data
 
 ![Geometry of Liberia&apos;s counties](../.gitbook/assets/screen-shot-2019-09-07-at-2.07.03-pm.png)
 
+Instead of having 1 observation with 7 variables as with the international border, now your `lbr_adm1` simple feature object has 15 observations, with each observation having 8 different variables describing some attribute associated with each individual polygon.  Now let's plot both Liberia's international border as well as its 15 counties.  To do this we will again use our `st_geometry()` nested within our`plot()` command while using our `lbr_adm1` object.  As before, continue with an argument that specifies the line weight for each of the counties.  Since we are describing a first level subdivision, graphically it is generally best to use a lineweight that is less than the width used for the international border.  Also, notice that I have added a new argument to the series of commands `add = TRUE` , which will serve to add the county borders to the already plotted international boundary.
+
+```r
+plot(st_geometry(your_intl_border_obj), lwd = ?)
+plot(st_geometry(your_adm1_obj), lwd = ?, border = "add_color_here", add = TRUE)
+```
+
 
 
