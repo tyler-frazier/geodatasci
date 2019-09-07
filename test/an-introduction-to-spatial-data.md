@@ -50,7 +50,7 @@ Once you have found the **Liberia Administrative Boundaries** link, click on it 
 
 ![Administrative Boundaries spatial data for Liberia made available by OCHA through HDX](../.gitbook/assets/screen-shot-2019-09-06-at-10.04.39-pm.png)
 
-For our purposes, we want to obtain the national boundary \(admint\), first level administrstive subdivisions \(adm1\) and second level administrative subdivisions \(adm2\).  Download each of these folders by clicking on the download tab off to the right of each file name.
+For our purposes, we want to obtain the national boundary \(admint\), first level administrative subdivisions \(adm1\) and second level administrative subdivisions \(adm2\).  Download each of these folders by clicking on the download tab off to the right of each file name.
 
 
 
