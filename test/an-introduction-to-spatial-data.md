@@ -82,5 +82,11 @@ An image in the bottom right pane of your RStudio environment should appear, and
 
 ![Liberia&apos;s international border](../.gitbook/assets/screen-shot-2019-09-07-at-1.53.31-pm.png)
 
+You can further specify the lineweight used when plotting this border by adding the `lwd =`   argument to your plot command.  Within the use of your `plot()` command, add the `lwd =`  argument and specify a weight or line width associated with that particular object's plotted lines.  In the example above, I have set `lwd = 3`.
+
+```r
+plot(st_geometry(your_sf_object), lwd = some_value)
+```
+
 
 
