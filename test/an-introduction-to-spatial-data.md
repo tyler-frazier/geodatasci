@@ -122,17 +122,17 @@ ggplot() +
           color = "color",
           fill = "color",
           alpha = value) +
-  geom_sf_label(data = your_adm1_sf_obj,
+  geom_sf_text(data = your_adm1_sf_obj,
                aes(label = variable_name),
                size = value,
                color = "color") +
-  geom_sf_text(data = your_int_sf_obj,
+  geom_sf_label(data = your_int_sf_obj,
                aes(label = variable_name),
                size = value,
                color = "color")
 ```
 
-The code above will produce the plot below when the`geom_sf()` function using the `lbr_adm1` arguments is specified with a line weight `size = 0.65`, line weight `color = "gray50"`, a polygon `fill = "gold3"` and a 65% opacity value of `alpha = 0.65`.  
+The code above will produce the plot below when the`geom_sf()` function using the `lbr_adm1` arguments is specified with a line weight `size = 0.65`, line weight `color = "gray50"`, a polygon `fill = "gold3"` and a 65% opacity value of `alpha = 0.65`.  Additionally, I have set the `size = 2.0` , and the `alpha = 0` \(100% transparent\) for the `data = lbr_int` object. The `geom_sf()` command will default to a `color = "black"` if the line color is not specified. Additionally, since the `alpha = 0` no `fill = "color"` is needed \(since it will not appear\). The county labels have a `size = 2` \(and also defaults to a `color = "black"`, while the `geom_sf_text()` command to label Liberia has a `size = 12` argument. In order to nudge the label to the east and south I have also added the `nudge_x = 0.3` and `nudge_y = -.1` arguments to the `geom_sf_label()` command.
 
 ![Liberia and its 15 Counties](../.gitbook/assets/liberia%20%281%29.png)
 
