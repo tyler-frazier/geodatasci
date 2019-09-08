@@ -136,6 +136,9 @@ The code above will produce the plot below when the`geom_sf()` function using th
 
 ![Liberia and its 15 Counties](../.gitbook/assets/liberia%20%281%29.png)
 
+After adding the counties go back and add the second level of administrative subdivisions, or districts.  Again use `read_sf()` to import that shapefile as a simple feature object into your RStudio workspace.  Use the  `geom_sf_text()` command to add the labels, while also making sure to specify the correct variable name in the `aes(label = variable_name)` argument.  Size the district borders and labels so they are smaller than the internation border as well as the county delineations.
+
+rm\(list=ls\(all=TRUE\)\)  
 
 
 
