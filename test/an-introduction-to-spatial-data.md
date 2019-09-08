@@ -83,23 +83,22 @@ Following the `data =` argument, you can also specifiy the line weight for the b
 
 ![Liberia with a green fill and gold border](../.gitbook/assets/liberia.png)
 
-It would also be helpful to have a label describing our plot.  In order to do this we can use either the `geom_sf_text()` command or the \`
-
-```text
-
-```
-
-```text
-
-```
-
- 
-
-You can further specify the lineweight used when plotting this border by adding the `lwd =`   argument to your plot command.  Within the use of your `plot()` command, add the `lwd =`  argument and specify a weight or line width associated with that particular object's plotted lines.  In the example above, I have set `lwd = 3`.
+It would also be helpful to have a label describing our plot.  In order to do this we can use either the `geom_sf_text()` command or the `geom_sf_label()` command.  In the following snippet of code you will notice that I have added the aesthetics argument within my `geom_sf_text()` command.  The `aes =` argument enables us to specify which variable contains the label we will place on our object.  If you click on the blue arrow to the left of the `lbr_int` object in the top right data pane, the object will expand below to reveal the names of all variables.  The second variable is named `CNTRY_NAME` and provides us with the name we will use as our label, Liberia.  Following the `aes()` argument, you can also specify the `size =` of your label as well as its `color =`.
 
 ```r
-plot(st_geometry(your_sf_object), lwd = some_value)
+ggplot() +
+  geom_sf(data = lbr_int,
+          size = 2.0,
+          color = "gold",
+          fill = "green",
+          alpha = 0.75) +
+  geom_sf_text(data = lbr_int,
+               aes(label = CNTRY_NAME),
+               size = 10,
+               color = "blue")
 ```
+
+
 
 You have successfully created a simple feature object that represents Liberia's border, as well as plotted it.  Good job!  Now continue with the first level of administrative subdivisions for Liberia, counties.  In order to do this, return to your use of the `read_sf()` command in order to import and create an object named `lbr_adm1`.   
 
