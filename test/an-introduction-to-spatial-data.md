@@ -1,3 +1,9 @@
+---
+description: >-
+  Locating and retrieving administrative subdivisions for your selected LMIC, as
+  well as plotting boundaries and labelling each local government unit.
+---
+
 # An Introduction to Spatial Data
 
 We have had a bit of practice creating a theoretical environment, but now we will move to a more practical application.  In this exercise you will learn how to install a package and load a library of functions into R, install spatial data as a simple feature and then use the grammar of graphics \(aka `ggplot::`\) to plot your geospatial data.  To begin with, let's install a package that we will use in order to describe and analyze our simple features.
@@ -149,9 +155,9 @@ library(sf)
 
 setwd("~/Tresors/teaching/project_folder/data")
 
-lbr_int  <- read_sf("lbr_admbnda_admint_ocha/lbr_admbnda_admint_ocha.shp")
-lbr_adm1  <- read_sf("lbr_admbnda_adm1_ocha/lbr_admbnda_adm1_ocha.shp")
-lbr_adm2  <- read_sf("lbr_admbnda_adm2_ocha/lbr_admbnda_adm2_ocha.shp")
+lbr_int  <- add_command_here("add_folder_here/add_file_name_here.shp")
+lbr_adm1  <- add_command_here("add_folder_here/add_file_name_here.shp")
+lbr_adm2  <- add_command_here("add_folder_here/add_file_name_here.shp")
 
 ggplot() +
   geom_sf(data = adm2_object,
