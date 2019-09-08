@@ -194,7 +194,7 @@ Meet with your group and prepare to present the best two plots for the Friday in
 
 ## Individual Stretch Goal
 
-Go to the [GADM](https://www.gadm.org) website and download the shapefiles for your selected country.  Compare their administrative subdivisions to those obtained from HDX.  Are they the same?  Are there any differences?  Which source do you think more closely describes to the local political reality in your selected LMIC?
+Go to the [GADM](https://www.gadm.org) website and download the shapefiles for your selected country.  Compare their administrative subdivisions to those obtained from HDX.  Are they the same?  Are there any differences?  Which source do you think more closely describes the local political reality within your selected LMIC?
 
 
 
