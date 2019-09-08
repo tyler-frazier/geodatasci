@@ -81,36 +81,32 @@ Now that we have conducted a cursory investigation of our simple feature object 
 
 Following the `data =` argument, you can also specifiy the line weight for the border using the `size =` argument.  It is also possible to specify the `color =` as well as the opacity / transparency of your polygon using the `alpha =` argument.  With the following script I have set the international border line weight width to `1.5` , the color of the border to `"gold"` , the fill color for the internal portion of the polygon to `"green"` and the `alpha =`   value to .5 or 50% transparent.
 
-![Liberia with a green fill and gold border](../.gitbook/assets/liberia.png)
+![Liberia with a green fill and gold border](../.gitbook/assets/liberia%20%281%29.png)
 
 It would also be helpful to have a label describing our plot.  In order to do this we can use either the `geom_sf_text()` command or the `geom_sf_label()` command.  In the following snippet of code you will notice that I have added the aesthetics argument within my `geom_sf_text()` command.  The `aes =` argument enables us to specify which variable contains the label we will place on our object.  If you click on the blue arrow to the left of the `lbr_int` object in the top right data pane, the object will expand below to reveal the names of all variables.  The second variable is named `CNTRY_NAME` and provides us with the name we will use as our label, Liberia.  Following the `aes()` argument, you can also specify the `size =` of your label as well as its `color =`.
 
 ```r
 ggplot() +
-  geom_sf(data = lbr_int,
-          size = 2.0,
-          color = "gold",
-          fill = "green",
-          alpha = 0.75) +
-  geom_sf_text(data = lbr_int,
-               aes(label = CNTRY_NAME),
-               size = 10,
-               color = "blue")
+  geom_sf(data = your_sf_obj,
+          size = value,
+          color = "color",
+          fill = "color",
+          alpha = value_between_0_&_1) +
+  geom_sf_text(data = your_sf_obj,
+               aes(label = variable_name),
+               size = value,
+               color = "color")
 ```
 
+![Liberia labelled](../.gitbook/assets/liberia.png)
 
-
-You have successfully created a simple feature object that represents Liberia's border, as well as plotted it.  Good job!  Now continue with the first level of administrative subdivisions for Liberia, counties.  In order to do this, return to your use of the `read_sf()` command in order to import and create an object named `lbr_adm1`.   
+Good job!  You have successfully used ggplot from the tidyverse with the simple features package in order to properly project and plot Liberia's international border, as well as to include a label.  Now continue with the first level of administrative subdivisions, Liberia's fifteen counties.  In order to do this, return to your use of the `read_sf()` command in order to import and create an object named `lbr_adm1`.   
 
 ```r
-lbr_adm1  <- your_command("folder_where_adm1_is_located/lbr_admbnda_adm1_ocha.shp")
+lbr_adm1  <- add_command_here("add_folder_here/add_file_name_here.shp")
 ```
 
-As before you could use data pane in the top right corner to view attribute data.  You can also use the `st_geometry()` command to have a first look at your newly created simple features object that represents Liberia's administrsative subdividion of counties.
-
-![Attribute data for Liberia&apos;s adm1 simple features object](../.gitbook/assets/screen-shot-2019-09-07-at-2.06.49-pm.png)
-
-![Geometry of Liberia&apos;s counties](../.gitbook/assets/screen-shot-2019-09-07-at-2.07.03-pm.png)
+As before you could use the data pane in the top right corner to view attribute data.  You can also use the `st_geometry()` command again to have a first look at your newly created simple features object that spatially describes the boundaries of Liberia's counties.
 
 Instead of having 1 observation with 7 variables as with the international border, now your `lbr_adm1` simple feature object has 15 observations, with each observation having 8 different variables describing some attribute associated with each individual polygon.  Now let's plot both Liberia's international border as well as its 15 counties.  To do this we will again use our `st_geometry()` nested within our`plot()` command while using our `lbr_adm1` object.  As before, continue with an argument that specifies the line weight for each of the counties.  Since we are describing a first level subdivision, graphically it is generally best to use a lineweight that is less than the width used for the international border.  Also, notice that I have added a new argument to the series of commands `add = TRUE` , which will serve to add the county borders to the already plotted international boundary.
 
