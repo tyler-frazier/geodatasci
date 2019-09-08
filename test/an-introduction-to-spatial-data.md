@@ -4,7 +4,7 @@ description: >-
   well as plotting boundaries and labelling each local government unit.
 ---
 
-# An Introduction to Spatial Data
+# Projecting, Plotting and Labelling Administrative Subdivisions
 
 We have had a bit of practice creating a theoretical environment, but now we will move to a more practical application.  In this exercise you will learn how to install a package and load a library of functions into R, install spatial data as a simple feature and then use the grammar of graphics \(aka `ggplot::`\) to plot your geospatial data.  To begin with, let's install a package that we will use in order to describe and analyze our simple features.
 

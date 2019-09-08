@@ -10,7 +10,8 @@
 
 ## Project 1.  Administrative Units, Population and Description <a id="test"></a>
 
-* [An Introduction to Spatial Data](test/an-introduction-to-spatial-data.md)
+* [Projecting, Plotting and Labelling Administrative Subdivisions](test/an-introduction-to-spatial-data.md)
+* [Extracting Populations from a Raster and Aggregating to each Unit](test/extracting-populations-from-a-raster-and-aggregating-to-each-unit.md)
 
 ## Project 2. Resource Production
 
