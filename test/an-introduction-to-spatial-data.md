@@ -138,10 +138,45 @@ The code above will produce the plot below when the`geom_sf()` function using th
 
 After adding the counties go back and add the second level of administrative subdivisions, or districts.  Again use `read_sf()` to import that shapefile as a simple feature object into your RStudio workspace.  Use the  `geom_sf_text()` command to add the labels, while also making sure to specify the correct variable name in the `aes(label = variable_name)` argument.  Size the district borders and labels so they are smaller than the internation border as well as the county delineations.
 
-rm\(list=ls\(all=TRUE\)\)  
+```r
+rm(list=ls(all=TRUE))
 
+# install.packages("tidyverse", dependencies = TRUE)
+# install.packages("sf", dependencies = TRUE)
 
+library(tidyverse)
+library(sf)
 
+setwd("~/Tresors/teaching/project_folder/data")
+
+lbr_int  <- read_sf("lbr_admbnda_admint_ocha/lbr_admbnda_admint_ocha.shp")
+lbr_adm1  <- read_sf("lbr_admbnda_adm1_ocha/lbr_admbnda_adm1_ocha.shp")
+lbr_adm2  <- read_sf("lbr_admbnda_adm2_ocha/lbr_admbnda_adm2_ocha.shp")
+
+ggplot() +
+  geom_sf(data = adm2_object,
+          size = value,
+          color = "color",
+          fill = "color",
+          alpha = value) +
+  geom_sf(data = adm1_object,
+          size = value,
+          color = "gray50",
+          alpha = value) +
+  geom_sf(data = int_object,
+          size = value,
+          alpha = value) +
+  geom_sf_text(data = adm2_object,
+               aes(label = variable_name),
+               size = value) +
+  geom_sf_text(data = adm1_object,
+               aes(label = variable_name),
+               size = value)
+
+ggsave("liberia.png")
+```
+
+Use `ggsave(file_name.png)` to save your plot as a `.png` file, to your working directory.
 
 ## Team Challenge Question
 
