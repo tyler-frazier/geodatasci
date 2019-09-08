@@ -81,7 +81,7 @@ Now that we have conducted a cursory investigation of our simple feature object 
 
 Following the `data =` argument, you can also specifiy the line weight for the border using the `size =` argument.  It is also possible to specify the `color =` as well as the opacity / transparency of your polygon using the `alpha =` argument.  With the following script I have set the international border line weight width to `1.5` , the color of the border to `"gold"` , the fill color for the internal portion of the polygon to `"green"` and the `alpha =`   value to .5 or 50% transparent.
 
-![Liberia with a green fill and gold border](../.gitbook/assets/liberia%20%281%29.png)
+![Liberia with a green fill and gold border](../.gitbook/assets/liberia%20%282%29.png)
 
 It would also be helpful to have a label describing our plot.  In order to do this we can use either the `geom_sf_text()` command or the `geom_sf_label()` command.  In the following snippet of code you will notice that I have added the aesthetics argument within my `geom_sf_text()` command.  The `aes =` argument enables us to specify which variable contains the label we will place on our object.  If you click on the blue arrow to the left of the `lbr_int` object in the top right data pane, the object will expand below to reveal the names of all variables.  The second variable is named `CNTRY_NAME` and provides us with the name we will use as our label, Liberia.  Following the `aes()` argument, you can also specify the `size =` of your label as well as its `color =`.
 
@@ -106,9 +106,35 @@ Good job!  You have successfully used ggplot from the tidyverse with the simple 
 lbr_adm1  <- add_command_here("add_folder_here/add_file_name_here.shp")
 ```
 
-As before you could use the data pane in the top right corner to expand your view of the `lbr_adm1` file you created.  You can also use the `st_geometry()` command again to have a first look at your newly created simple features object that spatially describes the boundaries of Liberia's counties.  Instead of having 1 observation with 7 variables as with the international border, your `lbr_adm1` simple feature object has 15 observations, with each observation having 8 different variables describing some attribute associated with each individual polygon.  Let's plot both Liberia's international border as well as its 15 counties.  
+As before you could use the data pane in the top right corner to expand your view of the `lbr_adm1` file you created.  You can also click on the small grid symbol to the right of your data object \(within the data pane\) in order to view your data in a new tab in the same pane where your script is located.  Whereas before we had a simple feature class object with 1 observation with 7 variables, your `lbr_adm1` simple feature object has 15 observations, with each observation having 8 different variables describing some attribute associated with each individual polygon.  Let's plot both Liberia's international border as well as its 15 counties.
 
+To do this, follow the same approach you used with the `lbr_int` object but replace it with the name of your adm1 spatial object, `lbr_adm1`.  Also follow the same approach you used for adding the labels in your previous snippet of code, but this time specify the variable with the county names from `lbr_adm1`.  
 
+```r
+ggplot() +
+  geom_sf(data = your_adm1_sf_obj,
+          size = value,
+          color = "color",
+          fill = "color",
+          alpha = value) +
+  geom_sf(data = your_int_sf_obj,
+          size = value,
+          color = "color",
+          fill = "color",
+          alpha = value) +
+  geom_sf_label(data = your_adm1_sf_obj,
+               aes(label = variable_name),
+               size = value,
+               color = "color") +
+  geom_sf_text(data = your_int_sf_obj,
+               aes(label = variable_name),
+               size = value,
+               color = "color")
+```
+
+The code above will produce the plot below when the`geom_sf()` function using the `lbr_adm1` arguments is specified with a line weight `size = 0.65`, line weight `color = "gray50"`, a polygon `fill = "gold3"` and a 65% opacity value of `alpha = 0.65`.  
+
+![Liberia and its 15 Counties](../.gitbook/assets/liberia%20%281%29.png)
 
 You may also add a lighter color to the administrative subdivisions in order to graphically display counties as subdividions of the larger nation.  In the above example I have set `border = gray` .  You are welcome to use any color that seemingly works best for you, although gray scales often achieve the task quite well.  Use the `color()` command directly in the console to view a list of all 650 or so colors that are available in base R.
 
