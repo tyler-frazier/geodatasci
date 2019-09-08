@@ -81,11 +81,19 @@ Now that we have conducted a cursory investigation of our simple feature object 
 
 Following the `data =` argument, you can also specifiy the line weight for the border using the `size =` argument.  It is also possible to specify the `color =` as well as the opacity / transparency of your polygon using the `alpha =` argument.  With the following script I have set the international border line weight width to `1.5` , the color of the border to `"gold"` , the fill color for the internal portion of the polygon to `"green"` and the `alpha =`   value to .5 or 50% transparent.
 
+![Liberia with a green fill and gold border](../.gitbook/assets/liberia.png)
 
+It would also be helpful to have a label describing our plot.  In order to do this we can use either the `geom_sf_text()` command or the \`
 
-vironment An image in the bottom right pane of your RStudio environment should appear, and that image should be a single polygon that is describing the international border of Liberia.
+```text
 
-![Liberia&apos;s international border](../.gitbook/assets/screen-shot-2019-09-07-at-1.53.31-pm.png)
+```
+
+```text
+
+```
+
+ 
 
 You can further specify the lineweight used when plotting this border by adding the `lwd =`   argument to your plot command.  Within the use of your `plot()` command, add the `lwd =`  argument and specify a weight or line width associated with that particular object's plotted lines.  In the example above, I have set `lwd = 3`.
 
@@ -124,8 +132,6 @@ text(st_coordinates(st_centroid(your_adm1_obj)), labels = your_adm1_obj$variable
 
 One final argument that has been provided at the end of the `text()` command is  `cex =` .  The `cex =`  argument will scaled the size of each label in accordance with the value provided.  For example, above I have set `cex = .45`  which will scale the size of each label to be 45% smaller than the base value.  You could also set `cex =` values that are more than 1 in order to increase the proportionate size of the labels.
 
-![Liberia and its counties](../.gitbook/assets/screen-shot-2019-09-07-at-2.53.39-pm.png)
-
 After adding the counties go back and add the second level of administrative subdivisions, or districts.  Again use `read_sf()` to import that shapefile as a simple feature object into your RStudio workspace.  Again use the `plot(st_geometry(lbr_adm2), lwd = ???, border = "some_color", add = TRUE` in order to add that layer to your previous two layers.  Again use the `text()` command with `st_coordinates(st_centroid(adm2_obj_name))` while also using the `labels =  my_adm2_sf_ob$variable_name`argument with the `cex = some_even_smaller_value`in order to plot those value.  At this point, your script should look similar to the following.
 
 ```r
@@ -153,8 +159,6 @@ text(st_coordinates(st_centroid(your_adm2_obj)), labels = your_adm2_obj$variable
 ```
 
 Once you have produced the output, you can use the **export** tab in the bottom right RStudio pane where plots are produced.  Use either the **Save as Image** or **Save as PDF** tab in order to save your plot to your working directory.  Your spatial plot describing the political geography of Liberia should appear similar to the following image.
-
-![Liberia, its counties and districts](../.gitbook/assets/screen-shot-2019-09-07-at-3.17.24-pm.png)
 
 ## Team Challenge Question
 
