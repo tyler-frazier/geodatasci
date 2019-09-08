@@ -136,45 +136,9 @@ The code above will produce the plot below when the`geom_sf()` function using th
 
 ![Liberia and its 15 Counties](../.gitbook/assets/liberia%20%281%29.png)
 
-You may also add a lighter color to the administrative subdivisions in order to graphically display counties as subdividions of the larger nation.  In the above example I have set `border = gray` .  You are welcome to use any color that seemingly works best for you, although gray scales often achieve the task quite well.  Use the `color()` command directly in the console to view a list of all 650 or so colors that are available in base R.
 
-In addition to spatially desribing the national border and all 15 of Liberia's counties, it would also be helpful to add some text that identifies the name of each county.  To do this we will use the `text()` command on a separate line of code within our script after our two `plot()` commands.  The `text()` command will require us to provide, first the location where each annotation is to be plotted and second the label to be plotted at each of those locations.  This time instead of just using the `st_geometry()` we will further nest inside of that command the `st_centroid()` command in order to provide the coordinates for the center point of each county or the location where each label will be placed.  Additionally, we will set the `labels =`  argument to the variable within our `lbr_adm1` object that provides the name of each county.   Each simple feature object's variable names can be found in the data pane, by clicking on the blue arrow to expand the object or by viewing object attributes \(obsevations and variables\) by clicking on the data viewer grid symbol to the right of your object, also in the data pane.  
 
-You will notice that within your `sf` object named `lbr_adm1` the variable `admin1name` contains the names of each county.  In order to properly set the `labels =`  argument, you will need to specify both the simple feature object name as well as the variable within that object using the `$` operator.
 
-```r
-text(st_coordinates(st_centroid(your_adm1_obj)), labels = your_adm1_obj$variable_name, cex = ???)
-```
-
-One final argument that has been provided at the end of the `text()` command is  `cex =` .  The `cex =`  argument will scaled the size of each label in accordance with the value provided.  For example, above I have set `cex = .45`  which will scale the size of each label to be 45% smaller than the base value.  You could also set `cex =` values that are more than 1 in order to increase the proportionate size of the labels.
-
-After adding the counties go back and add the second level of administrative subdivisions, or districts.  Again use `read_sf()` to import that shapefile as a simple feature object into your RStudio workspace.  Again use the `plot(st_geometry(lbr_adm2), lwd = ???, border = "some_color", add = TRUE` in order to add that layer to your previous two layers.  Again use the `text()` command with `st_coordinates(st_centroid(adm2_obj_name))` while also using the `labels =  my_adm2_sf_ob$variable_name`argument with the `cex = some_even_smaller_value`in order to plot those value.  At this point, your script should look similar to the following.
-
-```r
-rm(list=ls(all=TRUE))
-
-# install.packages("tidyverse", dependencies = TRUE)
-# install.packages("sf", dependencies = TRUE)
-
-library(tidyverse)
-library(sf)
-
-setwd("the/path/to_my/working/directory")
-
-lbr_int  <- your_command("folder_where_admint_is_located/lbr_admbnda_admint_ocha.shp")
-lbr_adm1  <- your_command("folder_where_adm1_is_located/lbr_admbnda_adm1_ocha.shp")
-lbr_adm2  <- your_command("folder_where_adm2_is_located/lbr_admbnda_adm2_ocha.shp")
-
-plot(st_geometry(your_intl_border_obj), lwd = ?)
-plot(st_geometry(your_adm1_obj), lwd = ?, border = "add_color_here", add = TRUE)
-plot(st_geometry(your_adm2_obj), lwd = ?, border = "add_color_here", add = TRUE)
-
-text(st_coordinates(st_centroid(your_adm1_obj)), labels = your_adm1_obj$variable_with_county_names, cex = ???)
-text(st_coordinates(st_centroid(your_adm2_obj)), labels = your_adm2_obj$variable_with_district_names, cex = ???)
-
-```
-
-Once you have produced the output, you can use the **export** tab in the bottom right RStudio pane where plots are produced.  Use either the **Save as Image** or **Save as PDF** tab in order to save your plot to your working directory.  Your spatial plot describing the political geography of Liberia should appear similar to the following image.
 
 ## Team Challenge Question
 
