@@ -13,6 +13,10 @@
 * [Projecting, Plotting and Labelling Administrative Subdivisions](test/an-introduction-to-spatial-data.md)
 * [Extracting Populations from a Raster and Aggregating to each Unit](test/extracting-populations-from-a-raster-and-aggregating-to-each-unit.md)
 
+## Assignment 1.  Developing an Annotated Bibliography
+
+* [Background](assignment-1.-developing-an-annotated-bibliography/untitled.md)
+
 ## Project 2. Resource Production
 
 ## Project 3. Accessibility to Health Care through Transportation Facilities
