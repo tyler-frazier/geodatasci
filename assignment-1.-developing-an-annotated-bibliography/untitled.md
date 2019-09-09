@@ -44,6 +44,7 @@ Also read the first three chapters from Amartya Sen's Development as Freedom and
   * development is the process of expanding the real freedoms that people enjoy
   * * 
 
+![](../.gitbook/assets/screen-shot-2019-09-09-at-3.12.05-pm.png)
 
 
 
@@ -51,8 +52,7 @@ Also read the first three chapters from Amartya Sen's Development as Freedom and
 
 
 
-
-
+![](../.gitbook/assets/screen-shot-2019-09-09-at-3.13.52-pm.png)
 
 
 
