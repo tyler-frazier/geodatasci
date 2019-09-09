@@ -22,14 +22,14 @@ Also read the first three chapters from Amartya Sen's Development as Freedom and
 
 {% embed url="https://slack-files.com/TFB8EJWF3-FN5V4DWQ5-9824c193ba" caption="Link to Intro, Chapters 1 & 2 of Development as Freedom by Amartya Sen" %}
 
-* Introduction:
+* Introduction: Development as Freedom
   * Development is the process of expanding the real freedoms that people enjoy
   * If freedom is what development advances then there is a major argument for con- centrating on that objective rather than on some particular means or chosen list of instruments
   * Development requires the removal of major sources of unfreedom
   * Despite vast wealth, the contemporary world denies elementary freedom to vast num- bers, perhaps the majority of the world population
   * Freedom is central to the process of development
   * Free and sustainable agency emerges as a major engine of development. It is a constituent part and also contributes to the strengthening of free agencies of other kinds
-* Chapter 1
+* Chapter 1: The Perspective of Freedom
   * Maitreyee’s question “Can I achieve immortality through wealth?” No “What should I do with that by which I do not become immortal”
   * forms of unfreedom
   * freedom involves both processes that allow freedom of actions and decisions and the actual opportunities that people have given their personal and social circumstances
@@ -38,8 +38,11 @@ Also read the first three chapters from Amartya Sen's Development as Freedom and
   * positive effects of the market system
   * replacement of bonded labor \(such as traditional agricultural\) and forced work with a system of free contract labor
   * Individual freedom is a social product
-* Chapter 2
-  * 
+* Chapter 2: The Ends and the Means of Development
+  * Comparison of development as a “fierce” process and a world in which wisdom de- mands toughness and calculated neglect of various concerns that are seen as “soft- headed”
+  * contrasts alternative outlook that sees development as a “friendly process”, based on mutually beneficial exchanges, the working of social safety nets, political liberties or social development
+  * development is the process of expanding the real freedoms that people enjoy
+  * * 
 
 
 
