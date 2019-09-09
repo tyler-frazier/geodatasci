@@ -18,4 +18,8 @@ Human develoment can also focus on the state of development in a country as well
 
 {% embed url="https://www.gapminder.org/videos/ted-talks/hans-rosling-ted-2006-debunking-myths-about-the-third-world/" %}
 
+
+
+{% embed url="https://slack-files.com/TFB8EJWF3-FN5V4DWQ5-9824c193ba" %}
+
 * 
