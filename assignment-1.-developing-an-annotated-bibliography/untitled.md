@@ -33,8 +33,13 @@ Also read the first three chapters from Amartya Sen's Development as Freedom and
   * Maitreyee’s question “Can I achieve immortality through wealth?” No “What should I do with that by which I do not become immortal”
   * forms of unfreedom
   * freedom involves both processes that allow freedom of actions and decisions and the actual opportunities that people have given their personal and social circumstances
-
-
+  * Two roles of freedom or expansion of the “capabilities” of persons to lead the kind of lives they value and have reason to value
+  * evaluative systems
+  * positive effects of the market system
+  * replacement of bonded labor \(such as traditional agricultural\) and forced work with a system of free contract labor
+  * Individual freedom is a social product
+* Chapter 2
+  * 
 
 
 
