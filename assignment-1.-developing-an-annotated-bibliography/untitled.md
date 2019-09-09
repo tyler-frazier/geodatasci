@@ -18,8 +18,42 @@ Human develoment can also focus on the state of development in a country as well
 
 {% embed url="https://www.gapminder.org/videos/ted-talks/hans-rosling-ted-2006-debunking-myths-about-the-third-world/" %}
 
+Also read the first three chapters from Amartya Sen's Development as Freedom and consider a number of the themes he introduces as part of his highly significant work.
+
+{% embed url="https://slack-files.com/TFB8EJWF3-FN5V4DWQ5-9824c193ba" caption="Link to Intro, Chapters 1 & 2 of Development as Freedom by Amartya Sen" %}
+
+* Introduction:
+  * Development is the process of expanding the real freedoms that people enjoy
+  * If freedom is what development advances then there is a major argument for con- centrating on that objective rather than on some particular means or chosen list of instruments
+  * Development requires the removal of major sources of unfreedom
+  * Despite vast wealth, the contemporary world denies elementary freedom to vast num- bers, perhaps the majority of the world population
+  * Freedom is central to the process of development
+  * Free and sustainable agency emerges as a major engine of development. It is a constituent part and also contributes to the strengthening of free agencies of other kinds
+* Chapter 1
+  * Maitreyee’s question “Can I achieve immortality through wealth?” No “What should I do with that by which I do not become immortal”
+  * forms of unfreedom
+  * freedom involves both processes that allow freedom of actions and decisions and the actual opportunities that people have given their personal and social circumstances
 
 
-{% embed url="https://slack-files.com/TFB8EJWF3-FN5V4DWQ5-9824c193ba" %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 * 
