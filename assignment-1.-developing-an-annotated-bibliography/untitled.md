@@ -6,5 +6,9 @@ A mismatch between capabilities and opportunities can lead to human frustration 
 
 After considering the above description of human development, listen to Selim Jahan's podcast's.
 
-{% page-ref page="untitled.md" %}
+{% embed url="https://soundcloud.com/hdro-web/what-is-human-development" %}
+
+{% embed url="https://soundcloud.com/hdro-web/hdr2015theme" %}
+
+
 
