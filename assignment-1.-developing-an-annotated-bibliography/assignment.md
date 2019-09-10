@@ -20,6 +20,8 @@ Begin by proposing a research topic you would like to investigate this semester.
 * Resource management and allocation
 * Food security
 * Environmental Impact Assessment
+* Climate change
+* Land use
 
 Making an appointment with a research librarian at Swem in order to receive assistance and individual attention is a good place to start.  Be sure to share your assignment with your Research Librarian in advance of meeting, so she/he will be best prepared at the time you meet.
 
