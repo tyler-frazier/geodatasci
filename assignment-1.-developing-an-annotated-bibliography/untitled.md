@@ -15,7 +15,7 @@ Human develoment can also focus on the state of development in a country as well
 * The western world being understood as having long life in small family, while the third world, a shorter life in a larger family
 * The tremendous social change that occurred in Asia before economic change and how health appeared to be a precursor to wealth
 * The relationship between child mortality and GDP per capita, is there a gap when disaggregated from continents to countries to quintiles?
-
+* 
 {% embed url="https://www.gapminder.org/videos/ted-talks/hans-rosling-ted-2006-debunking-myths-about-the-third-world/" %}
 
 Also read the first three chapters from Amartya Sen's Development as Freedom and consider a number of the themes he introduces as part of his highly significant work.
@@ -44,7 +44,17 @@ Also read the first three chapters from Amartya Sen's Development as Freedom and
   * development is the process of expanding the real freedoms that people enjoy
   * * 
 
-![](../.gitbook/assets/screen-shot-2019-09-09-at-3.12.05-pm.png)
+
+
+
+
+
+
+
+
+{% embed url="https://sustainabledevelopment.un.org/" %}
+
+
 
 
 
@@ -54,14 +64,5 @@ Also read the first three chapters from Amartya Sen's Development as Freedom and
 
 ![](../.gitbook/assets/screen-shot-2019-09-09-at-3.13.52-pm.png)
 
+![](../.gitbook/assets/screen-shot-2019-09-09-at-3.12.05-pm.png)
 
-
-
-
-
-
-
-
-
-
-* 
