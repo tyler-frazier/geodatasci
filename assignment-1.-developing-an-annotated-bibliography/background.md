@@ -1,8 +1,8 @@
 # Background
 
-**Human development** has been defined as the process of enlarging human choices.  In the following two podcasts, Selim Jahan, Director of UNDP's Human Development Report Office, talks about how every day we make different types of choices: some being economic, others cultural and still others political. Critical to enlarging the choices people have throughout every aspect of their lives, is enhancing capabilities, while also increasing opportunities to use those capabilities.  A mismatch between capabilities and opportunities can lead to human frustration and the loss of human potential. 
+**Human development** has been defined as the process of enlarging human choices.  In the following two podcasts, Selim Jahan, Director of UNDP's Human Development Report Office, talks about how every day we make different types of choices: some being economic, others cultural and still others political. Enlarging people's choices throughout every aspect of their lives is achieved by enhancing capabilities, while also increasing the opportunities to use those capabilities.  A mismatch between capabilities and opportunities can lead to human frustration and the loss of human potential. 
 
-Jahan also talks about how for far too long the paradigm of economic growth has dominated the idea of human development as the end of development. While income is critical, it is not an end. Income presents potential for expanding the richness of life, rather than simply the richness of the economy in which human beings live. The human development approach being described here is one that begins with people, their opportunities and choices. 
+In the following two podcasts, Jahan also talks about how for far too long the paradigm of economic growth has dominated the idea of human development as the end of development. While income is critical, it is not an end. Income presents potential for expanding the richness of life, rather than simply the richness of the economy in which human beings live. The human development approach being described here is one that begins with people, their opportunities and choices. 
 
 > To use a similar phrase, one might say that human development is development of the people \(capital\), for the people \(translated to the lives of people\) and by the people \(people are not only receiving but active participants in the process.  Selim Jahan's modified reference to Abraham Lincoln's Gettysburg Address
 
@@ -12,9 +12,9 @@ Jahan also talks about how for far too long the paradigm of economic growth has 
 
 Human develoment can also focus on the state of development in a country as well as that process over time.  While a slightly dated TEDx talk, Hans Rosling noted that many of the preconceived ideas about global development & global health are erroneous.  Listen to the following talk by Rosling and consider his observations on the following.
 
-* The western world being understood as having long life in small family, while the third world, a shorter life in a larger family
+* The western world being understood as having longer lives in smaller families, while the third world, as having shorter lives in larger families
 * The tremendous social change that occurred in Asia before economic change and how health appeared to be a precursor to wealth
-* The relationship between child mortality and GDP per capita, is there a gap when disaggregated from continents to countries to quintiles?
+* The relationship between child mortality and GDP per capita; do gaps really exist when population is disaggregated from continents to countries to quintiles?
 
 {% embed url="https://www.gapminder.org/videos/ted-talks/hans-rosling-ted-2006-debunking-myths-about-the-third-world/" %}
 
