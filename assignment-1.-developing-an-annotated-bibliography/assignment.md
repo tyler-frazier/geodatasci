@@ -2,7 +2,7 @@
 
 ## Summary
 
-In this assignment you will begin your exploratory investigation into a geospatial human develop- ment process. You will select four articles from a series of publications that use geospatial data to answer a scientific question about human development. Then you will annotate each of your selected articles by answering a series of questions about the intersection of each source with the main themes of this course. Finally, you will propose a research topic and select a region or country for continuing your exploratory investigation into a dimension of human development.
+In this assignment you will begin your exploratory investigation into a geospatial human development process. You will select four articles from a series of publications that use geospatial data to answer a scientific question about human development. Then you will annotate each of your selected articles by answering a series of questions about the intersection of each source with the main themes of this course. Finally, you will propose a research topic and select a region or country for continuing your exploratory investigation into a dimension of human development.
 
 ## Instructions
 
@@ -46,9 +46,9 @@ After selecting a research topic, propose a region or country that you think wil
 
 {% embed url="http://www.flowminder.org/work/research-innovation" %}
 
-Deliverable
+## Deliverable
 
-Use LATEX to typeset your annotated bibliography. Your annotated bibliography should be at least 1600 words in length and include a minimum of 4 different sources. Title your annotated bibliography and be sure to include your name. I will not include the title or reference information when verifying your work has met the word count. Please upload your finished PDF document to blackboard prior to the deadline, Saturday, February 9th no later than 10:00 PM.
+Type your annotated bibliography.  Your annotated bibliography should be at least 1600 words in length and include a minimum of 4 different sources. Title your annotated bibliography and be sure to include your name. Note your word count someplace on the first page.  Do not include your title or reference information when calculating your word count. Please print your annotated bibliography and place it in the box outside my office door no later than 10PM, Saturday, September 28th.
 
 {% embed url="http://www.worldpop.org.uk/about\_our\_work/publications/" %}
 
