@@ -18,7 +18,7 @@ Human develoment can also focus on the state of development in a country as well
 
 {% embed url="https://www.gapminder.org/videos/ted-talks/hans-rosling-ted-2006-debunking-myths-about-the-third-world/" %}
 
-Finally, read the introduction as well as Chapters 1 & 2 from Amartya Sen's Development as Freedom where he further introduces and elaborates upon the idea that development is the process of expanding the real freedoms that people enjoy.
+Finally, read the Introduction as well as Chapters 1 & 2 from Amartya Sen's Development as Freedom where he further elaborates upon the idea that development is the process of expanding the real freedoms that people enjoy.
 
 {% embed url="https://slack-files.com/TFB8EJWF3-FN5V4DWQ5-9824c193ba" caption="Link to Intro, Chapters 1 & 2 of Development as Freedom by Amartya Sen" %}
 
