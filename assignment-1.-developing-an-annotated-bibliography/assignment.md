@@ -37,7 +37,11 @@ Publications made available on the [flowminder](https://web.flowminder.org/work/
 
 After selecting a research topic and annotating each source propose a region, country or countries that you think will be interesting for further investigation. Identify and describe the local nature and complex challenges associated with your selected human development problem within the context of that location.
 
+{% embed url="http://www.flowminder.org/work/research-innovation" %}
+
 ## Deliverable
 
 Type your annotated bibliography.  Your annotated bibliography should be at least 1600 words in length and include a minimum of 4 different sources. Title your annotated bibliography and be sure to include your name. Note your word count someplace on the first page.  Do not include your title or reference information when calculating your word count. Please print your annotated bibliography and place it in the box outside my office door no later than 10PM, Saturday, September 28th.
+
+{% embed url="http://www.worldpop.org.uk/about\_our\_work/publications/" %}
 
