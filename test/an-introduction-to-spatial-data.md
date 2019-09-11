@@ -228,3 +228,107 @@ ggsave("montserrado.png")
 
 Now identify the most populous urban area within your LMIC and use `ggplot() +` to plot the first and second level administrative subdivisions where it is located.
 
+## Individual Stretch Goal 3
+
+Produce detailed maps of your more densely populated areas and include them in your final product.  The following is an example for Liberia.  Translate the script to your LMIC.
+
+```r
+### Create Larger Map of Liberia with Rectangles identifying area of Detailed Maps
+
+plot1 <- ggplot() +
+  geom_sf(data = lbr_adm1,
+          size = 0.5,
+          color = "gray50",
+          fill = "gold3",
+          alpha = 0.5) +
+  geom_sf(data = lbr_int,
+          size = 2.0,
+          alpha = 0) +
+  geom_rect(data = lbr_adm1, xmin = -10.95, xmax = -10.3, ymin = 6.2, ymax = 6.9, 
+            fill = NA, colour = "green", size = 2) +
+  geom_rect(data = lbr_adm1, xmin = -8.80, xmax = -7.35, ymin = 4.3, ymax = 5.65, 
+            fill = NA, colour = "blue", size = 2) +
+  geom_sf_text(data = lbr_adm1,
+               aes(label = admin1name),
+               size = 3) +
+  geom_sf_text(data = lbr_adm1,
+               aes(x = -10.60, y = 6.05, label = "Detail A"),
+               size = 5,
+               color = "green") +
+  geom_sf_text(data = lbr_adm1,
+               aes(x = -9.10, y = 4.6, label = "Detail B"),
+               size = 5,
+               color = "blue") +
+  xlab("longitude") + ylab("latitude") +
+  ggtitle("Liberia", subtitle = "Details A & B") +
+  theme(plot.title = element_text(hjust = 0.5), plot.subtitle = element_text(hjust = 0.5),
+        panel.background = element_rect(fill = "azure"),
+        panel.border = element_rect(fill = NA))
+
+### Create Detail A Map
+
+mont_cnty <- lbr_adm1 %>%
+  filter(admin1name == "Montserrado")
+
+plot2 <- lbr_adm2 %>%
+  filter(admin1Name == "Montserrado") %>%
+  ggplot() +
+  geom_sf(size = .15) +
+  geom_sf_text(aes(label = admin2Name),
+               size = 1.75) +
+  geom_sf(data = mont_cnty,
+          size = .5,
+          alpha = 0) +
+  geom_sf_text(data = mont_cnty,
+               aes(label = admin1name),
+               size = 3.75,
+               alpha = .5) +
+  xlab("longitude") + ylab("latitude") +
+  ggtitle("Detail A", subtitle = "Montserrado County") +
+  theme(plot.title = element_text(hjust = 0.5), plot.subtitle = element_text(hjust = 0.5),
+        panel.background = element_rect(fill = "azure"),
+        panel.border = element_rect(fill = NA))
+
+
+### Create Detail B Map
+
+east_cnties <- lbr_adm1 %>%
+  filter(admin1name == "Grand Kru" | admin1name == "Maryland" | admin1name == "River Gee")
+
+plot3 <- lbr_adm2 %>%
+  filter(admin1Name == "Grand Kru" | admin1Name == "Maryland" | admin1Name == "River Gee") %>%
+  ggplot() +
+  geom_sf(size = .15) +
+  
+  geom_sf_text(aes(label = admin2Name),
+               size = 1.75) +
+  geom_sf(data = east_cnties,
+          size = .5,
+          alpha = 0) +
+  geom_sf_text(data = east_cnties,
+               aes(label = admin1name),
+               size = 3.75,
+               alpha = .5) +
+  xlab("longitude") + ylab("latitude") +
+  ggtitle("Detail B", subtitle = "River Gee, Grand Kru & Maryland Counties") +
+  theme(plot.title = element_text(hjust = 0.5), plot.subtitle = element_text(hjust = 0.5),
+        panel.background = element_rect(fill = "azure"),
+        panel.border = element_rect(fill = NA))
+
+
+
+ggplot() +
+  coord_equal(xlim = c(0, 6.0), ylim = c(0, 4), expand = FALSE) +
+  annotation_custom(ggplotGrob(plot1), xmin = 0.0, xmax = 4.0, ymin = 0, 
+                    ymax = 4.0) +
+  annotation_custom(ggplotGrob(plot3), xmin = 4.0, xmax = 6.0, ymin = 0, 
+                    ymax = 2.0) +
+  annotation_custom(ggplotGrob(plot2), xmin = 4.0, xmax = 6.0, ymin = 2.0, 
+                    ymax = 4.0) +
+  theme_void()
+
+ggsave("details.png")
+```
+
+![](../.gitbook/assets/details.png)
+
