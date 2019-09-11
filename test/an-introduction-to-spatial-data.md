@@ -230,7 +230,7 @@ Now identify the most populous urban area within your LMIC and use `ggplot() +` 
 
 ## Individual Stretch Goal 3
 
-Produce detailed maps of your more densely populated areas and include them in your final product.  The following is an example for Liberia.  Translate the script to your LMIC.
+Produce detailed maps of your more densely populated areas and include them in your final product.  Use the `geom_rect() +` command to identify the area of increased scale.  Also use the `annotation_custom() +` command to arrange each plot within a larger graphical layout. The following is a fully working example for Liberia.  Translate the script to your LMIC.
 
 ```r
 ### Create Larger Map of Liberia with Rectangles identifying area of Detailed Maps
