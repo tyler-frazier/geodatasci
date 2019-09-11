@@ -192,13 +192,30 @@ Follow the steps from above that you used to produce your plot of Liberia, but i
 
 Meet with your group and prepare to present the best two plots for the Friday informal group presentation.  Then as a group, upload all 5 team members plots to \#data100\_igps \(informal group presentations\) by Sunday night.
 
-## Individual Stretch Goal
+## Individual Stretch Goal 1
 
 Go to the [GADM](https://www.gadm.org) website and download the shapefiles for your selected country.  Compare their administrative subdivisions to those obtained from HDX.  Are they the same?  Are there any differences?  Which source do you think more closely describes the local political reality within your selected LMIC?
 
+## Individual Stretch Goal 2
 
+Create a new `ggplot() +` as you did before.  This time in the `data =` argument, set it to `subset(`\) from the `lbr_adm1` object, so the `admin1name == "Montserrado"`.  Also do the same with your `lbr_adm2` , while also subsetting and plotting the labels for each administrative subdivision.
 
+```r
+ggplot() +
+  geom_sf(data = subset(sf_obj, variable == "outcome"),
+          size = value,
+          alpha = value) +
+  geom_sf(data = subset(sf_obj, variable == "outcome"),
+          size = value) +
+  geom_sf_text(data = subset(sf_obj, admin1name == "outcome"),
+               aes(label = variable),
+               size = value) +
+  geom_sf_text(data = subset(sf_obj, admin1Name == "outcome"),
+               aes(label = variable),
+               size = value)
 
+ggsave("montserrado.png")
+```
 
 
 
