@@ -198,19 +198,22 @@ Go to the [GADM](https://www.gadm.org) website and download the shapefiles for y
 
 ## Individual Stretch Goal 2
 
-Create a new `ggplot() +` as you did before.  This time in the `data =` argument, set it to `subset(`\) from the `lbr_adm1` object, so the `admin1name == "Montserrado"`.  Also do the same with your `lbr_adm2` , while also subsetting and plotting the labels for each administrative subdivision.
+Create a new `ggplot() +` as you did before.  This time `filter` your `lbr_adm1` object by using the `>%>` \(pipe\) operator and using the assignment operator to create a new sf object that includes only the county named Montserrado.  Inside the `filter()` command you will need to specify the `admin1name = "Montserrado".` Then continue to use the `>%>` operator with your `lbr_adm2` object again filtering based on the `admin1Name == "Montserrado"` .  Follow that `>%>` with your `ggplot()`, `geom_sf()` and `geom_sf_text()` commands to plot the geometries and labels for both the first and second level administrative subdivisions of Montserrado, Liberia.
 
 ```r
-ggplot() +
-  geom_sf(data = subset(sf_obj, variable == "outcome"),
+new_sf_obj <- lbr_adm1 %>%
+  filter(variable == "outcome")
+  
+lbr_adm2 %>%
+  filter(variable == "outcome") %>%
+  ggplot() +
+  geom_sf(size = value) +
+  geom_sf_text(aes(label = variable),
+               size = value) +
+  geom_sf(data = newly_created_sf_obj,
           size = value,
           alpha = value) +
-  geom_sf(data = subset(sf_obj, variable == "outcome"),
-          size = value) +
-  geom_sf_text(data = subset(sf_obj, admin1name == "outcome"),
-               aes(label = variable),
-               size = value) +
-  geom_sf_text(data = subset(sf_obj, admin1Name == "outcome"),
+  geom_sf_text(data = newly_created_sf_obj,
                aes(label = variable),
                size = value) +
   xlab("longitude") + ylab("latitude") +
