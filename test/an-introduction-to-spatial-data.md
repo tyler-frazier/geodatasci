@@ -213,6 +213,7 @@ ggplot() +
   geom_sf_text(data = subset(sf_obj, admin1Name == "outcome"),
                aes(label = variable),
                size = value) +
+  xlab("longitude") + ylab("latitude") +
   ggtitle("Montserrado County", subtitle = "Liberia's most populous county and its subdivisions") +
   theme(plot.title = element_text(hjust = 0.5), 
         plot.subtitle = element_text(hjust = 0.5))
@@ -220,9 +221,7 @@ ggplot() +
 ggsave("montserrado.png")
 ```
 
+![](../.gitbook/assets/montserrado%20%281%29.png)
 
-
-
-
-
+Now identify the most populous urban area within your LMIC and use `ggplot() +` to plot the first and second level administrative subdivisions where it is located.
 
