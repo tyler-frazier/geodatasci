@@ -212,7 +212,10 @@ ggplot() +
                size = value) +
   geom_sf_text(data = subset(sf_obj, admin1Name == "outcome"),
                aes(label = variable),
-               size = value)
+               size = value) +
+  ggtitle("Montserrado County", subtitle = "Liberia's most populous county and its subdivisions") +
+  theme(plot.title = element_text(hjust = 0.5), 
+        plot.subtitle = element_text(hjust = 0.5))
 
 ggsave("montserrado.png")
 ```
