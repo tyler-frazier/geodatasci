@@ -17,7 +17,7 @@
 
 * [Background](assignment-1.-developing-an-annotated-bibliography/background.md)
 * [Assignment](assignment-1.-developing-an-annotated-bibliography/assignment.md)
-* [Example](assignment-1.-developing-an-annotated-bibliography/example.md)
+* [Examples](assignment-1.-developing-an-annotated-bibliography/examples.md)
 
 ## Project 2. Resource Production
 
