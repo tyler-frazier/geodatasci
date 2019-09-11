@@ -224,7 +224,7 @@ lbr_adm2 %>%
 ggsave("montserrado.png")
 ```
 
-![](../.gitbook/assets/montserrado%20%281%29.png)
+![](../.gitbook/assets/montserrado%20%282%29.png)
 
 Now identify the most populous urban area within your LMIC and use `ggplot() +` to plot the first and second level administrative subdivisions where it is located.
 
