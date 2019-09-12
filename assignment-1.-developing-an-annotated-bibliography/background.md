@@ -25,7 +25,7 @@ Finally, read the Introduction as well as Chapters 1 & 2 from Amartya Sen's Deve
 Consider the following ideas from Sen's highly significant work.
 
 * Freedom is central to the process of development; development is the process of expanding the real freedoms that people enjoy
-* Despite vast wealth, the contemporary world denies elementary freedom to vast num- bers, perhaps the majority of the world population
+* Despite vast wealth, the contemporary world denies elementary freedom to vast numbers, perhaps the majority of the world population
 * Freedom involves both processes that allow freedom of actions and decisions and the actual opportunities that people have given their personal and social circumstances
 * Some view development as a “fierce” process in a world where wisdom demands toughness and calculated neglect of various concerns that are seen as “soft- headed”
 * Contrast the alternative outlook that sees development as a “friendly process”, based on mutually beneficial exchanges, working social safety nets, political liberties and/or social development
