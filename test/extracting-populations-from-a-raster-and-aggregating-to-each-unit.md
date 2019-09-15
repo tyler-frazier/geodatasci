@@ -8,7 +8,27 @@ Clicking on the download tab may automatically begin the process of downloading 
 
 After you have succesfully downloaded the file, go to your project folder that you previously used as your working directory and create a new folder within the `/data` folder that will be dedicated to raw data from worldpop.
 
-![](../.gitbook/assets/screen-shot-2019-09-15-at-3.17.40-pm.png)
+![Structure within the Data Folder](../.gitbook/assets/screen-shot-2019-09-15-at-3.17.40-pm.png)
+
+Once you have your `.tif` file located within a subdirectory of the data folder, you can go ahead and open up RStudio.  Create a new file, R Script, and save it in your scripts folder.  Add the `rm(list=ls(all=TRUE))` at the beginning of your code and then load the tidyverse and sf libraries.  Following your libraries, be sure to set your working directory.
+
+```r
+rm(list=ls(all=TRUE))
+
+# install.packages("tidyverse", dependencies = TRUE)
+# install.packages("sf", dependencies = TRUE)
+
+library(tidyverse)
+library(sf)
+
+setwd("~/path/to_my/working/directory/")
+```
+
+Now for this exercise, we will install a new package and then load its library of functions.  Use the `install.packages()` to install the `raster::` package.  Be sure to set the `dependencies = TRUE` argument within your command.  After you have successfully installed the `raster::` package, use the `library()` function to load `raster::` and make its set of commands available as part of your current RStudio work session.
+
+
+
+
 
 
 
