@@ -46,5 +46,7 @@ myLMIC_adm1  <- add_command_here("add_folder_here/add_file_name_here.shp")
 
 In a manner similar to how we retrieved a basic description of our raster file, we can simply type the name of our simple features class object into the console.
 
-![](../.gitbook/assets/screen-shot-2019-09-15-at-5.36.44-pm.png)
+![Description of a sf class object from within an R work session](../.gitbook/assets/screen-shot-2019-09-15-at-5.36.44-pm.png)
+
+R informs us that our simple feature collection has 15 features, each one with 7 fields \(or variables\).  R also provides us with the bounding box for our collection of polygons in terms of the minimum and maximum longitude and latitude values.  Additionally, we are able to confirm that the source shapefile used to important our sf object also used the WGS84 datum for projection.  
 
