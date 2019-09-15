@@ -48,5 +48,22 @@ In a manner similar to how we retrieved a basic description of our raster file, 
 
 ![Description of a sf class object from within an R work session](../.gitbook/assets/screen-shot-2019-09-15-at-5.36.44-pm.png)
 
-R informs us that our simple feature collection has 15 features, each one with 7 fields \(or variables\).  R also provides us with the bounding box for our collection of polygons in terms of the minimum and maximum longitude and latitude values.  Additionally, we are able to confirm that the source shapefile used to important our sf object also used the WGS84 datum for projection.  
+R informs us that our simple feature collection has 15 features, each one with 7 fields \(or variables\).  R also provides us with the bounding box for our collection of polygons in terms of the minimum and maximum longitude and latitude values.  Additionally, we are able to confirm that the source shapefile used to important our sf object also used the WGS84 datum for projection.
+
+You also may notice that below the proj4string row, R describes the object as a tibble: 15 x 8.  A tibble is a new object class for data that is commonly used with the tidyverse syntax.  Tidyverse syntax is or sometimes referred to as tidyR is different from the baseR syntax.  While tidyR is fully capable of calling variables from data frames using either the `$` operator or the `[ ]` subscripting operators, it is a more advanced design in its approach to data that can include multiple dimensions, and thus `%>%` pipe operators can be very effective.  For now, all you need to know is that a tibble is a kind of data object, and tidyR is a new kind of data science syntax for R.
+
+Since both our `raster` and `sf` objects are similarly projected, we should be able to plot both and confirm they have the same bounaries.  Start by plotting the `raster` object.  Following that on the next line, by also plotting your `sf` object.  You will want to next the name of your `sf` object within the `st_geometry()` command in order to plot just the geometry for all 15 polygon features.  Finally, also include the `add = TRUE` argument to the command, in order to add the ploygon features to the already plotted raster layer.
+
+```r
+plot(your_raster_object)
+plot(st_geometry(your_adm1_sf_obj), add = TRUE)
+```
+
+![Raster Layer of Liberia&apos;s Population with ADM1 subdivisions](../.gitbook/assets/rplot%20%282%29.png)
+
+
+
+
+
+
 
