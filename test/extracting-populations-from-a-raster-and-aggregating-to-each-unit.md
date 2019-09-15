@@ -6,7 +6,9 @@ Now that you have selected your LMIC and produced a basic geospatial description
 
 Clicking on the download tab may automatically begin the process of downloading the `.tif` file into your downloads folder.  Sometimes your web browser may be set to try and display the image file directly within the browser itself.  You should still be able to save the file directly to your downloads folder, OR go back to the download tab, right click on it, and select **download linked file**, in order to override any attempt to display the image.
 
-After you have 
+After you have succesfully downloaded the file, go to your project folder that you previously used as your working directory and create a new folder within the `/data` folder that will be dedicated to raw data from worldpop.
+
+![](../.gitbook/assets/screen-shot-2019-09-15-at-3.17.40-pm.png)
 
 
 
