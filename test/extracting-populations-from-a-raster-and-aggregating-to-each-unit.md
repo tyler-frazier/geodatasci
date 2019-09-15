@@ -59,7 +59,7 @@ plot(your_raster_object)
 plot(st_geometry(your_adm1_sf_obj), add = TRUE)
 ```
 
-![Raster Layer of Liberia&apos;s Population with ADM1 subdivisions](../.gitbook/assets/rplot%20%282%29.png)
+![Raster Layer of Liberia&apos;s Population with ADM1 subdivisions overlayed](../.gitbook/assets/rplot%20%282%29.png)
 
 
 
