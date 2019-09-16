@@ -134,7 +134,7 @@ myLMIC_adm1 <- myLMIC_adm1 %>%
 
 After running the above code, look in the data pane in the top right corner of RStudio and find your modified adm1 simple features object.  Click on the small grid off to the right of the object to view the data in the top left pane \(scripts pane\).  Scroll all the way to the right in the data, and you should notice a new column named `pop19` that has the population counts for every adm1 subdivision in your country.
 
-Now that we have totals for each county, it is finally time to plot our results.  Since we are only going to call one object in the first example, we can start our `ggplot()` command by automatically specifying the object we will be using in our plot.
+Now that we have totals for each county, it is finally time to plot our results.  Since we are only going to call one object in the first example, we can start our `ggplot()` command by automatically specifying the object we will be using in our plot.  Within the `geom_sf()` command, use the `aes(fill = )` argument to identify the variable that will be used to spatially describe the continuous values of population totals for each of Liberia's counties.  Also add the `scale_fill_gradient()` command with the `low =`  and `high =`  arguments to desginate a color that will coorespond to the low and high ends of the value range.  A heatmap typically sets the color yellow to coorespond with the minimum value and red as the maximum value.
 
 ```r
 ggplot(myLMIC_adm1) +
@@ -143,5 +143,13 @@ ggplot(myLMIC_adm1) +
                color = "color",
                size = size) +
   scale_fill_gradient(low = "color", high = "color")
+  
+  ggsave("lbr_pop19.png")
 ```
+
+![Population of Liberia&apos;s Counties in 2019](../.gitbook/assets/lbr_pop19.png)
+
+
+
+
 
