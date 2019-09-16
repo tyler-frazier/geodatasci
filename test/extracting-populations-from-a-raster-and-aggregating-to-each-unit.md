@@ -99,5 +99,25 @@ For example on a Mac, you will see that 7 processes have been allocated to R in 
 
 After your `raster::extract()` has finished, you should have a new data frame object in your top right data pane that is populated with probably hundreds of thousands if not millions of rows \(observations\), and two columns \(variables\).  Each row will have a number between 1 and 15 in the above case \(each number cooresonding to each of Liberia's counties\) and then a following column that provides the WorldPop estimate for how many people occupy each individual gridcell.  You may notice that all of the observational values have fractions and even quite a large number are likely to be a fraction less than 1.  While not an ideal outcome, these fractions are a result of the current methodology and essentially is still state of the art for dasymmetric population distribution.  In the future, I expect new methodologies will discretize intervals and over come this "zero cell problem" by some means other than adding these small values across the entire space that essentially amount to "noise."
 
-Since this newly created data frame is quite large, and it would be better if you didn't run the `extract()` command everytime you opened and run this script, it is a good idea to go ahead and save the data frame as an `.RData` file.  You can save data using the `save()` command, and then you can also later load data using the `load()` command.  
+Since this newly created data frame is quite large, and it would be better if you didn't have to run the `extract()` command everytime you opened and ran this script, it is a good idea to go ahead and save the data frame as an `.RData` file.  You can save data using the `save()` command, and then you can also later load data using the `load()` command.  Once you have executed the `save()` command, you can then comment it off, thus only needing to `load()` the data.
+
+```r
+# ncores <- detectCores() - 1
+# beginCluster(ncores)
+# pop_vals_adm1 <- raster::extract(lbr_pop19, lbr_adm1, df = TRUE)
+# endCluster()
+# save(pop_vals_adm1, file = "pop_vals_adm1.RData")
+
+load("pop_vals_adm1.RData")
+```
+
+We have assigned a cooresponding ID for each gridcell according to its county, and now we will sum the totals all gridcells by ID.  Start with the data frame that you created with your `extract()` command, in the above case I have called the data frame object `pop_vals_adm1`.  Follolw your object with the `%>%` pipe operator.  You will use the `group_by()` command in order to group all of the observations within our data frame according to its `ID`.  Follow the `group_by()` command again with another `%>%` pipe operator.  Now inform R that you want it to not only group each row according to its ID but also summarize all of the rows with the same `ID` according to the `lbr_ppp_2019` variable, which contains the estimate of how many persons live within each gridcell.  Finally, be sure to add the `na.rm = TRUE` argument to your command, which will remove from the calculation all grid cells that do not have a value \(generally designated in R as NA\).
+
+```r
+totals_adm1 <- pop_vals_adm1 %>%
+  group_by(add_ID_variable_here) %>%
+  summarize(name_of_newly_created_var = sum(add_pop_var_here, na.rm = TRUE))
+```
+
+
 
