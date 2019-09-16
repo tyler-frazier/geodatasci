@@ -159,7 +159,7 @@ Meet with your group and prepare to present the two best plots for the Friday in
 
 ## Individual Stretch Goal 1
 
-Go back and replicate the step by step instructions from above, but instead of extracting and plotting the values for your LMIC's adm1 subdivisions, do it for adm2.
+Go back and replicate the step by step instructions from above, but instead of extracting and plotting the values for your LMIC's adm1 subdivisions, do it for adm2.  Set the `fill =`  argument by making it equal to the log transformation of your population variable `log(variable_name)`.   
 
 
 
