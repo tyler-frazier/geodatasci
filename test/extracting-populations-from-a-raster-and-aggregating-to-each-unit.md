@@ -151,5 +151,15 @@ ggplot(myLMIC_adm1) +
 
 
 
+## Team Challenge Question
+
+Follow the steps from above that you used to produce your plot of Liberia, but instead each team member should use their own selected LMIC country.  Go back to the HDX website and find the population totals  for the LMIC country you have selected.
+
+Meet with your group and prepare to present the two best plots for the Friday informal group presentation.  Then as a group, upload all 5 team members plots to \#data100\_igps \(informal group presentations\) by Sunday night.
+
+## Individual Stretch Goal 1
+
+Go back and replicate the step by step instructions from above, but instead of extracting and plotting the values for your LMIC's adm1 subdivisions, do it for adm2.
+
 
 
