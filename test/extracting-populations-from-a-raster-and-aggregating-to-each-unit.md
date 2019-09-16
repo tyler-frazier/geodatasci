@@ -119,5 +119,22 @@ totals_adm1 <- pop_vals_adm1 %>%
   summarize(name_of_newly_created_var = sum(add_pop_var_here, na.rm = TRUE))
 ```
 
+We now have estimated population totals for every county in Liberia.  
+
+![](../.gitbook/assets/screen-shot-2019-09-15-at-8.49.48-pm.png)
+
+Review the sum totals and see if you think they seem realistic.  Execute `sum(totals_adm1$pop19)` directly in the console, and consider the total returned.  In this case, R returns a total of 4,288,144 total persons living in 15 different counties across Liberia during the year 2019.  What does R return for your LMIC?  Is the sum total realistic?  Research the population of your LMIC in 2019 and confirm your returned value is relatively close to the widely accepted value.
+
+Now that we have the total population for each county, we need to add it to our `sf` class object so that we can spatially describe the population of our LMIC.  You can do this with the `%>%` pipe operator and the `add_column()` command.  In the argument of the `add_column()` command first specify the name of the column you will be creating in your `sf` adm1 object and then set that `=` to the name of the data frame and variable where those population totals exist.  In the above case `pop19 = totals_adm1$pop19`.  Also notice how I simply write over my existing `sf` object by assigning the newly created object the exact same name `lbr_adm1 <- lbr_adm1 %>%`. 
+
+```r
+myLMIC_adm1 <- myLMIC_adm1 %>%
+  add_column(pop19 = totals_adm1$name_of_newly_created_var)
+```
+
+After running the above code, look in the data pane in the top right corner of RStudio and find your modified adm1 simple features object.  Click on the small grid off to the right of the object to view the data in the top left pane \(scripts pane\).  Scroll all the way to the right in the data, and you should notice a new column named `pop19` that has the population counts for every adm1 subdivision in your country.
+
+Now that we have totals for each county, it is finally time to plot our results.  For this first example, 
+
 
 
