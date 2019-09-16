@@ -93,7 +93,7 @@ endCluster()
 
 Depending on your computer, the size of the `raster` file as well as the size of your `sf` file, running the above 4 lines of code could take a few minutes.  You will want to be patient and wait for the `extract()` command to complete its evaluation of every grid cell.  If you would like to monitor the progress of your comptuer you could go to the activity monitor on a Mac or the tast manager on a Windows machine.  
 
-![](../.gitbook/assets/screen-shot-2019-09-15-at-8.07.45-pm.png)
+![](../.gitbook/assets/screen-shot-2019-09-15-at-8.07.45-pm%20%281%29.png)
 
 For example on a Mac, you will see that 7 processes have been allocated to R in order to evaluate the location of all ~25 million gridcells.  You will also notice the CPU load has increased considerable, to almost 90% in the above case.  With 7 i7 cores, it took about 1 minute and 10 seconds to extract the values of all 4 million persons distributed across the 25 million gridcells throughout Liberia.  Your case could be faster or slower depending on the size of the data, the speed of your machine, and how much computational power you have reserved for the given task.
 
