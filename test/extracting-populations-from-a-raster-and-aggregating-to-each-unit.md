@@ -134,7 +134,14 @@ myLMIC_adm1 <- myLMIC_adm1 %>%
 
 After running the above code, look in the data pane in the top right corner of RStudio and find your modified adm1 simple features object.  Click on the small grid off to the right of the object to view the data in the top left pane \(scripts pane\).  Scroll all the way to the right in the data, and you should notice a new column named `pop19` that has the population counts for every adm1 subdivision in your country.
 
-Now that we have totals for each county, it is finally time to plot our results.  For this first example, 
+Now that we have totals for each county, it is finally time to plot our results.  Since we are only going to call one object in the first example, we can start our `ggplot()` command by automatically specifying the object we will be using in our plot.
 
-
+```r
+ggplot(myLMIC_adm1) +
+  geom_sf(aes(fill = pop19)) +
+  geom_sf_text(aes(label = admin1name),
+               color = "color",
+               size = size) +
+  scale_fill_gradient(low = "color", high = "color")
+```
 
