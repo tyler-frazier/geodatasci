@@ -45,7 +45,7 @@ or alternatively a plot with both a line and points over that line.
 
 `plot(x, y, type = "o")`
 
-![A plot produced using the &quot;over&quot; specification in the argument ](../.gitbook/assets/rplot02.png)
+![A plot produced using the &quot;over&quot; specification in the argument ](../.gitbook/assets/rplot02%20%281%29.png)
 
 We can also add some description to our plot in order to better communicate our results.  We can begin by adding a title, indicating the units of measurement while also adding labels for both the x and y axes.
 
@@ -99,7 +99,7 @@ symbols(east, north, squares = rep(.75,10), inches = FALSE)
 
 Following is one possible outcome produced by the randomly produced coordinates.  While the squares produced in your plot will be in different locations, the number of squares as well as the size of each, should be very similar.  Lets also consider the additional arguments in the `symbols()` command.  In the `squares =` argument within the command, I have also used the `rep()` function, which will repeat the length of each square, `.75` in this case, 10 times, or 1 time for each square.  I have also added the `inches = FALSE` argument so the units are considered to be similar to the axes.
 
-![Squares within a Defined Area](../.gitbook/assets/rplot01%20%281%29.png)
+![Squares within a Defined Area](../.gitbook/assets/rplot01%20%282%29.png)
 
 Now lets add some circles to our plot.  This time, instead of assigning an object a permanent value by randomly selecting from a series of numbers, lets randomly select values as part of creating the plot with the `symbol()` function.
 
@@ -114,7 +114,7 @@ symbols(sample(x, 10, replace = TRUE),
 
 Where as before I created two objects and plotted their values as x & y coordinates, this time I have nested the `sample()` command within the `symbols()` function, in the place where R is looking for the x & y value coordinates.  In this manner, each time I execute the command, 10 circles will be randomly placed throughout the defined area, each with a radius of `.75`.  I have also included the `add = TRUE` argument within the command, in order to add the circles to our previous plot of square.  The `fg =` argument permits us to select a color for each circle.
 
-![Squares with Randomly Placed Circles within a Defined Area](../.gitbook/assets/rplot02%20%281%29.png)
+![Squares with Randomly Placed Circles within a Defined Area](../.gitbook/assets/rplot02%20%282%29.png)
 
 Let's also add some larger trees and specify their color as well.  Again we will randomly place them while using the `add = TRUE` argument so they are added to our previous plot.  Also, consider a wider range of colors to use as the outline for each circle, while also filling each circle with a color.  In order to determine how to fill the circle with a color, use the `?` followed by the command you are interested in learning more about in order to view all of the available options.  In this case you can type `?symbols` directly in the console in order to see all of the arguments possible.  If you scroll down in the help window, you will see that `fg =` is used to specify the color or your symbol border, while `bg =`  is used to indicate the color for your symbol's fill.  You may also be interested to know which colors are available to select.  In order to review a list of all available colors, simply type `colors()` directly into your console.  Running the following chunk of commands will then produce a plot similar to the following image.
 
