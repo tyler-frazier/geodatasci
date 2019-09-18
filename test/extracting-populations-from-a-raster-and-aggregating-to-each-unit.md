@@ -169,3 +169,13 @@ Take your spatial description of population at the district level from above and
 
 Again, include the `data =`  argument when using the `geom_sf_text()` command in order to add the labels for both the districts and counties.  District labels can be relatively small, perhaps `size = 1.0` while they should be considerable larger for the county labels, possibly along the order of `size = 2.5`. In your `geom_sf_text()` argument for the county lables, set the `alpha = .35`, such that the labels are transparent enough to interpret whats beneath them, while still discenable enough to read.
 
+Change your `scale_fill_gradient()` command to `scale_fill_gradient2()` in order to add a third color and midpoint to the colors mapped to each contiuous value.  Look at the value from the previous scale.  What is the midpoint?  
+
+```r
+scale_fill_gradient2(low = "blue", mid="yellow", high="red", midpoint = add_value_here)
+```
+
+Add other descriptive elements to your plot, such as labels for axes, title and panel background.
+
+![](../.gitbook/assets/lbrdist_logpop19b.png)
+
