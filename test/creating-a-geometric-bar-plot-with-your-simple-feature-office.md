@@ -133,9 +133,7 @@ Return to yout spatial plot that you created in the last exercise.  Recall the s
             color="color", size=add_size, nudge_y = add_value) +
 ```
 
-
-
-
+![](../.gitbook/assets/rplot05.png)
 
 
 
