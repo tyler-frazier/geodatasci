@@ -201,7 +201,7 @@ Finally, create a three dimension plot of all log of density population values b
 plot_gg(gglbr_adm2, multicore = TRUE, width = 6 ,height=2.7, fov = 70)
 ```
 
-![](../.gitbook/assets/rplot01%20%283%29.png)
+![](../.gitbook/assets/rplot01%20%284%29.png)
 
 ![](../.gitbook/assets/rplot02.png)
 

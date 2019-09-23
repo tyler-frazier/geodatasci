@@ -107,7 +107,7 @@ Place the value that describes each administrative unit's share of the total pop
             size=2.0)
 ```
 
-![](../.gitbook/assets/rplot%20%283%29.png)
+![](../.gitbook/assets/rplot01%20%282%29.png)
 
 
 
