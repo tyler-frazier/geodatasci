@@ -97,6 +97,14 @@ yourLMIC_adm1 %>%
   xlab("county") + ylab("population")
 ```
 
+In addition to changing the order of the adm1 names, also add an annotation to each bar that indicates the share of the total population located within that subdivision.  Use the `geom_text()` command to add labels to your bar plot and set the `label =`  argument within the `aes()` parameter in order to calculate each administrative units share of the total population.  Divide the `sum()` of `pop19` variable in the denominator by the raw `pop19`  counts as the numerator.  Place the division of these values within the `percentage()` command from the `scales::` library \(you'll need to install this new package\).
+
+```r
+geom_text(aes(label=scales::new_command(pop19/sum(pop19))))
+```
+
+![](../.gitbook/assets/rplot%20%283%29.png)
+
 
 
 

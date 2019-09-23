@@ -59,7 +59,7 @@ plot(your_raster_object)
 plot(st_geometry(your_adm1_sf_obj), add = TRUE)
 ```
 
-![Raster Layer of Liberia&apos;s Population with ADM1 subdivisions overlayed](../.gitbook/assets/rplot%20%283%29.png)
+![Raster Layer of Liberia&apos;s Population with ADM1 subdivisions overlayed](../.gitbook/assets/rplot%20%284%29.png)
 
 We can see that we now have a scale on the right hand side of the plot that is using a color scale to coorespond with all continuous values between a minimum and maximum \(from about 0 to a little more than 112\).  We can also begin to identify the locations throughout Liberia where people have settled.  Clearly there is a large clump of green and yellow gridcells located along the southern coast \(this is the location of Liberia's capital city Monrovia\).  As we move away from the centrally populated coastal urban area, inland to the north-east we also notice some less densely populated areas along the outskirts of Monrovia, which have pinkish colored gridcells.  There are also a few, less populated urban areas further to the south as well as along the northern border with Guinea.  In fact, if we looked at all 24,922,800 gridcells that indivually comprise this map, each one would have a value and cooresponding color that indicates its population.
 
