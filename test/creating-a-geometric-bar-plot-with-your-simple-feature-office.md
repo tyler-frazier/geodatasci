@@ -135,9 +135,17 @@ Return to yout spatial plot that you created in the last exercise.  Recall the s
 
 ![](../.gitbook/assets/rplot05.png)
 
+Finally, install the package `ggpubr` and use the command `ggarrange()` to arrange your two plots together side by side.
 
+```r
+ggarrange(lbr_splt, lbr_bplt, nrow = 1, widths = c(2.25,2))
+```
 
+Use the `ggtitle()` command to title each plot, and then also use the 
 
+```text
+annotate_figure(liberia, top = text_grob("Liberia", color = "black", face = "bold", size = 26))
+```
 
 
 
