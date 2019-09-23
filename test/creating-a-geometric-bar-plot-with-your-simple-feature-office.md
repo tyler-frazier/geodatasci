@@ -1,4 +1,4 @@
-# Creating a Geometric Bar Plot with your Simple Feature office
+# Creating a Geometric Bar Plot with your Simple Feature object
 
 In the previous exercise, you extracted population data from a raster, and then aggregated these totals to the first level administrative area of your selected LMIC.  You then added this new column describing the population of each first level administrative subdivision to your simple feature object.  Now we are going to use that newly created column as the basis for generating a geometric bar plot of population, share of population and density by first level adminsitrative subdivision.
 
