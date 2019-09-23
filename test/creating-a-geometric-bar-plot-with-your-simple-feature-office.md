@@ -51,7 +51,7 @@ After you execute this command, view the data associated with yout adm1 object a
 
 While these area calculations are accurate, to describe a country in square meters is probably not the most useful unit to select.  Instead of meters squared, we will convert our unit of measurement to square kilometers.  In order to do this, we must first install a new library of functions for use in RStudio.  Install the `units::` package and use the `library()` command in order to make it available for use.
 
-The command we need from the `units::` package is `set_units()`, although this time we will nest our command within a `%>%` to modify the units of measurement from `m^2` to `km^2`.  Notice how the last parenthesis doesn't coorespond with the new command from the `units::` library but rather with the parenthesis from the line prior.  We specify our syntax in this manner since we are applying the `set_units()` command to the results from the `st_area()` command.
+The command we need from the `units::` package is `set_units()`, although this time we will nest our command within a `%>%` to modify the units of measurement from `m^2` to `km^2`.  Notice how the last parenthesis doesn't coorespond with the new command from the `units::` library but rather with the parenthesis from the prior line.  We specify our syntax in this manner since we are applying the `set_units()` command to the results which have been _piped_  from the `st_area()` command.
 
 ```r
 yourLMIC_adm1 <- yourLMIC_adm1 %>%
@@ -59,7 +59,7 @@ yourLMIC_adm1 <- yourLMIC_adm1 %>%
            units::new_command_here(new_units))
 ```
 
-The last step of creating our two new columns is to use the `area` variable we created and _on the fly_ also create a column named `density` which will be the result of our `area` column divided by the `pop19` variable we created in the last exercise and added to your adm1 object.
+The second step in creating our two new columns is to use the `area` variable _on the fly_ to calculate a column named `density` .  This second new column will be the result of our `area` column divided by the `pop19` variable \(which we created in the last exercise\).  
 
 ```r
 yourLMIC_adm1 <- yourLMIC_adm1 %>%
@@ -68,31 +68,33 @@ yourLMIC_adm1 <- yourLMIC_adm1 %>%
   mutate(density = numerator_variable / denominator_variable)
 ```
 
-Since we have modfied the units, you should notice density being measured in terms of number of persons per square kilometer.
+Since we have modfied the units, you should notice both the variables `area` and `density` being described in units of persons per square kilometer.
 
 ![Three newly created spatial, descriptive statistical variables](../.gitbook/assets/screen-shot-2019-09-22-at-10.39.17-pm.png)
 
-Since we have all of the data needed in place, start your bar plot by first using the `%>%` from your adm1 object.  Follow that pipe operator with your `ggplot()` command that provides the  `x` and `y` variables you will identify from your `sf` class object.  Since we are plotting a bar plot, we will use the `geom_bar()` command.  We will also use the `stat = "identity"` argument since we are plotting the values of individual units of observation, in this case the population of each first level administrative subdivision from your LMIC.  Also add a `color =`  argument to your `geom_bar()` command as well as set the width of each bar.  Following the `geom_bar()` command, use the `coord_flip()` to flip the county names along the xaxis and give them a verticle disposition.
+That is all the data we need for now.  Start the creation of your geometric bar plot by first piping `%>%`  your adm1 object to a newly specified `ggplot` object.  Add the aesthetics to your `ggplot` object using the `ggplot()` command and specifying the  `x` and `y` variables from your `sf` class object.  These `x` and `y` objects will be used to plot the values using the `x` and `y` axes \(although we will flip the horizontal to the verticle and _vice-versa_ in a moment\).
+
+Since we are generating a bar plot, we will use the `geom_bar() +` command.  Include the `stat = "identity"` argument to plot the values of individual units of observation, in this case the population of each first level administrative subdivision from your LMIC.  Also add a `color =`  argument to your `geom_bar()` command and set the width of each bar.  Following the `geom_bar()` command, use the `coord_flip()` to flip the county names along the xaxis and give them a verticle disposition.
 
 ```r
 yourLMIC_adm1 %>%
   ggplot(aes(x=your_adm1_names, y=pop19)) +
-  geom_bar(stat="identity", color="blue", width=.65) +
+  geom_bar(stat="identity", color="color", width=value) +
   coord_flip() +
-  xlab("county") + ylab("population")
+  xlab("label") + ylab("label")
 ```
 
 ![](../.gitbook/assets/rplot03%20%281%29.png)
 
-Let's order our counties in accordance with population size from largest to smallest in order to more easily associate the descriptive statistics presented in our bar plot with the spatial descriptive statistics we previosuly created with our map.  Add a second `%>%` after your adm1 object, where you will reorder the adm1 names based on the variable `pop19`.  Use the `mutate()` command again to write over the existing variable for adm1 names.  The key command you are adding within the `mutate()` argument is `fct_reorder()` which will change the order of the first named variable \(in this case `admin1name`\) based on the descending rank order of the second variable \(`pop19`\).  While I am using the raw population counts to change the county order listed along the verticle axis, you could in fact use any of the other columns \(for example `area` or `density` \).
+Let's order our counties in accordance with population size from largest to smallest in order to more easily associate the descriptive statistics presented in our bar plot with the spatial descriptive statistics we previosuly created with our map.  Add a second `%>%` after your adm1 object, where you will reorder the adm1 names based on the variable `pop19`.  Use the `mutate()` command again to write over the existing variable for adm1 names.  The key command you are adding within the `mutate()` argument is `fct_reorder()` which will change the order of the first named variable \(in this case `admin1name`\) based on the descending rank order of the second variable \(`pop19`\).  While I am using the raw population counts to change the county order listed along the verticle axis, you could use also the `area` or `density` variables.
 
 ```r
 yourLMIC_adm1 %>%
   mutate(admin1name = fct_reorder(admin1name, pop19)) %>%
   ggplot(aes(x=your_adm1_names, y=pop19)) +
-  geom_bar(stat="identity", color="blue", width=.65) +
+  geom_bar(stat="identity", color="color", width=value) +
   coord_flip() +
-  xlab("county") + ylab("population")
+  xlab("label") + ylab("label")
 ```
 
 In addition to changing the order of the adm1 names, also add an annotation to each bar that indicates the share of the total population located within that subdivision.  Use the `geom_text()` command to add labels to your bar plot and set the `label =`  argument within the `aes()` parameter in order to calculate each administrative units share of the total population.  Divide the `sum()` of `pop19` variable in the denominator by the raw `pop19`  counts as the numerator.  Place the division of these values within the `percentage()` command from the `scales::` library \(you'll need to install this new package\).
@@ -107,15 +109,15 @@ Place the value that describes each administrative unit's share of the total pop
 
 ![](../.gitbook/assets/rplot01%20%282%29.png)
 
-In the last step of creating our geometric bar plot, add a `fill =`  argument to the `ggplot(aes())` command that will be used to map a color to each counties population total based on its place along the continuous scale from maximum to minimum.  As we did with our spatial description of population, also add the `scale_fill_gradient()` command to define colors that will coorespond to the `low =` and `high =`  values.  Use your assignment operator to create a new ggplot object that will be plotted with spatial description of your LMIC.
+The last step of creating our geometric bar plot is to add a `fill =`  argument to the `ggplot(aes())` command that will be used to map a color to each counties population total, based on its place along the continuous scale from maximum to minimum.  As we did with our spatial description of population, also add the `scale_fill_gradient()` command to define colors that will coorespond to the `low =` and `high =`  values.  Use your assignment operator to create a new ggplot object that will be plotted with spatial description of your LMIC.
 
 ```r
 yourLMIC_bplt <- yourLMIC_adm1 %>%
   mutate(admin1name = fct_reorder(admin1name, pop19)) %>%
   ggplot(aes(x=admin1name, y=pop19, fill = pop19)) +
-  geom_bar(stat="identity", color="blue", width=.65) +
+  geom_bar(stat="identity", color="color", width=value) +
   coord_flip() +
-  xlab("county") + ylab("population") +
+  xlab("label") + ylab("label") +
   geom_text(aes(label=percent(pop19/sum(pop19))), 
             position = position_stack(vjust = 0.5),
             color="black", size=2.0) +
@@ -124,10 +126,10 @@ yourLMIC_bplt <- yourLMIC_adm1 %>%
 
 ![](../.gitbook/assets/rplot02%20%281%29.png)
 
-Return to yout spatial plot that you created in the last exercise.  Recall the snippet of code where you used the `geom_sf(aes(fill = pop19))` in order to plot the population of every first level administrative subdivision along a contiuous scale for your LMIC.  Now add the `geom_sf_text()` command to your script and set the `aes(label=command(variable,2)` argument to use the `density` variable from your adm1 object.  Also, use the `round()` command, so the values from this variable are limited to two decimal points.  Nudge the density values, so they appear benath each label, while also modifying their size and color.
+Return to the spatial plot that you created in the last exercise.  Copy the snippet of code that you used with the `geom_sf(aes(fill = pop19))` command in order to plot the population of every first level administrative subdivision along a contiuous scale for your LMIC.  Paste this snippet into your new script.  Add a new line to the snippet where you use the `geom_sf_text()` command to set plot the density of each individual adm1 object beneath its name.  Use the `aes(label=command(variable,2)` argument to add the `density` values.  Also, use the `round()` command, so the values from this variable are limited to two decimal points.  Nudge the density values, so they appear benath each label, while also modifying their size and color.
 
 ```r
-  geom_sf_text(aes(label=round(density,2)),
+  geom_sf_text(aes(label=round(add_variable_here, 2)),
             color="color", size=add_size, nudge_y = add_value) +
 ```
 
@@ -136,10 +138,10 @@ Return to yout spatial plot that you created in the last exercise.  Recall the s
 Finally, install the package `ggpubr` and use the command `ggarrange()` to arrange your two plots together side by side.
 
 ```r
-liberia <- ggarrange(lbr_splt, lbr_bplt, nrow = 1, widths = c(2.25,2))
+liberia <- ggarrange(your_spatial_plot, your_bar_plot, nrow = 1, widths = c(2.25,2))
 ```
 
-Use the `ggtitle()` command to title each plot, and then also use the `annotate_figure()` command to set a common title. 
+Use the `ggtitle()` command to title each plot, and then also use the `annotate_figure()` command to set a common title for the combination of the two descriptive results. 
 
 ```r
 annotate_figure(liberia, top = text_grob("Liberia", color = "black", face = "bold", size = 26))
