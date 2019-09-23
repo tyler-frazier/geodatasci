@@ -67,8 +67,10 @@ The last step of creating our two new columns is to use the `area` variable we c
 yourLMIC_adm1 <- yourLMIC_adm1 %>%
   mutate(area = sf::new_command_here(yourLMIC_adm1) %>% 
            units::new_command_here(new_units)) %>%
-  mutate(density = pop19 / area)
+  mutate(density = numerator_variable / denominator_variable)
 ```
+
+![Three newly created spatial, descriptive statistical variables](../.gitbook/assets/screen-shot-2019-09-22-at-10.39.17-pm.png)
 
 
 
