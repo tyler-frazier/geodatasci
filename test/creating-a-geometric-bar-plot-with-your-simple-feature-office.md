@@ -126,7 +126,12 @@ yourLMIC_bplt <- yourLMIC_adm1 %>%
 
 ![](../.gitbook/assets/rplot02%20%281%29.png)
 
+Return to yout spatial plot that you created in the last exercise.  Recall the snippet of code where you used the `geom_sf(aes(fill = pop19))` in order to plot the population of every first level administrative subdivision along a contiuous scale for your LMIC.  Now add the `geom_sf_text()` command to your script and set the `aes(label=command(variable,2)` argument to use the `density` variable from your adm1 object.  Also, use the `round()` command, so the values from this variable are limited to two decimal points.  Nudge the density values, so they appear benath each label, while also modifying their size and color.
 
+```r
+  geom_sf_text(aes(label=round(density,2)),
+            color="color", size=add_size, nudge_y = add_value) +
+```
 
 
 
