@@ -138,16 +138,20 @@ Return to yout spatial plot that you created in the last exercise.  Recall the s
 Finally, install the package `ggpubr` and use the command `ggarrange()` to arrange your two plots together side by side.
 
 ```r
-ggarrange(lbr_splt, lbr_bplt, nrow = 1, widths = c(2.25,2))
+liberia <- ggarrange(lbr_splt, lbr_bplt, nrow = 1, widths = c(2.25,2))
 ```
 
-Use the `ggtitle()` command to title each plot, and then also use the 
+Use the `ggtitle()` command to title each plot, and then also use the `annotate_figure()` command to set a common title. 
 
-```text
+```r
 annotate_figure(liberia, top = text_grob("Liberia", color = "black", face = "bold", size = 26))
 ```
 
+To save your two plots together, use the `ggsave()` command.  Modify the `width =` and the `height =` commands to set the dimensions for your combined spatial and bar plot.  Use the `dpi =`  command to set the number of dots per inch, or effectively increase the resolution.
 
+```r
+ggsave("liberia.png", width = 20, height = 10, dpi = 200)
+```
 
-
+![](../.gitbook/assets/liberia%20%284%29.png)
 
