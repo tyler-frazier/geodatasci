@@ -155,3 +155,19 @@ ggsave("liberia.png", width = 20, height = 10, dpi = 200)
 
 ![](../.gitbook/assets/liberia%20%284%29.png)
 
+
+
+## Project 1. Individual Deliverable
+
+Upload the combined spatial description and geometric bar plot of your selected LMIC to the slack channel \#data100\_project1 no later than 11:59PM on Saturday, September 28th.
+
+## Individual Stretch Goal 1
+
+Again create a combined spatial description and geometric bar plot of your LMIC, but this time use the adm2 `sf` object you created in part 2, stretch goal 2.  Include this with your deliverable posted to \#data100\_project1.
+
+## Individual Stretch Goal 2
+
+Use the `render_movie("liberia.mp4")` command to create an orbitting video of the three dimension spatial plot you created in part 2, stretch goal 3.  Also, include this with your deliverable posted to \#data100\_project1.
+
+ 
+
