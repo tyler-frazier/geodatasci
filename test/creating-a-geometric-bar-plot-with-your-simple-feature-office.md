@@ -99,8 +99,12 @@ yourLMIC_adm1 %>%
 
 In addition to changing the order of the adm1 names, also add an annotation to each bar that indicates the share of the total population located within that subdivision.  Use the `geom_text()` command to add labels to your bar plot and set the `label =`  argument within the `aes()` parameter in order to calculate each administrative units share of the total population.  Divide the `sum()` of `pop19` variable in the denominator by the raw `pop19`  counts as the numerator.  Place the division of these values within the `percentage()` command from the `scales::` library \(you'll need to install this new package\).
 
+Place the value that describes each administrative unit's share of the total population within the center of each bar using the `position =` .  Set it using the `position_stack(vjust = 0.5)` command with a verticle adjust to the center of the bar \(half the total width\).  Also, decrease the size of the text annotations.
+
 ```r
-geom_text(aes(label=scales::new_command(pop19/sum(pop19))))
+  geom_text(aes(label=percent(pop19/sum(pop19))),
+            position = position_stack(vjust = 0.5),
+            size=2.0)
 ```
 
 ![](../.gitbook/assets/rplot%20%283%29.png)
