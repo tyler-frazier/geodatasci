@@ -30,5 +30,38 @@ setwd("~/your/working/directory/for_data")
 
 Once you have loaded the `tidyverse::` and `sf::` libraries as well as set your working directory, use the `load()` command to load into your workspace the `.RData` file that contains your adm1 `sf` class object with the newly created `pop19` variable \(column\).
 
-  
+```r
+load("name_of_the_file_you_saved.RData")
+```
+
+One you have executed this command you should notice your adm1 `sf` object reappear in the top right pane under the environment tab.
+
+Next, we are going to add two new columns to our adm1 object, first is a column that provides us with the area in square kilometers and the second is a column that describes the density of each first level administrative subdivision of your LMIC.  In order to add these two columns, we will use the `%>%` operator followed by the `mutate()` function.  The `mutate()` command is part of the tidyverse syntax and is used to create a new variable which is calculated from data found in another variable.  As part of the argument within the `mutate()` command, you will give the new column that you are creating a name.
+
+Start with just the name of your adm1 object, the pipe operator and newly created column which we will name `area`.  In order to calculate this newly created column, we will also use a new command from the `sf` library of functions called `st_area()`.  
+
+```r
+yourLMIC_adm1 <- yourLMIC_adm1 %>%
+  mutate(area = sf::new_command_here(yourLMIC_adm1))
+```
+
+After you execute this command, view the data associated with yout adm1 object and confirm that you have a new column named `area`. 
+
+![](../.gitbook/assets/screen-shot-2019-09-22-at-10.15.28-pm.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
