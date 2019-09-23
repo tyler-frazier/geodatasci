@@ -109,6 +109,31 @@ Place the value that describes each administrative unit's share of the total pop
 
 ![](../.gitbook/assets/rplot01%20%282%29.png)
 
+In the last step of creating our geometric bar plot, add a `fill =`  argument to the `ggplot(aes())` command that will be used to map a color to each counties population total based on its place along the continuous scale from maximum to minimum.  As we did with our spatial description of population, also add the `scale_fill_gradient()` command to define colors that will coorespond to the `low =` and `high =`  values.  Use your assignment operator to create a new ggplot object that will be plotted with spatial description of your LMIC.
+
+```r
+yourLMIC_bplt <- yourLMIC_adm1 %>%
+  mutate(admin1name = fct_reorder(admin1name, pop19)) %>%
+  ggplot(aes(x=admin1name, y=pop19, fill = pop19)) +
+  geom_bar(stat="identity", color="blue", width=.65) +
+  coord_flip() +
+  xlab("county") + ylab("population") +
+  geom_text(aes(label=percent(pop19/sum(pop19))), 
+            position = position_stack(vjust = 0.5),
+            color="black", size=2.0) +
+  scale_fill_gradient(low = "yellow", high = "red")
+```
+
+![](../.gitbook/assets/rplot02%20%281%29.png)
+
+
+
+
+
+
+
+
+
 
 
 
