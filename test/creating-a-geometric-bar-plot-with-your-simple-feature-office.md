@@ -76,17 +76,26 @@ Since we have modfied the units, you should notice density being measured in ter
 
 Since we have all of the data needed in place, start your bar plot by first using the `%>%` from your adm1 object.  Follow that pipe operator with your `ggplot()` command that provides the  `x` and `y` variables you will identify from your `sf` class object.  Since we are plotting a bar plot, we will use the `geom_bar()` command.  We will also use the `stat = "identity"` argument since we are plotting the values of individual units of observation, in this case the population of each first level administrative subdivision from your LMIC.  Also add a `color =`  argument to your `geom_bar()` command as well as set the width of each bar.  Following the `geom_bar()` command, use the `coord_flip()` to flip the county names along the xaxis and give them a verticle disposition.
 
-```text
-lbr_adm1 %>%
-  ggplot(aes(x=admin1name, y=pop19)) +
+```r
+yourLMIC_adm1 %>%
+  ggplot(aes(x=your_adm1_names, y=pop19)) +
   geom_bar(stat="identity", color="blue", width=.65) +
   coord_flip() +
   xlab("county") + ylab("population")
 ```
 
+![](../.gitbook/assets/rplot03%20%281%29.png)
 
+Let's order our counties in accordance with population size from largest to smallest in order to more easily associate the descriptive statistics presented in our bar plot with the spatial descriptive statistics we previosuly created with our map.  Add a second `%>%` after your adm1 object, where you will reorder the adm1 names based on the variable `pop19`.  Use the `mutate()` command again to write over the existing variable for adm1 names.  The key command you are adding within the `mutate()` argument is `fct_reorder()` which will change the order of the first named variable \(in this case `admin1name`\) based on the descending rank order of the second variable \(`pop19`\).  While I am using the raw population counts to change the county order listed along the verticle axis, you could in fact use any of the other columns \(for example `area` or `density` \).
 
-
+```r
+yourLMIC_adm1 %>%
+  mutate(admin1name = fct_reorder(admin1name, pop19)) %>%
+  ggplot(aes(x=your_adm1_names, y=pop19)) +
+  geom_bar(stat="identity", color="blue", width=.65) +
+  coord_flip() +
+  xlab("county") + ylab("population")
+```
 
 
 

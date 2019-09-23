@@ -139,7 +139,7 @@ symbols(sample(x, 10, replace = TRUE),
 
 ```
 
-![Squares with Two Types of Circles within a Defined Area](../.gitbook/assets/rplot03%20%281%29.png)
+![Squares with Two Types of Circles within a Defined Area](../.gitbook/assets/rplot03%20%282%29.png)
 
 Thus far we have only created R objects that are of the vector class.  We can review the class of one of the objects we have created by typing `class(east)` directly into the console and observe that R informs us that the object is a vector of integers.  Now let's create a new class of an object called a data frame that contains a series of rows and columns where each row represents an observation while each column represents a different variable.  We can start with the coordinates that represent the center point of each square.
 
