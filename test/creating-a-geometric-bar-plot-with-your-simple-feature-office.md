@@ -47,11 +47,28 @@ yourLMIC_adm1 <- yourLMIC_adm1 %>%
 
 After you execute this command, view the data associated with yout adm1 object and confirm that you have a new column named `area`. 
 
-![](../.gitbook/assets/screen-shot-2019-09-22-at-10.15.28-pm.png)
+![The last two columns of your adm1 object](../.gitbook/assets/screen-shot-2019-09-22-at-10.15.28-pm.png)
 
+While these area calculations are likely accurate, to describe a country in square meters is probably not the most useful unit to select.  Instead of meters squared, we will convert our area unit of measurement to kilometers squared.  In order to do this, we must first install a new library of functions for use in RStudio.  Install the `units::` package and use the `library()` command in order to make it available for use.
 
+The command we need from the `units::` package is `set_units()`, although this time we will nest our command within a `%>%` to modify the units of measurement from `m^2` to `km^2`.
 
+```r
+yourLMIC_adm1 <- yourLMIC_adm1 %>%
+  mutate(area = sf::new_command_here(yourLMIC_adm1) %>% 
+           units::new_command_here(new_units))
+```
 
+Notice how the last parenthesis doesn't coorespond with the new command from the `units::` library but rather with the parenthesis from the line prior.  We specify our syntax in this manner since we are applying the `set_units()` command to the results from the `st_area()` command.
+
+The last step of creating our two new columns is to use the `area` variable we created and _on the fly_ also create a column named `density` which will be the result of our `area` column divided by the `pop19` variable we created in the last exercise and added to your adm1 object.
+
+```r
+yourLMIC_adm1 <- yourLMIC_adm1 %>%
+  mutate(area = sf::new_command_here(yourLMIC_adm1) %>% 
+           units::new_command_here(new_units)) %>%
+  mutate(density = pop19 / area)
+```
 
 
 
