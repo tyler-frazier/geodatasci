@@ -171,10 +171,6 @@ lbr_adm2 %>%
   geom_bar(stat="identity", color="blue", width=.75) +
   coord_flip() +
   theme(legend.position = "none") +
-  # geom_text(aes(label = admin2Name),
-  #              position = position_stack(vjust = 0.5),
-  #              color = "black",
-  #              size = 1.0) +
   geom_text_repel(aes(label = admin2Name),
                   position = position_stack(vjust = 0.5),
                   force = 0.0005,
