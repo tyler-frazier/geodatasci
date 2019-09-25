@@ -163,9 +163,32 @@ Upload the combined spatial description and geometric bar plot of your selected 
 
 ## Individual Stretch Goal 1
 
-Again create a combined spatial description and geometric bar plot of your LMIC, but this time use the adm2 `sf` object you created in part 2, stretch goal 2.  Include this with your deliverable posted to \#data100\_project1.
+Again create a combined spatial description and geometric bar plot of your LMIC, but this time use the adm2 `sf` object you created in part 2, stretch goal 2.  Use the `save()` and `load()` commands as you did before to import your adm2 object that also includes the newly created poulation column.  Also, again use the `mutate()` command to create new variables that describe `area` and `density` , but this time as new columns in your `adm2` object.    Modify the following script to produce the subsequent geometric bar plot based on your own adm2 `sf` class object.
+
+```r
+lbr_adm2 %>%
+  ggplot(aes(x=admin1Name, y=pop19, weight = pop19, fill = admin2Name)) +
+  geom_bar(stat="identity", color="blue", width=.75) +
+  coord_flip() +
+  theme(legend.position = "none") +
+  # geom_text(aes(label = admin2Name),
+  #              position = position_stack(vjust = 0.5),
+  #              color = "black",
+  #              size = 1.0) +
+  geom_text_repel(aes(label = admin2Name),
+                  position = position_stack(vjust = 0.5),
+                  force = 0.0005,
+                  direction = "y",
+                  size = 1.35,
+                  segment.size = .2,
+                  segment.alpha = .4)
+  
+ggsave("lbr_adm2_bp.png", width = 20, height = 15, dpi = 300)
+```
 
 ![Population by County and District](../.gitbook/assets/lbr_adm2_bp.png)
+
+Include this with your deliverable posted to \#data100\_project1.
 
 ## Individual Stretch Goal 2
 
