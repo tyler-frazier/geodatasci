@@ -165,6 +165,8 @@ Upload the combined spatial description and geometric bar plot of your selected 
 
 Again create a combined spatial description and geometric bar plot of your LMIC, but this time use the adm2 `sf` object you created in part 2, stretch goal 2.  Include this with your deliverable posted to \#data100\_project1.
 
+![Population by County and District](../.gitbook/assets/lbr_adm2_bp.png)
+
 ## Individual Stretch Goal 2
 
 Use the `render_movie("liberia.mp4")` command to create an orbitting video of the three dimension spatial plot you created in part 2, stretch goal 3.  Also, include this with your deliverable posted to \#data100\_project1.
