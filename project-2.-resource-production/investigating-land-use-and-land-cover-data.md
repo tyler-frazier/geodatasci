@@ -100,7 +100,7 @@ Once you have those three new `raster` class objects in your R workspace, use th
 lulc <- command(existing_stack, new_raster1, new_raster2, new_raster3)
 ```
 
-Manually update the names for the water layer as well as each of the three later newly imported layers.  Again use the `names()` command with your `RasterStack` object, but this time specifiy which layers will have their names modified and updated.  In this case you want to update the names of the first layer as well as layers ten through twelve.
+Manually update the names for the water layer as well as each of the three newly stacked rasters.  Again use the `names()` command with your `RasterStack` object, but this time specifiy which layers will have their names modified and updated.  In this case you want to update the names of the first layer as well as layers ten through twelve.  Using the `[]` subscripting operators with the `c()` combine command is a powerful way to traverse an object in order to pinpoint your specified command.  In this case it is important that the number of names being modified \(as specified by the 1, 10, 11 & 12 on the left hand side\) is the same length as the number of names being assigned \(specified by water, topo, slope and ntl on the right hand side\).
 
 ```r
 add_command_here(object_name)[c(1,10:12)] <- c("water","topo","slope", "ntl")
@@ -257,6 +257,10 @@ Follow the steps from above used to produce the plots describing Liberia, but in
 Also use `ggplot()` to plot two linear models.  Use the `fit()` and `summary()` commands to describe your models.  Are you able to definitively identify coorelation between population and any of the other or combination of other land use and land cover geospatial covariates?
 
 Meet with your group and prepare four different plots with at least three from different countries \(or team members\) for the Friday informal group presentation.  Then as a group, upload all 5 team members plots to \#data100\_igps \(informal group presentations\) by Sunday night.
+
+## Individual Stretch Goal 1
+
+
 
 
 
