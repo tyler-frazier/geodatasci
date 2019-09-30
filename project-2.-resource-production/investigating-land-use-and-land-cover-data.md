@@ -60,26 +60,26 @@ The object `f` is needed to identify all of the `raster` objects you will stack 
 lulc <- your_outside_cmd(lapply(f, function(i) your_inside_cmd(i, band=1)))
 ```
 
-Once you have executed your `stack()` to create your `RasterStack` object in your workspace, you can check to confirm the contents of your `lulc` object.
+Once you have executed your `stack()` command to create your `RasterStack` object in your workspace, check to confirm the contents of your `lulc` object.
 
 ![](../.gitbook/assets/screen-shot-2019-09-29-at-10.29.26-pm.png)
 
-You will notice that the `RasterStack` object not only is comprised of nearly 25 million gridcells in this instance, there is also a new dimension to the object named `nlayers`, which is 9.  Within this `RasterStack` is layer representing each one of the files we copied from the WorldPop website into your `lulc` data folder and then imported into RStudio.  The names of each layer is given on the `names` row, but the information has been directly assigned from each file name, which was long and confusing.  You will rename each layer, by again identifying patterns from the object `f` we created, and replacing the superfluous parts with an empty space or `""`.  You will need to retain the part of each file name that begins with `dst` and is then followed by three digits.  For example, with the file name `lbr_esaccilc_dst040_100m_2015.tif` you will need to retain everything BUT the `dst040` part of the name.  To do this, you will first want to replace the common pattern from the last part of the file name sequence with a `""`. Then you will want to replace the first part of the  the common pattern from the file name sequence with a `""`.  You will do this by nesting the two commands within each other.
+You will notice that the `RasterStack` object not only is comprised of nearly 25 million gridcells in this instance, there is also a new dimension to the object named `nlayers`, which is 9.  Within this `RasterStack` is the `names` identifier, with each name representing one of the files we copied from the WorldPop website into your `lulc` data folder and then imported into RStudio.  While the name of each layer is provided on the `names` row having been directly assigned from each file name, specifically the names themselves are very long and confusing.  Rename each layer, by again identifying patterns from the object `f` we created, and replacing the superfluous parts with an empty space or `""`.  You will need to retain the part of each file name that begins with `dst` and is then followed by three digits.  For example, with the file name `lbr_esaccilc_dst040_100m_2015.tif` you will need to retain everything BUT the `dst040` part of the name.  To do this, you will first want to replace the common pattern from the last part of the file name sequence with a `""`. Then you will want to replace the first part of the common pattern from the file name sequence with a `""`.  You will do this by nesting the two commands within each other.
 
 ```r
-nms <- sub("last_part.tif", "", sub("first_part_", "", object_w_names))
+nms <- sub("last_part.tif", "", sub("first_part_", "", object_with_the_file_names))
 ```
 
-Type `nms` directly into the console to confirm you have the truncated form of the name for each raster layer.
+Type `nms` directly into the console to confirm you have correctly created this new object that contains the truncated form of each raster layer name you plan to assign.
 
 ![](../.gitbook/assets/screen-shot-2019-09-29-at-11.11.48-pm.png)
 
-The first file that contains the distance to water layer had a slightly different naming pattern, but don't worry about it just yet.  You'll replace that layers name also, in a moment.
+The first file that contains the distance to water layer had a slightly different naming pattern, but don't worry about it just yet.  Go ahead and assign it as is, but keep in mind you will also replace that layer's name momentarily.
 
 Once you have created your `nms` object that contains each layer's name, use the `names()` command with your `lulc` object as the object and simply assign the names using `nms`.
 
 ```r
-command(RasterStack_obj) <- object_with_names
+add_command_here(your_RasterStack_obj) <- object_with_truncated_names
 ```
 
 Confirm you have correctly used the `names()` command with your `lulc` object to rename each layer by viewing the `RasterStack` in the console.  You should notice that there are several new names listed for each layer in your `RasterStack`.  
@@ -94,10 +94,16 @@ slope <- raster("lbr_srtm_slope_100m.tif")
 ntl <- raster("lbr_viirs_100m_2015.tif")
 ```
 
-Once you have those three new `raster` class objects in your R workspace, use the `addLayer()` command to combine all twelve layers into a single `RasterStack`.  Manually update the names for the water layer as well as each of the three later newly imported layers.  Again use the `names()` command with your `RasterStack` object, but this time specifiy which layers will have their names modified and updated.  In this case you want to update the names of the first layer as well as layers ten through twelve.
+Once you have those three new `raster` class objects in your R workspace, use the `addLayer()` command to combine all twelve layers into a single `RasterStack`.  To add these three layers to your existing `RasterStack` with 9 layers first specify your existing object, then follow it with the three newly imported geospatial covariate rasters you plan to stack on top of the existing nine.
 
 ```r
-add_command(object_name)[c(1,10:12)] <- c("water","topo","slope", "ntl")
+lulc <- command(existing_stack, new_raster1, new_raster2, new_raster3)
+```
+
+Manually update the names for the water layer as well as each of the three later newly imported layers.  Again use the `names()` command with your `RasterStack` object, but this time specifiy which layers will have their names modified and updated.  In this case you want to update the names of the first layer as well as layers ten through twelve.
+
+```r
+add_command_here(object_name)[c(1,10:12)] <- c("water","topo","slope", "ntl")
 ```
 
 With all of the geospatial covariates in place as separate layers within your `RasterStack` , you are now able to plot each one.  Have a look at a few of the different layers using the `plot()` command with the `[[layer_number]]` subscriting operators.  Try adding the `adm1` or `adm2` `sf` object to your plot as well or using the `contour()` command to add contour lines.
