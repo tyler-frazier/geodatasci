@@ -156,15 +156,36 @@ Now use the `bind_cols()` command to bind each of these thirteen rows to the ele
 lbr_adm2 <- add_command_here(lbr_adm2, lulc_ttls_adm2)
 ```
 
+Your adm2 `sf` object should now have something on the order of 24 variables.  To start with your description and analysis of the land use and land cover data, consider first the `pop19` variable you created in the last project.  Use `ggplot()` to produce a histogram using the `geom_histogram() +` command.
 
+```text
+ggplot(lbr_adm2, aes(pop19)) +
+  geom_histogram()
+```
 
+Compare how the histogram plot changes after adding the `log()` command to the `pop19` variable within the `aes()` argument.
 
+![](../.gitbook/assets/loghist.png)
 
+Likewise, do the same with the `geom_density() +` command, also adding the `log()` command by wrapping the `pop19` variable within it.
 
+```text
+ggplot(lbr_adm2, aes(pop19)) +
+  geom_density()
+```
 
+![](../.gitbook/assets/logdense.png)
 
+You will notice that the density plot has a similar profile as the histogram.  We can compare the two by overlapping the histogram with the density plot \(which is the probability density function\).
 
+```text
+ggplot(lbr_adm2, aes(pop19)) +
+  geom_histogram(aes(y = ..density..), color = "black", fill = "white") + 
+  geom_density(alpha = 0.2, fill = "#FF6666") + 
+  theme_minimal()
+```
 
+![](../.gitbook/assets/loghistdense.png)
 
 
 
