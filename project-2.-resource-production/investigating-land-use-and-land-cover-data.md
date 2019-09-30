@@ -108,7 +108,7 @@ With all of the geospatial covariates in place as separate layers within your `R
 plot(lulc[[12]])
 ```
 
-![](../.gitbook/assets/ntl.png)
+![Night Time Lights of Liberia in 2015](../.gitbook/assets/ntl.png)
 
 ```r
 plot(lulc[[8]])
