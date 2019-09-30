@@ -24,6 +24,12 @@
 
 * [Acquiring, Modifying and Describing the Data](project-2.-resource-production/investigating-land-use-and-land-cover-data.md)
 
+## Assignment 2.  Writing a Literature Review
+
+* [Background](assignment-2.-writing-a-literature-review/background.md)
+* [Assignment](assignment-2.-writing-a-literature-review/assignment.md)
+* [Examples](assignment-2.-writing-a-literature-review/examples.md)
+
 ## Project 3. Accessibility to Health Care through Transportation Facilities
 
 ## Project 4. Demographic Analysis with Survey Data
