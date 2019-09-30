@@ -180,7 +180,7 @@ ggplot(lbr_adm2, aes(pop19)) +
 
 ![](../.gitbook/assets/logdense.png)
 
-You will notice that the density plot has a similar profile as the histogram.  We can compare the two by overlapping the histogram with the density plot or probability density function \(pdf\).  In order to transform a histogram into a density plot, R use something called a **kernel density estimator** as well as a **bandwidth** to smooth the date over the space.  A good analogy for thinking about how a histogram transforms into a pdf is to think of each verticle bar and combined squares of chocolate, and then you took a hairdryer to melt the chocoloate squares until they melted and smoothed out over the space.  While there are statistical methods that can be used to modify the shape and profile of the pdf function, essentially the area of the histogram and the density plot should be nearly the same.
+You will notice that the density plot has a similar profile as the histogram.  We can compare the two by overlapping the histogram with the density plot or probability density function \(pdf\).  In order to transform a histogram into a density plot, the density function uses somethings called a **kernel** and **bandwidth** to smooth the data over the space.  A good analogy for thinking about how a histogram transforms into a pdf is to think of each verticle bar as stacked, square pieces of chocolate, and then you took a hairdryer to warm the chocolate squares until they melted and smoothed out over the space.  While there are statistical methods that can be used to modify the shape and profile of the pdf function, essentially the area of the histogram and the density plot should be nearly the same.
 
 ```text
 ggplot(lbr_adm2, aes(pop19)) +
