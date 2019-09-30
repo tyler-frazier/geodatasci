@@ -96,7 +96,11 @@ slope <- raster("lbr_srtm_slope_100m.tif")
 ntl <- raster("lbr_viirs_100m_2015.tif")
 ```
 
+Once you have those three new `raster` class objects in your R workspace, use the `addLayer()` command to combine all twelve layers into a single `RasterStack`.  Manually update the names for the water layer as well as each of the three later newly imported layers.  Again use the `names()` command with your `RasterStack` object, but this time specifiy which layers will have their names modified and updated.  In this case you want to update the names of the first layer as well as layers ten through twelve.
 
+```r
+add_command(object_name)[c(1,10:12)] <- c("water","topo","slope", "ntl")
+```
 
 
 
