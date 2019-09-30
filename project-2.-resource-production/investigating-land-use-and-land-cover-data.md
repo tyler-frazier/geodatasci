@@ -150,7 +150,11 @@ Your object `lulc_ttls_adm2` should have the same number of rows as your `adm2` 
 
 ![](../.gitbook/assets/screen-shot-2019-09-30-at-12.22.03-am.png)
 
+Now use the `bind_cols()` command to bind each of these thirteen rows to the eleven existing variables in your adm2 object.
 
+```r
+lbr_adm2 <- add_command_here(lbr_adm2, lulc_ttls_adm2)
+```
 
 
 
