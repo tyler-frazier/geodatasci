@@ -24,10 +24,6 @@ Begin writing your literature review by first drafting an outline that reflects 
 
 {% file src="../.gitbook/assets/lit\_review\_guide.pdf" caption="Literature Review Guide" %}
 
-
-
-
-
 Begin to write your literature review by transforming the information contained within the structure of your outline into an integrated, fluid and coherent paper. Be sure to add a section that introduces your literature review. For example, you could introduce your work by providing a general analysis that considers your topic from a comprehensive perspective as well as in terms of your area of regional focus. You could also introduce your research by defining the parameters of your inquiry. As you proceed to sections that are the main body of your work, seek to provide insight and add value through progressively synthesizing findings from your sources. After completing a first draft, you may need to find one or two more additional sources that serve to advance your research focus and the depth of your work in terms of critical analysis. While researching and developing your literature review consider the following questions.
 
 * Are you able to describe and define how your selected human development process behaves as a complex adaptive system? Are you able to identify social, economic or environmental features associated with your human development process?
