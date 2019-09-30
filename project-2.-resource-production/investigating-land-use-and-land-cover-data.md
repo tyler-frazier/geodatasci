@@ -187,5 +187,30 @@ ggplot(lbr_adm2, aes(pop19)) +
 
 ![](../.gitbook/assets/loghistdense.png)
 
+Now do the same, but this time use a different variable.  For example in the following plot, I have used the `ntl` variable \(without the `log()` function added.
+
+![](../.gitbook/assets/ntlhistdens.png)
+
+Finally, regress the data from two variables against each other and thus create a model.  Use the `geom_point()` command to add the points for your two variables as well as the `geom_smooth()` command to add the regression line.
+
+```text
+ggplot(lbr_adm2, aes(pop19, ntl)) + 
+  geom_point(size = .1, color = "red") +
+  geom_smooth()
+```
+
+![](../.gitbook/assets/popntl.png)
+
+Estimate the parameters of your model using the `lm()` command and then return a the `summary()` to find out more information regarding the model's fit and capacity to explain the coorelationship between your two selected variables.
+
+```text
+fit <- lm(pop19 ~ ntl, data=lbr_adm2)
+summary(fit)
+```
+
+![](../.gitbook/assets/screen-shot-2019-09-30-at-12.47.52-am.png)
+
+
+
 
 
