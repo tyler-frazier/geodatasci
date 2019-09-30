@@ -52,9 +52,15 @@ With your working directory properly set to the `lulc` folder where all of your 
 f <- list.files(pattern="add_file_name_pattern_here", recursive=TRUE)
 ```
 
-After properly executing the above command, you should notice the object `f` appear in your top right pane.  It is also possible to check the contents of `f` which should be the names of all the `esaccilc_dst` files.  
+After properly executing the above command, you should notice the object `f` appear in your top right pane.  It is also possible to check the contents of `f` which should be the names of all the `esaccilc_dst` files. 
 
+![](../.gitbook/assets/screen-shot-2019-09-29-at-10.13.04-pm.png)
 
+The object `f` is needed to identify all of the `raster` objects you will stack one on top of another until you have created your `RasterStack`.  You may recall in project 1 using the `raster()` command to import a `.tif` into RStudio.  This time you will use both the `raster()` command on the inside of a function as well as the `stack()` command on the outside of the function.  In combination with the `lapply()` command \(which stands for list apply\), the `raster()` command will iteratre through your `f` object, identifying the name of each `.tif` file from your `lulc` folder, until each one has been imported, and with the `stack()` command, stacked one by one, into your formal `RasterStack` class object.  The `function(i)` part of the argument is used to indicate which function will be used to iterate the number of times as objects in your `i` argument, which in this case is equal to the number of rows in `f`.
+
+```r
+lulc <- your_outside_cmd(lapply(f, function(i) your_inside_cmd(i, band=1)))
+```
 
 
 
