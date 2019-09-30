@@ -1,10 +1,10 @@
 # Assignment
 
-Summary
+## Summary
 
 In this assignment you will use your annotated bibliography as the beginning point to write a literature review on your selected human development topic. Your literature review should amount to more than reporting what you’ve read, but instead should demonstrate understanding of your selected area of research. It should define the boundaries of your inquiry, identify some of the most significant works, and contextually serve as a starting point for positioning your research. A good literature review serves to justify your research through a critical analysis of the material.
 
-Instructions
+## Instructions
 
 Start your literature review by selecting a human development topic that you found interesting while exploring the material from flowminder and worldpop. Also select a region or country where you think investigating your selected topic will be inherently relevant due to local cir- cumstances. Draft a title for your forthcoming literature review that includes your selected dimension of human development and the region or country of interest. Begin by writing a few sentences that describe how your selected topic relates to Amartya Sen’s definition of human development.
 
@@ -28,7 +28,7 @@ Begin to write your literature review by transforming the information contained 
 
 Conclude your literature review with a one or two paragraph reflection on your work to date. Follow this summary by attempting to identify a gap in the literature that you think needs addressed. Also draft a central research question that your investigation into a human devel- opment process will seek to answer.
 
-Deliverable
+## Deliverable
 
-Use LATEX to typeset your literature review. Title your document, add your name and cite your sources. Identify each reference in a bibliography at the end of your document. Your review should be at least 2000 words in length. I will not include the title or reference information when verifying your work has met the word count. Please upload your finished PDF document to blackboard by Friday, March 1st no later than 10:00 PM.
+Type your annotated literature review.  Title your document, add your name and cite your sources.  Identify each reference in a bibliography at the end of your document. Your review should be at least 2000 words in length. I will not include the title or reference information when verifying your work has met the word count.  Note your word count on the first page.  Do not include your title or reference information when calculating your word count.  Please print your literature review and place it in the box outside my office door no later than 10PM, Saturday, October 19th.
 
