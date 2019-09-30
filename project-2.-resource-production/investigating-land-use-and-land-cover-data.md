@@ -108,7 +108,7 @@ With all of the geospatial covariates in place as separate layers within your `R
 plot(lulc[[12]])
 ```
 
-![Night Time Lights of Liberia in 2015](../.gitbook/assets/ntl.png)
+![](../.gitbook/assets/ntl.png)
 
 ```r
 plot(lulc[[8]])
@@ -246,7 +246,13 @@ summary(fit)
 
 ![](../.gitbook/assets/screen-shot-2019-09-30-at-1.10.44-am.png)
 
+## Team Challenge Question
 
+Follow the steps from above used to produce the plots describing Liberia, but instead each team member should use their own selected LMIC country.  Produce 2 combined histogram with density plots that describe the coorelationship between population at the adm2 level as a dependent variable and 2 of the other land use land cover variables you added.  You are also welcome to use density as a response variable, if you wish.
+
+Also use `ggplot()` to plot two linear models.  Use the `fit()` and `summary()` commands to describe your models.  Are you able to definitively identify coorelation between population and any of the other or combination of other land use and land cover geospatial covariates?
+
+Meet with your group and prepare four different plots with at least three from different countries \(or team members\) for the Friday informal group presentation.  Then as a group, upload all 5 team members plots to \#data100\_igps \(informal group presentations\) by Sunday night.
 
 
 
