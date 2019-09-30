@@ -10,7 +10,15 @@ Start your literature review by selecting a human development topic that you fou
 
 Identify one or more of the data science methods that you found to be significant while annotating the four sources from Assignment 1. Also identify one or more of the datasets you found to be significant as part of your annotated bibliography. Do your best to name and describe the \(geospatial\) data science methodology \(or methodologies\) and identify the source of your data \(or datasets\).
 
-Research your selected human development topic and identified data science method\(s\). A good place to start is William & Mary’s online library database https://libraries.wm.edu. You may want to approach the Swem research desk and ask for guidance on how to identify new, relevant and useful sources. It may also be helpful to schedule an appointment with a research librarian https://libraries.wm.edu/appointments. Be sure to provide the research librarian with your topic, methods of interest, datasets and region of investigation in advance so she or he has some idea of how to assist prior to meeting. I have also arranged two meeting times with Swem librarians \(2/21 at 5:30 PM and then 6:30 PM\) in order to assist with your research.
+Research your selected human development topic and identified data science method\(s\). A good place to start is William & Mary’s online library database.
+
+{% embed url="https://libraries.wm.edu" %}
+
+You may want to approach the Swem research desk and ask for guidance on how to identify new, relevant and useful sources. It may also be helpful to schedule an appointment with a research librarian.
+
+{% embed url="https://libraries.wm.edu/appointments/" %}
+
+Be sure to provide the research librarian with your topic, methods of interest, datasets and region of investigation in advance so she or he has some idea of how to assist prior to meeting. I have also arranged two meeting times with Swem librarians \(2/21 at 5:30 PM and then 6:30 PM\) in order to assist with your research.
 
 Select at least four new sources that contribute to understanding the current state of your selected human development topic. You are welcome to select a source that describes your selected topic from a more global perspective, but please keep in mind at this step in the research process we are not interested in proposed solutions to a development problem. Sources that focus on describing, analyzing and modeling your selected human development topic in terms of patterns or processes will likely be more helpful. Field studies that couple methods and data with on-site observations and/or verification of information could also be contextually useful. Identify new sources that are central to your focus and contribute to increasing the depth of your investigation. You are welcome to use new sources from flowminder or worldpop so long as each one is in addition to the four from your annotated bibliography. Upon selecting each new source, again annotate the article and add it to your bibliography.
 
@@ -18,13 +26,10 @@ Begin writing your literature review by first drafting an outline that reflects 
 
 Begin to write your literature review by transforming the information contained within the structure of your outline into an integrated, fluid and coherent paper. Be sure to add a section that introduces your literature review. For example, you could introduce your work by providing a general analysis that considers your topic from a comprehensive perspective as well as in terms of your area of regional focus. You could also introduce your research by defining the parameters of your inquiry. As you proceed to sections that are the main body of your work, seek to provide insight and add value through progressively synthesizing findings from your sources. After completing a first draft, you may need to find one or two more additional sources that serve to advance your research focus and the depth of your work in terms of critical analysis. While researching and developing your literature review consider the following questions.
 
-\(a\)  Are you able to describe and define how your selected human development process behaves as a complex adaptive system? Are you able to identify social, economic or environmental features associated with your human development process?
-
-\(b\)  Are you able to identify features associated with your human development process that are difficult or nearly impossible to predict in detail? Alternatively, are you able to identify broader system properties or features that are more feasible to predict?
-
-\(c\)  Are you able to identify an emergent property inherent to your human development process that does not necessarily link to an individual specific agent? Are you able to describe how your human development process tends towards greater complexity and away from equilibrium?
-
-\(d\)  In your opinion, which scientific questions are most relevant to your selected human de- velopment process?
+* Are you able to describe and define how your selected human development process behaves as a complex adaptive system? Are you able to identify social, economic or environmental features associated with your human development process?
+* Are you able to identify features associated with your human development process that are difficult or nearly impossible to predict in detail? Alternatively, are you able to identify broader system properties or features that are more feasible to predict?
+* Are you able to identify an emergent property inherent to your human development process that does not necessarily link to an individual specific agent? Are you able to describe how your human development process tends towards greater complexity and away from equilibrium?
+* In your opinion, which scientific questions are most relevant to your selected human development process?
 
 Conclude your literature review with a one or two paragraph reflection on your work to date. Follow this summary by attempting to identify a gap in the literature that you think needs addressed. Also draft a central research question that your investigation into a human devel- opment process will seek to answer.
 
