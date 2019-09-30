@@ -18,11 +18,41 @@ Each of these different folders contains sets of geospatial covariates or raster
 
 ![](../.gitbook/assets/screen-shot-2019-09-29-at-9.17.47-pm.png)
 
-Visit the ESA-CCI Viewer at [https://maps.elie.ucl.ac.be/CCI/viewer/](https://maps.elie.ucl.ac.be/CCI/viewer/) and have a look at large portion of the data you just copied into your data subdirectory.  In the bottom left hand corner of the viewer you will find a legend for the map.  Open the legend and consider the values in the left hand column as well as each one's corresponding label.  Each value cooresponds to the three digit code found within the raster files your just copied into your `lulc` folder.  For example, the file `lbr_esaccilc_dst150_100m_2015.tif` is the geospatial covariate layer for _Sparse vegetation \(tree, shrub, herbaceous cover\) \(&lt;15%\)_ since the third part of the file name **dst150** cooresponds to the 150 value in the legend.  As before, the dst part of the filename again stands for distance, since each gridcell will provide a distance measure.
+Visit the ESA-CCI Viewer at [https://maps.elie.ucl.ac.be/CCI/viewer/](https://maps.elie.ucl.ac.be/CCI/viewer/) and have a look at large portion of the data you just copied into your data subdirectory.  In the bottom left hand corner of the viewer you will find a legend for the map.  Open the legend and consider the values in the left hand column as well as each one's corresponding label.  Each value cooresponds to the three digit code found within the raster files your just copied into your `lulc` folder.  For example, the file `lbr_esaccilc_dst150_100m_2015.tif` is the geospatial covariate layer for _Sparse vegetation \(tree, shrub, herbaceous cover\) \(&lt;15%\)_ since the third part of the file name **dst150** cooresponds to the 150 value in the legend.  As before, the dst part of the filename again stands for distance, since each gridcell will provide a distance measure.  Save the legend to your data folder for reference, since it is likely you will need it again later.
 
+Once all the data is properly situated in your folder, open RStudio and create a new script.  Use the `library()` command to load the `raster`,`sf`,`tidyverse`, `doParallel` and `snow` libraries of functions just as we did before.  Set your working dirctory to your data folder.  Also, be sure to `load()` the `sf` files you previously created for your LMIC's adm1 & adm2, each one with the population data variable you created.
 
+```r
+rm(list=ls(all=TRUE))
 
+# install.packages("raster", dependencies = TRUE)
+# install.packages("sf", dependencies = TRUE)
+# install.packages("tidyverse", dependencies = TRUE)
+# install.packages("doParallel", dependencies = TRUE)
+# install.packages("snow", dependencies = TRUE)
+# install.packages("randomForest", dependencies = TRUE)
 
+library(sf)
+library(raster)
+library(tidyverse)
+library(doParallel)
+library(snow)
+library(randomForest)
+
+setwd("/the_path/to_your/project_folder/with_data/")
+
+### Import Administrative Boundaries ###
+
+load("lbr_adms.RData")
+```
+
+With your working directory properly set to the `lulc` folder where all of your geospatial covariate rasters are located, use a command that imports all of the `esaccilc_dst` files into your R workspace, all at the same time, as well as stack each of the different rasters on top of one another, until you have formed what is called a brick.  To do this first start with the `list.files()` command and create an object named `f` that will contain the names of all of the `esaccilc_dst` files in your `lulc` folder.  It's probably possible to import ALL of your raster files from the `lulc` folder by identifying a common pattern to ALL the geospatial covariate files, but for now we will start with just the `esaccilc_dst` `.tif`files.  The `recursive = TRUE` argument will enable the `list.files()` command to search not only in the parent `lulc` directory, but also in any child subdirectories.
+
+```r
+f <- list.files(pattern="add_file_name_pattern_here", recursive=TRUE)
+```
+
+After properly executing the above command, you should notice the object `f` appear in your top right pane.  It is also possible to check the contents of `f` which should be the names of all the `esaccilc_dst` files.  
 
 
 
