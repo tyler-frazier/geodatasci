@@ -30,14 +30,12 @@ rm(list=ls(all=TRUE))
 # install.packages("tidyverse", dependencies = TRUE)
 # install.packages("doParallel", dependencies = TRUE)
 # install.packages("snow", dependencies = TRUE)
-# install.packages("randomForest", dependencies = TRUE)
 
 library(sf)
 library(raster)
 library(tidyverse)
 library(doParallel)
 library(snow)
-library(randomForest)
 
 setwd("/the_path/to_your/project_folder/with_data/")
 
