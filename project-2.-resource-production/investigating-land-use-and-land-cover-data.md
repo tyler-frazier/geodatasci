@@ -72,13 +72,29 @@ You will notice that the `RasterStack` object not only is comprised of nearly 25
 nms <- sub("last_part.tif", "", sub("first_part_", "", object_w_names))
 ```
 
+Type `nms` directly into the console to confirm you have the truncated form of the name for each raster layer.
 
+![](../.gitbook/assets/screen-shot-2019-09-29-at-11.11.48-pm.png)
 
+The first file that contains the distance to water layer had a slightly different naming pattern, but don't worry about it just yet.  You'll replace that layers name also, in a moment.
 
+Once you have created your `nms` object that contains each layer's name, use the `names()` command with your `lulc` object as the object and simply assign the names using `nms`.
 
+```r
+command(RasterStack_obj) <- object_with_names
+```
 
+Confirm you have correctly used the `names()` command with your `lulc` object to rename each layer by viewing the `RasterStack` in the console.  You should notice that there are several new names listed for each layer in your `RasterStack`.  
 
+![](../.gitbook/assets/screen-shot-2019-09-29-at-11.17.41-pm.png)
 
+There are still three more raster `.tif` files in your `lulc` data folder that need to be imported and added as new layers to your `lulc` `RasterStack` object.  Import the topography, slope and night time lights layers into R by using the `raster()` command as you have done in the past.
+
+```r
+topo <- raster("lbr_srtm_topo_100m.tif")
+slope <- raster("lbr_srtm_slope_100m.tif")
+ntl <- raster("lbr_viirs_100m_2015.tif")
+```
 
 
 
