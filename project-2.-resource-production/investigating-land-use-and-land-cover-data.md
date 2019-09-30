@@ -208,7 +208,47 @@ fit <- lm(pop19 ~ ntl, data=lbr_adm2)
 summary(fit)
 ```
 
-![](../.gitbook/assets/screen-shot-2019-09-30-at-12.47.52-am.png)
+![](../.gitbook/assets/screen-shot-2019-09-30-at-12.47.52-am%20%281%29.png)
+
+Add a few more variables to the `lm()` command.  For example in the following plot I have estimated a regression model where the population of Liberia in 2019 is the dependent variable \(response\), while night time lights \(`ntl`\), urban cover \(`dst190`\), and bare cover \(`dst200`\) are the independent variables \(predictors\).
+
+```text
+ggplot(lm(pop19 ~ ntl + dst190 + dst200, data=lbr_adm2)) + 
+  geom_point(aes(x=.fitted, y=.resid), size = .1) +
+  geom_smooth(aes(x=.fitted, y=.resid))
+```
+
+![](../.gitbook/assets/popntlurbbare.png)
+
+Again estimate the model and check the fit.
+
+```text
+fit <- lm(pop19 ~ ntl + dst190 + dst200, data=lbr_adm2)
+summary(fit)
+```
+
+![](../.gitbook/assets/screen-shot-2019-09-30-at-1.06.19-am.png)
+
+Finally, add all of the variables to your regression model.  Compare the results.
+
+```text
+ggplot(lm(pop19 ~ water + dst011 + dst040 + dst130 + dst140 + dst150 + dst160 + dst190 + dst200 + topo + slope + ntl, data=lbr_adm2)) + 
+  geom_point(aes(x=.fitted, y=.resid), size = .1) +
+  geom_smooth(aes(x=.fitted, y=.resid))
+```
+
+![](../.gitbook/assets/all.png)
+
+```text
+fit <- lm(pop19 ~ water + dst011 + dst040 + dst130 + dst140 + dst150 + dst160 + dst190 + dst200 + topo + slope + ntl, data=lbr_adm2)
+summary(fit)
+```
+
+![](../.gitbook/assets/screen-shot-2019-09-30-at-1.10.44-am.png)
+
+
+
+
 
 
 
