@@ -100,37 +100,37 @@ Once you have those three new `raster` class objects in your R workspace, use th
 lulc <- command(existing_stack, new_raster1, new_raster2, new_raster3)
 ```
 
-Manually update the names for the water layer as well as each of the three newly stacked rasters.  Again use the `names()` command with your `RasterStack` object, but this time specifiy which layers will have their names modified and updated.  In this case you want to update the names of the first layer as well as layers ten through twelve.  Using the `[]` subscripting operators with the `c()` combine command is a powerful way to traverse an object in order to pinpoint your specified command.  In this case it is important that the number of names being modified \(as specified by the 1, 10, 11 & 12 on the left hand side\) is the same length as the number of names being assigned \(specified by water, topo, slope and ntl on the right hand side\).
+Manually update the names for the water layer as well as each of the three newly stacked rasters.  Again use the `names()` command with your `RasterStack` object, but this time specifiy which layers will have their names modified and updated.  In this case you want to update the names of the first layer as well as layers ten through twelve.  Using the `[]` subscripting operators with the `c()` combine command is a powerful way to traverse an object in order to pinpoint your specified command.  In this case it is important that the number of names being modified \(as specified by the 1, 10, 11 & 12 on the left hand side inside the subscripting operators\) is the same length as the number of names being assigned \(specified by the names water, topo, slope and ntl within the combine command on the right hand side\).
 
 ```r
 add_command_here(object_name)[c(1,10:12)] <- c("water","topo","slope", "ntl")
 ```
 
-With all of the geospatial covariates in place as separate layers within your `RasterStack` , you are now able to plot each one.  Have a look at a few of the different layers using the `plot()` command with the `[[layer_number]]` subscriting operators.  Try adding the `adm1` or `adm2` `sf` object to your plot as well or using the `contour()` command to add contour lines.
+With all of the geospatial covariates in place as separate layers within your `RasterStack` , you are now able to plot each one.  Have a look at a few of the different layers using the `plot()` command with the `[[layer_number]]` double subscripting operators.  Using the `[[]]` double subscripting operator will identify entire lists, rather than rows, objects and/or observations from within a `data.frame`.  Try adding the `adm1` or `adm2` `sf` object to your plot.  Also use the `contour()` command to add contour lines to your topographic map.
 
 ```r
 plot(lulc[[12]])
 ```
 
-![](../.gitbook/assets/ntl.png)
+![Raster of Night Time Lights throughout Liberia in 2015](../.gitbook/assets/ntl.png)
 
 ```r
 plot(lulc[[8]])
 plot(st_geometry(lbr_adm1), add = TRUE)
 ```
 
-![](../.gitbook/assets/urban.png)
+![Raster of distance to Urban Areas throughout Liberia in 2015](../.gitbook/assets/urban.png)
 
 ```text
 plot(lulc[[10]])
 contour(lulc[[10]], add = TRUE)
 ```
 
-![](../.gitbook/assets/contour.png)
+![Raster of Topography and Contour Lines representing generalize common Altitudes](../.gitbook/assets/contour.png)
 
 ## Extracting Land Use and Land Cover Data for Description
 
-Now that you have your `lulc` `RasterStack` in place, use the `extract()` command to assign the adm2 ID to each gridcell.  Just as you did before, `save()` your `data.frame` object so you don't have to unnecessarily rerun the computational expensive `extract()` command again and again.
+Now that you have your `lulc` `RasterStack` in place, use the `extract()` command to assign the adm2 ID to each gridcell.  Just as you did before, `save()` your `data.frame` object so you don't have to unnecessarily rerun the computationally expensive `extract()` command again and again.
 
 ```r
 ncores <- detectCores() - 1
@@ -140,9 +140,9 @@ endCluster()
 save(lulc_vals_adm2, file = "lulc_vals_adm2.RData")
 ```
 
-Comment off these 5 lines once the `extract()` has finished, and then add the `load("name_of_you_data_file.RData")` command to reload the data the next time you run your script.
+Comment off these 5 lines using the `#`, once the `extract()` has finished, and then add the `load("name_of_you_data_file.RData")` command to reload the data the next time you run your script.
 
-Use the `sum()` command with the `summarize_all()` command to sum all of the values within each adm2 subdivision for each of the twelve different raster layers. 
+Use the `sum()` command with the `summarize_all()` command to sum all of the values within each adm2 subdivision for each of the twelve different raster layers.  The `summarize_all()` command is  different than the one used in the previous project, since you will summarize all of the geospatial covariates at once rather than specifying each one at a time \(although it is still possible, it would just take a lot more typing\).
 
 ```r
 lulc_ttls_adm2 <- lulc_vals_adm2 %>%
@@ -150,9 +150,9 @@ lulc_ttls_adm2 <- lulc_vals_adm2 %>%
   summarize_all(sum, na.rm = TRUE)
 ```
 
-Your object `lulc_ttls_adm2` should have the same number of rows as your `adm2` `sf` object as well as thirteen variables, one for each of the geospatial covariates obtained from WorldPop as well as an `ID` column.  You will notice that the names of each column in your `lulc_ttls_adm2` object will correspond with the names of each layer from your `RasterStack`.
+Your object `lulc_ttls_adm2` should have the same number of rows as your `adm2` `sf` object as well as thirteen variables, one for each of the geospatial covariates obtained from WorldPop and the `ID` column.  You will notice that the names of each column in your `lulc_ttls_adm2` object will correspond with the names of each layer from your `RasterStack`.
 
-![](../.gitbook/assets/screen-shot-2019-09-30-at-12.22.03-am.png)
+![Summation of gridcell values for each adm2 subdivision \(in this case numbers 60 through 81\)](../.gitbook/assets/screen-shot-2019-09-30-at-12.22.03-am.png)
 
 Now use the `bind_cols()` command to bind each of these thirteen rows to the eleven existing variables in your adm2 object.
 
@@ -180,7 +180,7 @@ ggplot(lbr_adm2, aes(pop19)) +
 
 ![](../.gitbook/assets/logdense.png)
 
-You will notice that the density plot has a similar profile as the histogram.  We can compare the two by overlapping the histogram with the density plot \(which is the probability density function\).
+You will notice that the density plot has a similar profile as the histogram.  We can compare the two by overlapping the histogram with the density plot or probability density function \(pdf\).  In order to transform a histogram into a density plot, R use something called a **kernel density estimator** as well as a **bandwidth** to smooth the date over the space.  A good analogy for thinking about how a histogram transforms into a pdf is to think of each verticle bar and combined squares of chocolate, and then you took a hairdryer to melt the chocoloate squares until they melted and smoothed out over the space.  While there are statistical methods that can be used to modify the shape and profile of the pdf function, essentially the area of the histogram and the density plot should be nearly the same.
 
 ```text
 ggplot(lbr_adm2, aes(pop19)) +
@@ -191,11 +191,11 @@ ggplot(lbr_adm2, aes(pop19)) +
 
 ![](../.gitbook/assets/loghistdense.png)
 
-Now do the same, but this time use a different variable.  For example in the following plot, I have used the `ntl` variable \(without the `log()` function added.
+Create another histogram with the pdf overlapping, but this time use a different variable.  For example in the following plot, I have used the `ntl` variable, without the `log()` function added.
 
 ![](../.gitbook/assets/ntlhistdens.png)
 
-Finally, regress the data from two variables against each other and thus create a model.  Use the `geom_point()` command to add the points for your two variables as well as the `geom_smooth()` command to add the regression line.
+Regress the data from two variables against each other and examine the coorelationship that is being described by the two variables.  Use the `geom_point()` command to add the points for your two variables as well as the `geom_smooth()` command to add the regression line \(as well as the confidence interval\).
 
 ```text
 ggplot(lbr_adm2, aes(pop19, ntl)) + 
@@ -205,7 +205,7 @@ ggplot(lbr_adm2, aes(pop19, ntl)) +
 
 ![](../.gitbook/assets/popntl.png)
 
-Estimate the parameters of your model using the `lm()` command and then return a the `summary()` to find out more information regarding the model's fit and capacity to explain the coorelationship between your two selected variables.
+Estimate the parameters of your model using the `lm()` command and then return a `summary()` to find out more information regarding the model's fit and capacity to explain the coorelationship between your two selected variables.
 
 ```text
 fit <- lm(pop19 ~ ntl, data=lbr_adm2)
@@ -252,11 +252,11 @@ summary(fit)
 
 ## Team Challenge Question
 
-Follow the steps from above used to produce the plots describing Liberia, but instead each team member should use their own selected LMIC country.  Produce 2 combined histogram with density plots that describe the coorelationship between population at the adm2 level as a dependent variable and 2 of the other land use land cover variables you added.  You are also welcome to use density as a response variable, if you wish.
+Follow the steps from above used to produce the plots describing Liberia, but instead each team member should use their own selected LMIC country.  Produce 2 combined histogram with density plots that describe the coorelationship between population at the adm2 level as a dependent variable and 2 of the other land use land cover variables you added.  You are also welcome to use density as a variable.
 
-Also use `ggplot()` to plot two linear models.  Use the `fit()` and `summary()` commands to describe your models.  Are you able to definitively identify coorelation between population and any of the other or combination of other land use and land cover geospatial covariates?
+Also use `ggplot()` to plot two linear models.  Use the `fit()` and `summary()` commands to describe your models.  Are you able to definitively identify coorelation between population and any of the other or combination of other land use and land cover geospatial covariates?  How about density?
 
-Meet with your group and prepare four different plots with at least three from different countries \(or team members\) for the Friday informal group presentation.  Then as a group, upload all 5 team members plots to \#data100\_igps \(informal group presentations\) by Sunday night.
+Meet with your group and prepare four different plots from at least three different countries \(or team members\) for the Friday informal group presentation.  Then as a group, upload all 5 team members plots to \#data100\_igps \(informal group presentations\) by Sunday night.
 
 ## Individual Stretch Goal 1
 
