@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Investigating Geospatial Human Development Processes with R](README.md)
+* [Investigating Geospatial Human Development Patterns and Processes](README.md)
 
 ## Introduction <a id="getting-started"></a>
 
