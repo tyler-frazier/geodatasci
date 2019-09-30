@@ -10,11 +10,9 @@ Start your literature review by selecting a human development topic that you fou
 
 Identify one or more of the data science methods that you found to be significant while annotating the four sources from Assignment 1. Also identify one or more of the datasets you found to be significant as part of your annotated bibliography. Do your best to name and describe the \(geospatial\) data science methodology \(or methodologies\) and identify the source of your data \(or datasets\).
 
-Research your selected human development topic and identified data science method\(s\). A good place to start is William & Mary’s online library database.
+Research your selected human development topic and identified data science method\(s\). A good place to start is William & Mary’s online library database.  You may want to approach the Swem research desk and ask for guidance on how to identify new, relevant and useful sources. It may also be helpful to schedule an appointment with a research librarian.  Be sure to provide the research librarian with your topic, methods of interest, datasets and region of investigation in advance so she or he has some idea of how to assist prior to meeting.
 
 {% embed url="https://libraries.wm.edu" %}
-
-You may want to approach the Swem research desk and ask for guidance on how to identify new, relevant and useful sources. It may also be helpful to schedule an appointment with a research librarian.  Be sure to provide the research librarian with your topic, methods of interest, datasets and region of investigation in advance so she or he has some idea of how to assist prior to meeting.
 
 {% embed url="https://libraries.wm.edu/appointments/" %}
 
