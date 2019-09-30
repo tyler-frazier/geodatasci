@@ -102,6 +102,40 @@ Once you have those three new `raster` class objects in your R workspace, use th
 add_command(object_name)[c(1,10:12)] <- c("water","topo","slope", "ntl")
 ```
 
+With all of the geospatial covariates in place as separate layers within your `RasterStack` , you are now able to plot each one.  Have a look at a few of the different layers using the `plot()` command with the `[[layer_number]]` subscriting operators.  Try adding the `adm1` or `adm2` `sf` object to your plot as well or using the `contour()` command to add contour lines.
+
+```r
+plot(lulc[[12]])
+```
+
+![Night Time Lights of Liberia in 2015](../.gitbook/assets/ntl.png)
+
+```r
+plot(lulc[[8]])
+plot(st_geometry(lbr_adm1), add = TRUE)
+```
+
+![Distance to Urban Areas](../.gitbook/assets/urban.png)
+
+```text
+plot(lulc[[10]])
+contour(lulc[[10]], add = TRUE)
+```
+
+![Topography with Contours](../.gitbook/assets/topo.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
