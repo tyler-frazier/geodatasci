@@ -126,7 +126,7 @@ plot(lulc[[10]])
 contour(lulc[[10]], add = TRUE)
 ```
 
-![Raster of Topography and Contour Lines representing generalize common Altitudes](../.gitbook/assets/contour.png)
+![](../.gitbook/assets/contours.png)
 
 ## Extracting Land Use and Land Cover Data for Description
 
