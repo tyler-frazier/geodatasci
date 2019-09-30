@@ -119,7 +119,7 @@ plot(lulc[[8]])
 plot(st_geometry(lbr_adm1), add = TRUE)
 ```
 
-![Raster of distance to Urban Areas throughout Liberia in 2015](../.gitbook/assets/urban.png)
+![](../.gitbook/assets/urban.png)
 
 ```text
 plot(lulc[[10]])
