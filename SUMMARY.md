@@ -20,9 +20,9 @@
 * [Assignment](assignment-1.-developing-an-annotated-bibliography/assignment.md)
 * [Examples](assignment-1.-developing-an-annotated-bibliography/examples.md)
 
-## Project 2. Modeling Land Use and Land Cover <a id="project-2.-resource-production"></a>
+## Project 2. Investigating Land Use and Land Cover <a id="project-2.-resource-production"></a>
 
-* [Investigating Land Use and Land Cover Data](project-2.-resource-production/investigating-land-use-and-land-cover-data.md)
+* [Acquiring, Modifying and Describing the Data](project-2.-resource-production/investigating-land-use-and-land-cover-data.md)
 
 ## Project 3. Accessibility to Health Care through Transportation Facilities
 
