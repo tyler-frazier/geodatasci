@@ -62,5 +62,27 @@ The object `f` is needed to identify all of the `raster` objects you will stack 
 lulc <- your_outside_cmd(lapply(f, function(i) your_inside_cmd(i, band=1)))
 ```
 
+Once you have executed your `stack()` to create your `RasterStack` object in your workspace, you can check to confirm the contents of your `lulc` object.
+
+![](../.gitbook/assets/screen-shot-2019-09-29-at-10.29.26-pm.png)
+
+You will notice that the `RasterStack` object not only is comprised of nearly 25 million gridcells in this instance, there is also a new dimension to the object named `nlayers`, which is 9.  Within this `RasterStack` is layer representing each one of the files we copied from the WorldPop website into your `lulc` data folder and then imported into RStudio.  The names of each layer is given on the `names` row, but the information has been directly assigned from each file name, which was long and confusing.  You will rename each layer, by again identifying patterns from the object `f` we created, and replacing the superfluous parts with an empty space or `""`.  You will need to retain the part of each file name that begins with `dst` and is then followed by three digits.  For example, with the file name `lbr_esaccilc_dst040_100m_2015.tif` you will need to retain everything BUT the `dst040` part of the name.  To do this, you will first want to replace the common pattern from the last part of the file name sequence with a `""`. Then you will want to replace the first part of the  the common pattern from the file name sequence with a `""`.  You will do this by nesting the two commands within each other.
+
+```r
+nms <- sub("last_part.tif", "", sub("first_part_", "", object_w_names))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
