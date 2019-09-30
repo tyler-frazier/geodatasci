@@ -124,7 +124,31 @@ contour(lulc[[10]], add = TRUE)
 
 ![Topography with Contours](../.gitbook/assets/topo.png)
 
+## Extracting Land Use and Land Cover Data for Description
 
+Now that you have your `lulc` `RasterStack` in place, use the `extract()` command to assign the adm2 ID to each gridcell.  Just as you did before, `save()` your `data.frame` object so you don't have to unnecessarily rerun the computational expensive `extract()` command again and again.
+
+```r
+ncores <- detectCores() - 1
+beginCluster(ncores)
+lulc_vals_adm2 <- raster::extract(lulc, lbr_adm2, df = TRUE)
+endCluster()
+save(lulc_vals_adm2, file = "lulc_vals_adm2.RData")
+```
+
+Comment off these 5 lines once the `extract()` has finished, and then add the `load("name_of_you_data_file.RData")` command to reload the data the next time you run your script.
+
+Use the `sum()` command with the `summarize_all()` command to sum all of the values within each adm2 subdivision for each of the twelve different raster layers. 
+
+```r
+lulc_ttls_adm2 <- lulc_vals_adm2 %>%
+  group_by(add_column_name) %>%
+  summarize_all(sum, na.rm = TRUE)
+```
+
+Your object `lulc_ttls_adm2` should have the same number of rows as your `adm2` `sf` object as well as thirteen variables, one for each of the geospatial covariates obtained from WorldPop as well as an `ID` column.  You will notice that the names of each column in your `lulc_ttls_adm2` object will correspond with the names of each layer from your `RasterStack`.
+
+![](../.gitbook/assets/screen-shot-2019-09-30-at-12.22.03-am.png)
 
 
 
