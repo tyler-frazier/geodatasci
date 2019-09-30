@@ -6,7 +6,7 @@ In this assignment you will use your annotated bibliography as the beginning poi
 
 ## Instructions
 
-Start your literature review by selecting a human development topic that you found interesting while exploring the material from flowminder and worldpop. Also select a region or country where you think investigating your selected topic will be inherently relevant due to local cir- cumstances. Draft a title for your forthcoming literature review that includes your selected dimension of human development and the region or country of interest. Begin by writing a few sentences that describe how your selected topic relates to Amartya Sen’s definition of human development.
+Start your literature review by selecting a human development topic that you found interesting while exploring the material from flowminder and worldpop. Also select a region or country where you think investigating your selected topic will be inherently relevant due to local circumstances. Draft a title for your forthcoming literature review that includes your selected dimension of human development and the region or country of interest. Begin by writing a few sentences that describe how your selected topic relates to Amartya Sen’s definition of human development.
 
 Identify one or more of the data science methods that you found to be significant while annotating the four sources from Assignment 1. Also identify one or more of the datasets you found to be significant as part of your annotated bibliography. Do your best to name and describe the \(geospatial\) data science methodology \(or methodologies\) and identify the source of your data \(or datasets\).
 
@@ -14,11 +14,9 @@ Research your selected human development topic and identified data science metho
 
 {% embed url="https://libraries.wm.edu" %}
 
-You may want to approach the Swem research desk and ask for guidance on how to identify new, relevant and useful sources. It may also be helpful to schedule an appointment with a research librarian.
+You may want to approach the Swem research desk and ask for guidance on how to identify new, relevant and useful sources. It may also be helpful to schedule an appointment with a research librarian.  Be sure to provide the research librarian with your topic, methods of interest, datasets and region of investigation in advance so she or he has some idea of how to assist prior to meeting.
 
 {% embed url="https://libraries.wm.edu/appointments/" %}
-
-Be sure to provide the research librarian with your topic, methods of interest, datasets and region of investigation in advance so she or he has some idea of how to assist prior to meeting. I have also arranged two meeting times with Swem librarians \(2/21 at 5:30 PM and then 6:30 PM\) in order to assist with your research.
 
 Select at least four new sources that contribute to understanding the current state of your selected human development topic. You are welcome to select a source that describes your selected topic from a more global perspective, but please keep in mind at this step in the research process we are not interested in proposed solutions to a development problem. Sources that focus on describing, analyzing and modeling your selected human development topic in terms of patterns or processes will likely be more helpful. Field studies that couple methods and data with on-site observations and/or verification of information could also be contextually useful. Identify new sources that are central to your focus and contribute to increasing the depth of your investigation. You are welcome to use new sources from flowminder or worldpop so long as each one is in addition to the four from your annotated bibliography. Upon selecting each new source, again annotate the article and add it to your bibliography.
 
