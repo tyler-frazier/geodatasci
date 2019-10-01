@@ -34,9 +34,7 @@ Type your annotated literature review.  Title your document, add your name and c
 
 ## Rubric
 
-![Rubric for Assignment 2](../.gitbook/assets/image.png)
-
-
+![Rubric for Assignment 2](../.gitbook/assets/screen-shot-2019-10-01-at-5.30.50-pm.png)
 
 
 
