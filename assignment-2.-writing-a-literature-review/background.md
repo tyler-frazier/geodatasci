@@ -24,11 +24,7 @@ Click on the following link to watch An African Election through panopoly.  You 
 
 Owen Barder podcast
 
-{% embed url="http://developmentdrums.org/627" %}
+[https://www.cgdev.org/sites/default/files/archive/doc/multimedia/Development\_and\_Complexity\_Slides.pdf](https://www.cgdev.org/sites/default/files/archive/doc/multimedia/Development_and_Complexity_Slides.pdf)
 
 
-
-{% embed url="http://media.developmentdrums.org/DD33.mp3" %}
-
-{% embed url="https://www.cgdev.org/media/implications-complexity-development-owen-barder" %}
 
