@@ -20,11 +20,17 @@ Click on the following link to watch An African Election through panopoly.  You 
 
 {% embed url="https://wm.kanopy.com/video/african-election" %}
 
+Once you have finished watching _An African Election_, next listen to the May 2012, Kapuściński Lecture by Owen Barder from the Center for Global Development.  While listening to the lecture, also open the slides Barder has provided to accompany his talk by accessing the link after the soundcloud audio file.
+
+{% embed url="https://soundcloud.com/tyler-frazier-982923313/development-complexity-by-owen-barder" %}
+
+{% file src="../.gitbook/assets/development\_and\_complexity\_slides.pdf" caption="Development and complexity slides" %}
+
+There are a number of different themes presented through the course of Barder's lecture, but most central is the concept of complexity.
+
+> Development should not be thought of as the sum of improvements in the well being of people or the output of firms where it can be catalyzed by providing some missing ingrediant.  Instead human development should be understood as an emergent property from a complex and adpating economic and social system that is comprising of interacting, simulataneoulsy co-evolving agents...And his \(Nicholas Georgescu-Roegen\) insight, which is, really, at the heart of all this stuff, is that economic systems are not like evolutionary systems, they are evolutionary systems.  Owen Barder
 
 
-Owen Barder podcast
-
-![](https://www.cgdev.org/sites/default/files/archive/doc/multimedia/Development_and_Complexity_Slides.pdf)
 
 
 
