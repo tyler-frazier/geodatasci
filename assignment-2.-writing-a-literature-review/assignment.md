@@ -32,7 +32,7 @@ In this assignment you will use your annotated bibliography as the beginning poi
 
 Type your annotated literature review.  Title your document, add your name and cite your sources.  Identify each reference in a bibliography at the end of your document. Your review should be at least 2000 words in length. I will not include the title or reference information when verifying your work has met the word count.  Note your word count on the first page.  Do not include your title or reference information when calculating your word count.  Please print your literature review and place it in the box outside my office door no later than 10PM, Saturday, October 19th.
 
-## Rubrik
+## Rubric
 
 ![Rubric for Assignment 2](../.gitbook/assets/image.png)
 
