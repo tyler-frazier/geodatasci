@@ -44,5 +44,23 @@ What are the implications of Barder's talk; are his final recommendations releva
 
 How can developing a better understanding of economic and social systems as complex, evolutionary systems help us to better understand human development? What role does data science play in advancing this better understanding?
 
+![](../.gitbook/assets/screen-shot-2019-09-30-at-11.50.57-pm.png)
+
+![](../.gitbook/assets/screen-shot-2019-09-30-at-11.51.56-pm.png)
+
+![](../.gitbook/assets/screen-shot-2019-09-30-at-11.53.03-pm.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
