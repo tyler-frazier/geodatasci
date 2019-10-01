@@ -50,17 +50,3 @@ How can developing a better understanding of economic and social systems as comp
 
 ![](../.gitbook/assets/screen-shot-2019-09-30-at-11.53.03-pm.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
