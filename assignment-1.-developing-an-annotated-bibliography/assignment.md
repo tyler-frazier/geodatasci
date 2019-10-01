@@ -1,3 +1,7 @@
+---
+description: Write an Annotated Bibliography
+---
+
 # Assignment
 
 ## Summary
