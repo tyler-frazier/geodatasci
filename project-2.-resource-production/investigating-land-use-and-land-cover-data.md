@@ -266,15 +266,35 @@ Manually recreate the `ggplot()` model of your regression from above.  First ide
 name_of_model$variable.with.fitted.values
 ```
 
-Send this `object$variable` directly to the console and review the results.  You should have the same number of fitted values as subdivisions within your adm2.  Each individual fitted fitted value is calculated by multiplying each variables' estimate or coefficient by the actual value for that observation or row and then summating the total of those products.
+Send this `object$variable` directly to the console and review the results.  You should have the same number of fitted values as subdivisions within your adm2.  Each individual fitted value is calculated by multiplying each variables' estimate \(or coefficient\) by the actual value for that observation \(or row\) and then summating the total of those products.
 
-Likewise, manually calculate each individual model residual by subtracting all of the values for the dependent or response variable, `pop19`, from the fitted values.  The difference of these two outcomes are the model residuals.
+Likewise, manually calculate each individual model residual by subtracting all of the values for the dependent or response variable, `pop19`, from each cooresponding calculated, fitted value.  The difference of these two outcomes are the model residuals.
 
-```text
+```r
 your_adm2$pop19 - name_of_model$variable.with.fitted.values
 ```
 
-Plot the two variables
+Plot the two variables as a `ggplot` object.  First create a `data.frame` using the `cbind.data.frame()` command.  Name each of the new columns within your data frame accordingly.
+
+```r
+model_data <- cbind.data.frame(fitted = name_of_model$variable.with.fitted.values, residuals = your_adm2$pop19 - name_of_model$variable.with.fitted.values)
+```
+
+Use `ggplot()` to plot your model.
+
+```r
+ggplot(data = you_data_frame, aes(x = variable, y = variable)) +
+  geom_point(size = 0.25) +
+  geom_smooth(size = 0.5)
+```
+
+![](../.gitbook/assets/plot.png)
+
+The three observations beneath the curve before it begins to rise seem to evidence the final contributions to the model before it transitions towards the observation for Monrovia.  Add labels to these four points, by using the `subset()` command and creating a new object that you will use to annotate each of those four observations.
+
+```text
+text <- subset(model_data, fitted > add_value_here)
+```
 
 
 
