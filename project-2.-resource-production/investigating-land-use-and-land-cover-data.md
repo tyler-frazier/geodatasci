@@ -121,7 +121,7 @@ plot(st_geometry(lbr_adm1), add = TRUE)
 
 ![](../.gitbook/assets/urban.png)
 
-```text
+```r
 plot(lulc[[10]])
 contour(lulc[[10]], add = TRUE)
 ```
@@ -207,7 +207,7 @@ ggplot(lbr_adm2, aes(pop19, ntl)) +
 
 Estimate the parameters of your model using the `lm()` command and then return a `summary()` to find out more information regarding the model's fit and capacity to explain the coorelationship between your two selected variables.
 
-```text
+```r
 fit <- lm(pop19 ~ ntl, data=lbr_adm2)
 summary(fit)
 ```
@@ -226,7 +226,7 @@ ggplot(lm(pop19 ~ ntl + dst190 + dst200, data=lbr_adm2)) +
 
 Again estimate the model and check the fit.
 
-```text
+```r
 fit <- lm(pop19 ~ ntl + dst190 + dst200, data=lbr_adm2)
 summary(fit)
 ```
@@ -288,13 +288,101 @@ ggplot(data = you_data_frame, aes(x = variable, y = variable)) +
   geom_smooth(size = 0.5)
 ```
 
-![](../.gitbook/assets/plot.png)
+![](../.gitbook/assets/plot%20%281%29.png)
 
 The three observations beneath the curve before it begins to rise seem to evidence the final contributions to the model before it transitions towards the observation for Monrovia.  Add labels to these four points, by using the `subset()` command and creating a new object that you will use to annotate each of those four observations.
 
 ```text
 text <- subset(model_data, fitted > add_value_here)
 ```
+
+Use this new object to plot the names of these four observations from the data.
+
+```r
+ggplot(data = your_data, aes(x = variable, y = variable)) +
+  geom_point(size = 0.25) +
+  geom_smooth(size = 0.5) +
+  geom_text(data = your_data,
+            aes(x = variable,
+                y = variable,
+                label = name),
+            size = 2,
+            nudge_y = value)
+```
+
+![](../.gitbook/assets/plot.png)
+
+Likewise manually calculate residual standard error.
+
+```text
+#How to calculate Residual Standard error (Like Standard Deviation)
+k <- length(fit$coefficients)-1 #Subtract one to ignore intercept
+SSE <- sum(fit$residuals^2)
+n <- length(fit$residuals)
+#Residual Standard Error
+sqrt(SSE/(n-(1+k)))
+```
+
+Also, manually calculate multiple R^2.
+
+```text
+#Multiple R-Squared (Coefficient of Determination)
+SSyy <- sum((lbr_adm2$pop19 - mean(lbr_adm2$pop19))^2)
+SSE <- sum(fit$residuals^2)
+(SSyy-SSE)/SSyy
+#Alternatively
+1-SSE/SSyy
+```
+
+Calculate adjusted R^2.
+
+```text
+#Adjusted R-Squared
+n <- length(lbr_adm2$pop19)
+k <- length(fit$coefficients)-1
+SSE <- sum(fit$residuals^2)
+SSyy = sum((lbr_adm2$pop19 - mean(lbr_adm2$pop19))^2)
+1-(SSE/SSyy)*(n-1)/(n-(k+1))
+```
+
+Calculate the F-statistic.
+
+```text
+#F-Statistic
+((SSyy-SSE)/k) / (SSE/(n-(k+1)))
+```
+
+Finally, manually add the adjusted R^2 and F-statistic as labels to your plot.
+
+```r
+ggplot(data = model_data, aes(x = fitted, y = residuals)) +
+  geom_point(size = 0.25) +
+  geom_smooth(size = 0.5) +
+  geom_text(data = text,
+            aes(x = fitted,
+                y = residuals,
+                label = adm1),
+            size = 2,
+            nudge_y = 7500) +
+  geom_text(aes(x = 500000,
+                y = 25000,
+                label = "Adjusted R-Squared")) +
+  geom_text(aes(x = 500000,
+                y = 0,
+                label = round(as.numeric(summary(fit)[9]), 4))) +
+  geom_text(aes(x = 500000,
+                y = -40000,
+                label = "F-statistic")) +
+  geom_text(aes(x = 500000,
+                y = -65000,
+                label = round(as.numeric(summary(fit)[[10]][1]), 4)))
+```
+
+
+
+
+
+
 
 
 
