@@ -162,7 +162,7 @@ lbr_adm2 <- add_command_here(lbr_adm2, lulc_ttls_adm2)
 
 Your adm2 `sf` object should now have something on the order of 24 variables.  To start with your description and analysis of the land use and land cover data, consider first the `pop19` variable you created in the last project.  Use `ggplot()` to produce a histogram using the `geom_histogram() +` command.
 
-```text
+```r
 ggplot(lbr_adm2, aes(pop19)) +
   geom_histogram()
 ```
@@ -173,7 +173,7 @@ Compare how the histogram plot changes after adding the `log()` command to the `
 
 Likewise, do the same with the `geom_density() +` command, also adding the `log()` command by wrapping the `pop19` variable within it.
 
-```text
+```r
 ggplot(lbr_adm2, aes(pop19)) +
   geom_density()
 ```
@@ -182,7 +182,7 @@ ggplot(lbr_adm2, aes(pop19)) +
 
 You will notice that the density plot has a similar profile as the histogram.  We can compare the two by overlapping the histogram with the density plot or probability density function \(pdf\).  In order to transform a histogram into a density plot, the density function uses somethings called a **kernel** and **bandwidth** to smooth the data over the space.  A good analogy for thinking about how a histogram transforms into a pdf is to think of each verticle bar as stacked, square pieces of chocolate, and then you took a hairdryer to warm the chocolate squares until they melted and smoothed out over the space.  While there are statistical methods that can be used to modify the shape and profile of the pdf function, essentially the area of the histogram and the density plot should be nearly the same.
 
-```text
+```r
 ggplot(lbr_adm2, aes(pop19)) +
   geom_histogram(aes(y = ..density..), color = "black", fill = "white") + 
   geom_density(alpha = 0.2, fill = "#FF6666") + 
@@ -197,7 +197,7 @@ Create another histogram with the pdf overlapping, but this time use a different
 
 Regress the data from two variables against each other and examine the coorelationship that is being described by the two variables.  Use the `geom_point()` command to add the points for your two variables as well as the `geom_smooth()` command to add the regression line \(as well as the confidence interval\).
 
-```text
+```r
 ggplot(lbr_adm2, aes(pop19, ntl)) + 
   geom_point(size = .1, color = "red") +
   geom_smooth()
@@ -216,7 +216,7 @@ summary(fit)
 
 Add a few more variables to the `lm()` command.  For example in the following plot I have estimated a regression model where the population of Liberia in 2019 is the dependent variable \(response\), while night time lights \(`ntl`\), urban cover \(`dst190`\), and bare cover \(`dst200`\) are the independent variables \(predictors\).
 
-```text
+```r
 ggplot(lm(pop19 ~ ntl + dst190 + dst200, data=lbr_adm2)) + 
   geom_point(aes(x=.fitted, y=.resid), size = .1) +
   geom_smooth(aes(x=.fitted, y=.resid))
@@ -235,7 +235,7 @@ summary(fit)
 
 Finally, add all of the variables to your regression model.  Compare the results.
 
-```text
+```r
 ggplot(lm(pop19 ~ water + dst011 + dst040 + dst130 + dst140 + dst150 + dst160 + dst190 + dst200 + topo + slope + ntl, data=lbr_adm2)) + 
   geom_point(aes(x=.fitted, y=.resid), size = .1) +
   geom_smooth(aes(x=.fitted, y=.resid))
@@ -243,7 +243,7 @@ ggplot(lm(pop19 ~ water + dst011 + dst040 + dst130 + dst140 + dst150 + dst160 + 
 
 ![](../.gitbook/assets/all.png)
 
-```text
+```r
 fit <- lm(pop19 ~ water + dst011 + dst040 + dst130 + dst140 + dst150 + dst160 + dst190 + dst200 + topo + slope + ntl, data=lbr_adm2)
 summary(fit)
 ```
@@ -262,7 +262,7 @@ Meet with your group and prepare four different plots from at least three differ
 
 Manually recreate the `ggplot()` model of your regression from above.  First identify the `fitted.values` as a variable in the model you named `fit.`  Use the `$` operator to identify the variable within the model object and return all of the values.
 
-```text
+```r
 name_of_model$variable.with.fitted.values
 ```
 
@@ -292,7 +292,7 @@ ggplot(data = you_data_frame, aes(x = variable, y = variable)) +
 
 The three observations beneath the curve before it begins to rise seem to evidence the final contributions to the model before it transitions towards the observation for Monrovia.  Add labels to these four points, by using the `subset()` command and creating a new object that you will use to annotate each of those four observations.
 
-```text
+```r
 text <- subset(model_data, fitted > add_value_here)
 ```
 
@@ -314,7 +314,7 @@ ggplot(data = your_data, aes(x = variable, y = variable)) +
 
 Likewise manually calculate residual standard error.
 
-```text
+```r
 #How to calculate Residual Standard error (Like Standard Deviation)
 k <- length(fit$coefficients)-1 #Subtract one to ignore intercept
 SSE <- sum(fit$residuals^2)
@@ -336,7 +336,7 @@ SSE <- sum(fit$residuals^2)
 
 Calculate adjusted R^2.
 
-```text
+```r
 #Adjusted R-Squared
 n <- length(lbr_adm2$pop19)
 k <- length(fit$coefficients)-1
@@ -347,7 +347,7 @@ SSyy = sum((lbr_adm2$pop19 - mean(lbr_adm2$pop19))^2)
 
 Calculate the F-statistic.
 
-```text
+```r
 #F-Statistic
 ((SSyy-SSE)/k) / (SSE/(n-(k+1)))
 ```
@@ -378,7 +378,7 @@ ggplot(data = model_data, aes(x = fitted, y = residuals)) +
                 label = round(as.numeric(summary(fit)[[10]][1]), 4)))
 ```
 
-
+![](../.gitbook/assets/plot%20%282%29.png)
 
 
 
