@@ -260,9 +260,21 @@ Meet with your group and prepare four different plots from at least three differ
 
 ## Individual Stretch Goal 1
 
+Manually recreate the `ggplot()` model of your regression from above.  First identify the `fitted.values` as a variable in the model you named `fit.`  Use the `$` operator to identify the variable within the model object and return all of the values.
 
+```text
+name_of_model$variable.with.fitted.values
+```
 
+Send this `object$variable` directly to the console and review the results.  You should have the same number of fitted values as subdivisions within your adm2.  Each individual fitted fitted value is calculated by multiplying each variables' estimate or coefficient by the actual value for that observation or row and then summating the total of those products.
 
+Likewise, manually calculate each individual model residual by subtracting all of the values for the dependent or response variable, `pop19`, from the fitted values.  The difference of these two outcomes are the model residuals.
+
+```text
+your_adm2$pop19 - name_of_model$variable.with.fitted.values
+```
+
+Plot the two variables
 
 
 
