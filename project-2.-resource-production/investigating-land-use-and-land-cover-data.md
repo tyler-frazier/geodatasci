@@ -380,11 +380,3 @@ ggplot(data = model_data, aes(x = fitted, y = residuals)) +
 
 ![](../.gitbook/assets/plot%20%282%29.png)
 
-
-
-
-
-
-
-
-
