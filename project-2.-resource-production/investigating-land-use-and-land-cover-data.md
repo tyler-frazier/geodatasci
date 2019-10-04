@@ -252,11 +252,11 @@ summary(fit)
 
 ## Team Challenge Question
 
-Follow the steps from above used to produce the plots describing Liberia, but instead each team member should use their own selected LMIC country.  Produce 2 combined histogram with density plots that describe the coorelationship between population at the adm2 level as a dependent variable and 2 of the other land use land cover variables you added.  You are also welcome to use density as a variable.
+Follow the steps from above used to produce the plots describing Liberia, but instead each team member should use their own selected LMIC country.  Produce **two combined histogram** **with** **density plots** that describe the coorelationship between population at the adm2 level as a dependent variable and two of the other land use land cover variables you added.  You are also welcome to use density as a variable.
 
-Also use `ggplot()` to plot two linear models.  Use the `fit()` and `summary()` commands to describe your models.  Are you able to definitively identify coorelation between population and any of the other or combination of other land use and land cover geospatial covariates?  How about density?
+Also use `ggplot()` to plot **two linear models**.  Use the `fit()` and `summary()` commands to describe your models.  Are you able to definitively identify coorelation between population and any of the other or combination of other land use and land cover geospatial covariates?  How about density?
 
-Meet with your group and prepare four different plots from at least three different countries \(or team members\) for the Friday informal group presentation.  Then as a group, upload all 5 team members plots to \#data100\_igps \(informal group presentations\) by Sunday night.
+Meet with your group and prepare four different plots from at least three different countries \(or team members\) for the Friday informal group presentation.  Then as a group, upload all 5 team members plots to \#data100\_igps \(informal group presentations\) by Sunday night.  Each member should upload at least **two combined histogram / density plots** as well as **two linear model plots**.
 
 ## Individual Stretch Goal 1
 
