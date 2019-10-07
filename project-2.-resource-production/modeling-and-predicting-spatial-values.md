@@ -92,10 +92,25 @@ another_new_raster  <- raster_1 / raster_2
 Again use the `rasterize()` command to assign a value to every gridcell according to its `adm2` location, but this time use the `pop15` variable.
 
 ```r
-new_raster <- command(adm2, template_raster, field = "pop15")
+yet_another_new_raster <- command(adm2, template_raster, field = "pop15")
 ```
 
+Distribute the `adm2` populatoin totals across each gridcell according to its fractional proportion of summed predicted population \(also at `adm2`\), multiply the proportion by the totals.
 
+```text
+population <- gridcell_proportions * population_adm2
+```
+
+Confirm your results by evaluating the totals.
+
+```text
+cellStats(population, sum)
+[1] 4039128
+```
+
+R should return the same total previously used when you calcualte `sum(your_adm2$pop15)`.
+
+![](../.gitbook/assets/rplot01%20%285%29.png)
 
 
 
