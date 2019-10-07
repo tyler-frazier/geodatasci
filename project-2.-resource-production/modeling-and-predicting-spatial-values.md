@@ -38,6 +38,38 @@ As in the previous exercise, estimate your linear model using the `pop15` variab
 model <- add_command_here(depvar ~  ind1 + ... + indN, data=your_adm2_sf)
 ```
 
+Once you have estimated your model, use the `summary()` command to review a summary of its characteristics.
+
+![](../.gitbook/assets/screen-shot-2019-10-06-at-8.23.25-pm.png)
+
+Confirm that each variable in your `lulc` object has a corresponding variable in the linear model you just estimated.  You will use these estimates with the 12 different geospatial coverariate layers within your `RasterBrick` to predict the population at each gridcell across your LMIC.  Use the `predict()` function from the `raster::` package with your `lulc` object as well as your `model` to predict the population value of every gridcell within the borders of your LMIC.
+
+```r
+predicted_values <- library::function(RasterBrick, your_model, progress="window")
+```
+
+Adding the `progress="window"` argument at the end of the command should force a progress window to appear on main desktop that informs you of how many steps are needed to completely execute the command as well as how many have been completed.  The `progress="window"` argument is purely optional.
+
+The resulting object `predicted_values` should be a single `RasterLayer` with the same number of gridcells as each layer within your `RasterBrick`.   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
