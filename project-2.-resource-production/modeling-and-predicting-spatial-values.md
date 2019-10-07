@@ -26,11 +26,9 @@ You may have noticed when reviewing the characteristics of your `RasterStack` th
 yourRasterStack <- add_command_here(yourRasterStack, yourLMIC_intlborder)
 ```
 
-It might take a few minutes to run the `mask()` command.  On a MBAir using the `mask()` command on a 12 layer `RasterStack` , each layer with about 25 million gridcells takes about 10 minutes.  Once the command is completed, you should now notice `min values` and `max values` when retrieving a summary of the object.
+It might take a few minutes to run the `mask()` command.  On a MBAir using the `mask()` command on a 12 layer `RasterStack` \(each layer having about 25 million gridcells\) it takes about 10 minutes.  Once the command is completed, you should now notice `min values` and `max values` when retrieving a summary of what has now been transformed from a `RasterStack` to a `RasterBrick`.
 
 ![](../.gitbook/assets/screen-shot-2019-10-06-at-7.50.14-pm.png)
-
-In using the `mask()` command, you have effectively transformed your `RasterStack` into a `RasterBrick`.
 
 As in the previous exercise, estimate your linear model using the `pop15` variable as your response \(dependent variable\) and all of the covariates from your `adm2` sf object as the predictors \(independent variables\).
 
