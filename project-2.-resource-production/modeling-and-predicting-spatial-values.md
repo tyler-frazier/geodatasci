@@ -61,13 +61,19 @@ base <- predicted_values - minValue(predicted_values)
 cellStats(base, sum) 
 ```
 
-We will proceed with the `RasterLayer` by using the `extract()`command to assign the ID from each `adm2` object to each gridcell containing a predicted value from our linear model using the `lulc` geospatial covariates as indenpendent variables.  To effectively use the `extract()` command, set `ncores` object to one less than your total and then also execute the `beginCluster()` command as you have done in previous exercises.  In this case, since it is only one layer, the extract command should take less time to execute. 
+We will proceed with the `RasterLayer` by using the `extract()`command to assign the ID from each `adm2` object to each gridcell containing a predicted value from our linear model using the `lulc` geospatial covariates as indenpendent variables.  To effectively use the `extract()` command, set `ncores` object to one less than your total and then also execute the `beginCluster()` command as you have done in previous exercises.  In this case, since it is only one layer, the extract command should take less time to execute \(about 10 to 15 minutes on an MBAir\).
 
 ```r
 ncores <- detectCores() - 1
 beginCluster(ncores)
-preds_ttls <- raster::extract(your_pred_vals_raster, your_adm2, df=TRUE)
+pred_vals_adm2 <- raster::extract(your_pred_vals_raster, your_adm2, df=TRUE)
 endCluster()
+```
+
+Once you have assigned the `ID` to each gridcell according to its `adm2` location, aggregate the values.  This time we will use a slightly different command to sum the values by `adm2` unit, although either way could work.
+
+```r
+pred_ttls_adm2 <- aggregate(. ~ ID, pred_vals_adm2, sum)
 ```
 
 
