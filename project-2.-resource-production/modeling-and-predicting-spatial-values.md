@@ -182,7 +182,7 @@ mapview::mapview(gmonrovia_diff, alpha = .5)
 
 Do you identify a geospatial trend associated with the error resulting from your predicted values?
 
-![](../.gitbook/assets/rplot06%20%281%29.png)
+![](../.gitbook/assets/rplot07%20%281%29.png)
 
 ## Team Challenge Question
 
