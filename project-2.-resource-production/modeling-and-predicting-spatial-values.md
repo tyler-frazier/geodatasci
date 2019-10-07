@@ -70,10 +70,17 @@ pred_vals_adm2 <- raster::extract(your_pred_vals_raster, your_adm2, df=TRUE)
 endCluster()
 ```
 
-Once you have assigned the `ID` to each gridcell according to its `adm2` location, aggregate the values.  This time we will use a slightly different command to sum the values by `adm2` unit, although either way could work.
+Once you have assigned the `ID` to each gridcell according to its `adm2` location, aggregate the values.  This time we will use a slightly different command to sum the values by `adm2` unit, although either way could work.  Also, bind this new column to your `adm2` `sf` object.
 
 ```r
 pred_ttls_adm2 <- aggregate(. ~ ID, pred_vals_adm2, sum)
+lbr_adm2 <- bind_cols(lbr_adm2, pred_ttls_adm2)
+```
+
+Your `sf` object now has a new column named `layer` that has the sum of all predicted values for each `adm2` subdivision of the LMIC.  Assign the value for `layer` to each gridcell according to its `adm2` subdivision.  Use the `rasterize()` command with your `adm2` object and your `predicted_values` raster in order to create a new `raster` that has the predicted totals of every `adm2` assigned to each gridcell according to its location.
+
+```r
+predicted_totals <- rasterize(lbr_adm2, predicted_values, field = "layer")
 ```
 
 
