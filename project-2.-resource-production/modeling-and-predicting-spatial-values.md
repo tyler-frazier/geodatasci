@@ -30,7 +30,13 @@ It might take a few minutes to run the `mask()` command.  On a MBAir using the `
 
 ![](../.gitbook/assets/screen-shot-2019-10-06-at-7.50.14-pm.png)
 
+In using the `mask()` command, you have effectively transformed your `RasterStack` into a `RasterBrick`.
 
+As in the previous exercise, estimate your linear model using the `pop15` variable as your response \(dependent variable\) and all of the covariates from your `adm2` sf object as the predictors \(independent variables\).
+
+```r
+model <- add_command_here(depvar ~  ind1 + ... + indN, data=your_adm2_sf)
+```
 
 
 
