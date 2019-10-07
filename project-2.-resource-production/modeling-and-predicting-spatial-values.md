@@ -182,7 +182,11 @@ mapview::mapview(gmonrovia_diff, alpha = .5)
 
 ![](../.gitbook/assets/rplot06%20%281%29.png)
 
+## Team Challenge Question
 
+Follow the steps from above used to produce the plots describing Liberia, but instead each team member should use their own selected LMIC country.  Investigate the results from your model at different scales and locations across your selected LMIC.  How effective was your model?  Do you identify any trends?  Produce a variety of plots that investigate, describe and analyze your dasymmetric population allocation using a linear model with land use and land cover geospatial covariates.  Investigate at least two different locations and two different scales.  Use adm1, adm2 or adm3 units of analysis, either in combination or alone to define the boundaries of your analysis.
+
+Meet with your group and prepare to present three different plots from at least three different countries \(or team members\) for the Friday informal group presentation.  You are welcome to combine output from the previous Project 2 exercise \(part 1\) as you wish.  Then as a group, upload all 5 team members plots to \#data100\_igps \(informal group presentations\) by Sunday night.  Each member should upload at least **four plots** that describe **at least two different locations of differing scales** within your LMIC.
 
 
 
