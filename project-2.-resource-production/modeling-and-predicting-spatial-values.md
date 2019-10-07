@@ -130,13 +130,57 @@ Taking the `hist(diff)` will also inform you of the magnitude and direction of e
 
 ![](../.gitbook/assets/rplot02%20%284%29.png)
 
+By looking at the histogram and the above difference of predicted value from worldpop raster it appears that most of the error is slightly above or below 0, and is also distributed fairly evenly across the entire space.  Looking closely though, the area close to the southwest coast appears to exhibit a different phenomenon.  This is the capital of Liberia, Monrovia.  For your investigation, select the primary urban area and conduct the same analysis as follows.
 
+First subset your `adm2` by using the name of the administrative subdivision.
 
+```text
+new_name <- your_adm2 %>%
+  filter(name_var == "Add Name Here")
+```
 
+Use the `mask()` command with this newly created `sf` object to focus your analysis on the primate city within your LMIC.
 
+```text
+urban_diff <- mask(diff, urban_adm2)
+urban_pop <- mask(population, urban_adm2)
+```
 
+Create an object the defines the boundaries of your identified urban area.  The bounding box used in your `crop()` command should be defined according the following order.
 
+```text
+c(western_most_longitude, eastern_most_longitude, southern_most_latitude, northern_most_latitude)
+```
 
+Following is the bounding box and `crop()` command used for Monrovia, Liberia.
+
+```text
+extGMN <- c(-10.83, -10.64, 6.20, 6.42)
+gmonrovia_diff <- crop(gmonrovia_diff, extGMN)
+gmonrovia_pop <- crop(gmonrovia_pop, extGMN)
+```
+
+Plot your Monrovia rasters.
+
+![Error in terms of Predicted Values - WorldPop estimates](../.gitbook/assets/rplot03%20%283%29.png)
+
+![](../.gitbook/assets/rplot04%20%282%29.png)
+
+Finally, plot a three dimension map of the values, to gauge exactly how much variation was exhibited in the predicted values.  Install and load the `rgl::` and `rasterVis::` libraries in order to execute the following command.
+
+```text
+rasterVis::plot3D(gmonrovia_pop)
+```
+
+![](../.gitbook/assets/screen-shot-2019-10-07-at-12.26.00-am.png)
+
+Finally, add the `tmap::` library and overlay your differences plot.
+
+```r
+mapview::mapview(gmonrovia_diff, alpha = .5)
+```
+
+![](../.gitbook/assets/rplot06%20%281%29.png)
 
 
 
