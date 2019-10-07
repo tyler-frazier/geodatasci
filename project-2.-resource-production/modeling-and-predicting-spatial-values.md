@@ -54,14 +54,21 @@ The resulting object `predicted_values` should be a single `RasterLayer` with th
 
 Use the `cellStats(predicted_values, sum)` command to calculate the sum of all the values in every gridcell throughout your newly created `RasterLayer`.  With the model estimated for Liberia, the sum total of all predicted values is `113413402375`\(113 billion\).  Compared with the output from `sum(your_adm2$pop15)` \(which is `4039128`for Liberia\) your will very likely that your model has massively overestimated population values \(in this case by an order of about 28,000 times\).
 
-While these predicted values are no where near the real population count at each gridcell, they do nonetheless provide a spatial description of the proportion of persons as distributed across the landscape of your LMIC.  In fact, if we execute some basic raster algebra and subtract the minimium value from my `predicted_values` `RasterLayer` and then sum the values of all gridcells, we will find that while the total population predicted is still very likely a gross overestimation, it is getting closer to our best estimate of the real value.
+While these predicted values are no where near the real population count at each gridcell, they do nonetheless provide a spatial description of the proportion of persons as distributed across the landscape of your LMIC.  In fact, if we execute some basic raster algebra and subtract the minimium value from my `predicted_values` `RasterLayer` and then sum the values of all gridcells, we will find that while the total population predicted is still very likely a gross overestimation, it is getting closer to our best estimate of the real value \(in the case of Liberia, now an order of 15 times `pop15`\).
 
 ```r
 base <- predicted_values - minValue(predicted_values)
 cellStats(base, sum) 
 ```
 
+We will proceed with the `RasterLayer` by using the `extract()`command to assign the ID from each `adm2` object to each gridcell containing a predicted value from our linear model using the `lulc` geospatial covariates as indenpendent variables.  To effectively use the `extract()` command, set `ncores` object to one less than your total and then also execute the `beginCluster()` command as you have done in previous exercises.  In this case, since it is only one layer, the extract command should take less time to execute. 
 
+```r
+ncores <- detectCores() - 1
+beginCluster(ncores)
+preds_ttls <- raster::extract(your_pred_vals_raster, your_adm2, df=TRUE)
+endCluster()
+```
 
 
 
