@@ -128,7 +128,7 @@ cellStats(abs(diff), sum)
 
 Taking the `hist(diff)` will also inform you of the magnitude and direction of error in your predicted values.  Use the `plot(diff)` command to have a look at the resulting raster.
 
-
+![](../.gitbook/assets/rplot02%20%284%29.png)
 
 
 
