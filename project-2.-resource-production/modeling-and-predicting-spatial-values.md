@@ -112,6 +112,22 @@ R should return the same total previously used when you calcualte `sum(your_adm2
 
 ![](../.gitbook/assets/rplot01%20%285%29.png)
 
+## Investigate Margins of Error
+
+Our model is serving to allocate population totals across all gridcells, but how accurate is it?  To start we can calculate the different of our predicted values - the worldpop values and sum the totals.
+
+```text
+diff <- population - lbr_pop15
+```
+
+In order to establish a basis for comparing total error across your LMIC take the absolute value of the differences and sum them to arrive a term that represnts total error.
+
+```text
+cellStats(abs(diff), sum)
+```
+
+Taking the `hist(diff)` will also inform you of the magnitude and direction of error in your predicted values.  Use the `plot(diff)` command to have a look at the resulting raster.
+
 
 
 
