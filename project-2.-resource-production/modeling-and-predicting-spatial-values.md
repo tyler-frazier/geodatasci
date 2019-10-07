@@ -77,15 +77,23 @@ pred_ttls_adm2 <- aggregate(. ~ ID, pred_vals_adm2, sum)
 lbr_adm2 <- bind_cols(lbr_adm2, pred_ttls_adm2)
 ```
 
-Your `sf` object now has a new column named `layer` that has the sum of all predicted values for each `adm2` subdivision of the LMIC.  Assign the value for `layer` to each gridcell according to its `adm2` subdivision.  Use the `rasterize()` command with your `adm2` object and your `predicted_values` raster in order to create a new `raster` that has the predicted totals of every `adm2` assigned to each gridcell according to its location.
+Your `sf` object now has a new column named `layer` that has the sum of all predicted values for each `adm2` subdivision of the LMIC.  Assign the value for `layer` to each gridcell according to its `adm2` subdivision.  Use the `rasterize()` command with your `adm2` object and your `predicted_values` raster in order to create a new `raster` that has the predicted totals of every `adm2` assigned to each gridcell according to its location.  The `raster` object used in the argument \(in this case `predicted_values`\) is the base template for the new raster produced as a result of the command. 
 
 ```r
-predicted_totals <- rasterize(lbr_adm2, predicted_values, field = "layer")
+new_raster <- command(adm2, template_raster, field = "layer")
 ```
 
+Create a new raster that represents each gridcells proportion of the total within its `adm2` subdivision.
 
+```r
+another_new_raster  <- raster_1 / raster_2
+```
 
+Again use the `rasterize()` command to assign a value to every gridcell according to its `adm2` location, but this time use the `pop15` variable.
 
+```r
+new_raster <- command(adm2, template_raster, field = "pop15")
+```
 
 
 
