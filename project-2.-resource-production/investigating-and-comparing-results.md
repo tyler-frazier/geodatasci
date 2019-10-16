@@ -188,13 +188,41 @@ ttls <- cbind.data.frame(preds_sums = pred_ttls_adm3_sums$layer,
                          resp_logpop = pred_ttls_adm3_logpop15$layer)
 ```
 
+Bind the new values as columns within your adm.  Notice I assigned a name to each column.
 
+```r
+lbr_adm3 <- bind_cols(lbr_adm3, ttls)
+```
 
+Use the `rasterize()` command to create a new `RasterLayer` containing the predicted values from each of your models.  The second object in your `rasterize()` command is the raster that is used as the template to produce the new raster.  The values of the template raster are not used in the calculation, instead the values in the column of your adm `sf` object that identify the sum of predicted values from your model is used. 
 
+```r
+predicted_totals_sums <- rasterize(lbr_adm3, predicted_values_sums, field = "preds_sums")
+predicted_totals_means <- rasterize(lbr_adm3, predicted_values_sums, field = "preds_means")
+predicted_totals_logpop <- rasterize(lbr_adm3, predicted_values_sums, field = "resp_logpop")
+```
 
+Calculate the gridcell proportions for each result.
 
+```r
+gridcell_proportions_sums  <- predicted_values_sums / predicted_totals_sums
+gridcell_proportions_means  <- predicted_values_means / predicted_totals_means
+gridcell_proportions_logpop  <- predicted_values_logpop15 / predicted_totals_logpop
+```
 
+Check the `cellstats()` to confirm that the sum of each objects proportions is equal to the number of adms in your `sf` object.
 
+```r
+cellStats(gridcell_proportions_sums, sum)
+cellStats(gridcell_proportions_means, sum)
+cellStats(gridcell_proportions_logpop, sum)
+```
+
+Produce a raster object that contains the WorldPop values we will use as our comparison spatial data set for validation.
+
+```r
+population_adm3 <- rasterize(lbr_adm3, predicted_values_sums, field = "pop15")
+```
 
 
 
