@@ -123,7 +123,7 @@ save(lbr_adm3, file = "lbr_adm3.RData")
 
 Load your geospatial covariate `RasterBrick` of land use and land cover `lulc`, your 2015 WorldPop `raster` and  your adm `sf` object.  View your adm `sf` object and notice that you now have two summary sets of columns that describe each of your twelve geospatial covariates.  The first set of columns describes the sum of all values per adm while the second set describes the mean of all values per adm.  Also notice that in the second set, each variable  has had the number 1 added to its name to differentiate it from the first series.
 
-Use the `lm()` function to estimate three models.  First use `pop15` as the response variable and the `sum` of each geospatial covariate per adm as the predictors.  Second, again use `pop15` as the response variable but this time instead use the `mean` of each geospatial covariate per adm as the predictors.  Third, use the logarithm of 2015 population `log(pop15)` as the response and the `mean` of each geospatial covariate per adm as the predictors.
+Use the `lm()` function to estimate three models.  First use `pop15` as the response variable and the `sum` of each geospatial covariate per adm as the predictors.  Second, again use `pop15` as the response variable but this time instead use the `mean` of each geospatial covariate per adm as the predictors.  Third, use the logarithm of 2015 population `log(pop15)` as the response and the `mean` of each geospatial covariate per adm as the predictors.  Notice I created a new variable named `logpop15` but you could just as easily have specified `log(pop15)` within the call of your model.
 
 ```r
 model.sums <- lm(pop15 ~ water + dst011 + dst040 + dst130 + dst140 + dst150 + dst160 + dst190 + dst200 + topo + slope + ntl, data=lbr_adm3)
@@ -131,6 +131,63 @@ model.means <- lm(pop15 ~ water1 + dst0111 + dst0401 + dst1301 + dst1401 + dst15
 
 lbr_adm3$logpop15 <- log(lbr_adm3$pop15)
 model.logpop15 <- lm(logpop15 ~ water1 + dst0111 + dst0401 + dst1301 + dst1401 + dst1501 + dst1601 + dst1901 + dst2001 + topo1 + slope1 + ntl1, data=lbr_adm3)
+```
+
+Check the summary output from each model.
+
+```r
+summary(model.sums)
+summary(model.means)
+summary(model.logpop15)
+```
+
+Make sure the names of each layer in your `RasterBrick` matches the names of the independent variables in each of your models.  Notice how the second two models use the `mean` of each geospatial covarariate and the layer names are modified accordingly to match.
+
+```r
+names(lulc) <- c("water", "dst011" , "dst040", "dst130", "dst140", "dst150", "dst160", "dst190", "dst200", "topo", "slope", "ntl")
+lulc1 <- lulc
+names(lulc1) <- c("water1", "dst0111" , "dst0401", "dst1301", "dst1401", "dst1501", "dst1601", "dst1901", "dst2001", "topo1", "slope1", "ntl1")
+```
+
+Use the `predict()` function from the `raster::` package with the appropriate `RasterBrick` and `model` to predict each gridcells value.  Use the `save()` and then the `load()` command in order to reduce computation time after restarting your work session. 
+
+```r
+predicted_values_sums <- raster::predict(lulc, model.sums)
+predicted_values_means <- raster::predict(lulc1, model.means)
+predicted_values_logpop15 <- raster::predict(lulc1, model.logpop15)
+
+#save(predicted_values_sums, predicted_values_means, predicted_values_logpop15, file = "predicted_values.RData")
+```
+
+
+
+```r
+ncores <- detectCores() - 1
+beginCluster(ncores)
+pred_vals_adm3_sums <- raster::extract(predicted_values_sums, lbr_adm3, df=TRUE)
+pred_vals_adm3_means <- raster::extract(predicted_values_means, lbr_adm3, df=TRUE)
+pred_vals_adm3_logpop15 <- raster::extract(predicted_values_logpop15, lbr_adm3, df=TRUE)
+endCluster()
+
+save(pred_vals_adm3_sums, pred_vals_adm3_means, pred_vals_adm3_logpop15, file = "predicted_values_adm3s.RData")
 
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
