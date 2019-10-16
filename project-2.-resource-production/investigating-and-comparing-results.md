@@ -313,7 +313,7 @@ Upload your deliverable to the slack channel \#data100\_project2 no later than 1
 
 ## Individual Stretch Goal 1
 
-Conduct the same analysis as above at an increased scale, analyzing one of your LMICs largest or significant urban areas or cities.  Again compare the results.  Can you identify any trends?
+Conduct the same analysis as above at an increased scale, analyzing one of your LMIC's largest or most significant urban areas or cities.  Again compare the results.  Are you able to identify any trends?
 
 ## Individual Stretch Goal 2
 
