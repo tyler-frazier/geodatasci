@@ -289,7 +289,9 @@ rgl.snapshot("diff3", fmt = "png", top = TRUE )
 
 ![Population: Response - Log of Population](../.gitbook/assets/rplot13.png)
 
+![Difference: Response - Log of Population ](../.gitbook/assets/rplot14.png)
 
+![3D Difference: Response - Log of Population ](../.gitbook/assets/diff.png)
 
 
 
