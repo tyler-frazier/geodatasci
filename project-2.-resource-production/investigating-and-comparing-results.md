@@ -210,7 +210,7 @@ gridcell_proportions_means  <- predicted_values_means / predicted_totals_means
 gridcell_proportions_logpop  <- predicted_values_logpop15 / predicted_totals_logpop
 ```
 
-Check the `cellstats()` to confirm that the sum of each objects proportions is equal to the number of adms in your `sf` object.
+Check the `cellStats()` to confirm that the sum of each objects proportions is equal to the number of adms in your `sf` object.
 
 ```r
 cellStats(gridcell_proportions_sums, sum)
@@ -224,9 +224,31 @@ Produce a raster object that contains the WorldPop values we will use as our com
 population_adm3 <- rasterize(lbr_adm3, predicted_values_sums, field = "pop15")
 ```
 
+Calculate the final predicted value for each gridcell according to the output from each of the three models.
 
+```r
+population_sums <- gridcell_proportions_sums * population_adm3
+population_means <- gridcell_proportions_means * population_adm3
+population_logpop <- gridcell_proportions_logpop * population_adm3
+```
 
+Check `cellStats()` to verify that total population matches the initial value used in this dasymmetric allocation.
 
+```text
+cellStats(population_sums, sum)
+cellStats(population_means, sum)
+cellStats(population_logpop, sum)
+
+sum(lbr_adm3$pop15)
+```
+
+Calculate the difference between each `RasterLayer` and the WorldPop `RasterLayer`.
+
+```r
+diff_sums <- population_sums - lbr_pop15
+diff_means <- population_means - lbr_pop15
+diff_logpop <- population_logpop - lbr_pop15
+```
 
 
 
