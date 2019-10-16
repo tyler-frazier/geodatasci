@@ -250,6 +250,45 @@ diff_means <- population_means - lbr_pop15
 diff_logpop <- population_logpop - lbr_pop15
 ```
 
+Finally, produce a raster plot of each model's predicted output as well as the differences and a 3D plot to visualize the results.
+
+```r
+plot(population_sums)
+plot(diff_sums)
+rasterVis::plot3D(diff_sums)
+cellStats(abs(diff_sums), sum)
+
+plot(population_means)
+plot(diff_means)
+rasterVis::plot3D(diff_means)
+cellStats(abs(diff_means), sum)
+
+plot(population_logpop)
+plot(diff_logpop)
+rasterVis::plot3D(diff_logpop)
+cellStats(abs(diff_logpop), sum)
+
+plot(lbr_pop15)
+
+rgl.snapshot("diff3", fmt = "png", top = TRUE )
+```
+
+![Population: Predictors - Sums](../.gitbook/assets/rplot%20%284%29.png)
+
+![Difference: Predictors - Sums](../.gitbook/assets/rplot10.png)
+
+![3D Difference: Predictors - Sums](../.gitbook/assets/diff1.png)
+
+![Population: Predictors - Means](../.gitbook/assets/rplot11.png)
+
+![Difference: Predictors - Means](../.gitbook/assets/rplot12.png)
+
+![3D Difference: Predictors - Means](../.gitbook/assets/diff2.png)
+
+
+
+![Population: Response - Log of Population](../.gitbook/assets/rplot13.png)
+
 
 
 
