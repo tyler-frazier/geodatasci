@@ -159,7 +159,7 @@ predicted_values_logpop15 <- raster::predict(lulc1, model.logpop15)
 #save(predicted_values_sums, predicted_values_means, predicted_values_logpop15, file = "predicted_values.RData")
 ```
 
-
+Use the `extract()` function from the `raster::` package to assign the adm ID to each gridcell.  Again use the `save()` and `load()` commands to reduce computation time.
 
 ```r
 ncores <- detectCores() - 1
@@ -169,11 +169,24 @@ pred_vals_adm3_means <- raster::extract(predicted_values_means, lbr_adm3, df=TRU
 pred_vals_adm3_logpop15 <- raster::extract(predicted_values_logpop15, lbr_adm3, df=TRUE)
 endCluster()
 
-save(pred_vals_adm3_sums, pred_vals_adm3_means, pred_vals_adm3_logpop15, file = "predicted_values_adm3s.RData")
-
+#save(pred_vals_adm3_sums, pred_vals_adm3_means, pred_vals_adm3_logpop15, file = "predicted_values_adm3s.RData")
 ```
 
+Aggregate all values.
 
+```r
+pred_ttls_adm3_sums <- aggregate(. ~ ID, pred_vals_adm3_sums, sum)
+pred_ttls_adm3_means <- aggregate(. ~ ID, pred_vals_adm3_means, sum)
+pred_ttls_adm3_logpop15 <- aggregate(. ~ ID, pred_vals_adm3_logpop15, sum)
+```
+
+Create a new data frame that contains the aggregate sums from each model's predictions.
+
+```r
+ttls <- cbind.data.frame(preds_sums = pred_ttls_adm3_sums$layer, 
+                         preds_means = pred_ttls_adm3_means$layer, 
+                         resp_logpop = pred_ttls_adm3_logpop15$layer)
+```
 
 
 
