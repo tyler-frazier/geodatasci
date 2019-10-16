@@ -270,7 +270,7 @@ cellStats(abs(diff_logpop), sum)
 
 plot(lbr_pop15)
 
-rgl.snapshot("diff3", fmt = "png", top = TRUE )
+rgl.snapshot("diff", fmt = "png", top = TRUE )
 ```
 
 ![Population: Predictors - Sums](../.gitbook/assets/rplot%20%284%29.png)
@@ -293,5 +293,29 @@ rgl.snapshot("diff3", fmt = "png", top = TRUE )
 
 ![3D Difference: Response - Log of Population ](../.gitbook/assets/diff.png)
 
+## Project 2. Individual Deliverable
 
+Upload three sets of spatial plots that describe the predicted population of your selected LMIC using each of the three models.
+
+1. Response variable is population and the predictors are sum of covariates
+2. Response variable is population and the predictors are mean of covariates
+3. Reponse variable is log of population and the predictors are mean of covariates
+
+Each of the three sets of plots should also have three plots.
+
+1. A plot that describes the predicted population of your LMIC using the model
+2. A plot that describes the difference between your predicted results and the WorldPop estimates for 2015
+3. A three dimension plot that visualizes the population or difference
+
+Accompany your series of plots with a written statement that identifies which of the three models produced the best results.  Justify your assessment. 
+
+Upload your deliverable to the slack channel \#data100\_project2 no later than 11:59PM on Sunday, October 20th.
+
+## Individual Stretch Goal 1
+
+Conduct the same analysis as above at an increased scale, analyzing one of your LMICs largest or significant urban areas or cities.  Again compare the results.  Can you identify any trends?
+
+## Individual Stretch Goal 2
+
+Random Forest model
 
