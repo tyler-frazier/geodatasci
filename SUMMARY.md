@@ -24,6 +24,7 @@
 
 * [Acquiring, Modifying and Describing the Data](project-2.-resource-production/investigating-land-use-and-land-cover-data.md)
 * [Modeling & Predicting Spatial Values](project-2.-resource-production/modeling-and-predicting-spatial-values.md)
+* [Investigating and Comparing Results](project-2.-resource-production/investigating-and-comparing-results.md)
 
 ## Assignment 2.  Writing a Literature Review
 
