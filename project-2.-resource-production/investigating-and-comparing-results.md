@@ -313,7 +313,20 @@ Upload your deliverable to the slack channel \#data100\_project2 no later than 1
 
 ## Individual Stretch Goal 1
 
-Conduct the same analysis as above at an increased scale, analyzing one of your LMIC's largest or most significant urban areas or cities.  Again compare the results.  Are you able to identify any trends?
+Conduct the same analysis as above at an increased scale, analyzing one of your LMIC's largest or most significant urban areas or cities.  Subset your adm using the `%>%` operator and the `|` as needed.
+
+```r
+mts_bomi <- lbr_adm3 %>%
+ filter(NAME_1 == "Montserrado" | NAME_1 == "Bomi")
+```
+
+Use the `mapview()` command to identify trends and provide further support for your assessment of each model as you did in the previous execise.
+
+```r
+mapview::mapview(gmonrovia_diff, alpha = .5)
+```
+
+Again compare the results.  Are you able to identify any trends?
 
 ## Individual Stretch Goal 2
 
