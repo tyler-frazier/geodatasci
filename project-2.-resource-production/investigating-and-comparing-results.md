@@ -330,5 +330,61 @@ Again compare the results.  Are you able to identify any trends?
 
 ## Individual Stretch Goal 2
 
-Random Forest model
+Estimate a random forest model using the same data you previously used.  Use the mean values of all grid cells within each adm as the predictors \(independent variable\) and the log of population as the response \(dependent variable\).  Start by loading the World Pop raster you will use to validate your resuts against first.  Then load your adm0 to use in your `crop()` and `mask()` commands.  Load your adm3 that has all of your variables needed to estimate your random forest model.  Also be sure to load the land use and land cover variables you will use to predict the population of each individual grid cell.
+
+```text
+rm(list=ls(all=TRUE))
+
+# install.packages("raster", dependencies = TRUE)
+# install.packages("sf", dependencies = TRUE)
+# install.packages("tidyverse", dependencies = TRUE)
+# install.packages("doParallel", dependencies = TRUE)
+# install.packages("snow", dependencies = TRUE)
+# install.packages("randomForest", dependencies = TRUE)
+
+#library(sp)
+library(sf)
+library(raster)
+library(tidyverse)
+library(doParallel)
+library(snow)
+library(randomForest)
+
+### Import Administrative Boundaries ###
+
+setwd("~/Tresors/teaching/project_folder/data/")
+
+lbr_pop15 <- raster("lbr_ppp_2015.tif")
+
+lbr_adm0  <- read_sf("gadm36_LBR_0.shp")
+load("lbr_adm3.RData")
+
+lulc <- brick("lulc.tif")
+
+lulc <- crop(lulc, lbr_adm0)
+lulc <- mask(lulc, lbr_adm0)
+```
+
+Simplify your adm3 by extracting only the needed columns.  Remove the geometry from the object by using the `st_geometry()` command and assigning it as `NULL`.  Add the log of population as a variable to your newly created data set.  Simply the class of your data set by rewriting it as a `data.frame`.  
+
+```text
+model_data <- lbr_adm3[ ,c(18:20, 35:46)]
+st_geometry(model_data) <- NULL
+model_data$logpop15 <- as.numeric(log(model_data$pop15))
+model_data <- as.data.frame(model_data)
+```
+
+Your object `model_data` should have the following structure.
+
+![](../.gitbook/assets/screen-shot-2019-10-21-at-11.21.07-pm.png)
+
+
+
+
+
+
+
+
+
+
 
