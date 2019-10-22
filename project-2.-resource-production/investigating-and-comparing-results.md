@@ -273,7 +273,7 @@ plot(lbr_pop15)
 rgl.snapshot("diff", fmt = "png", top = TRUE )
 ```
 
-![Population: Predictors - Sums](../.gitbook/assets/rplot%20%284%29.png)
+![Population: Predictors - Sums](../.gitbook/assets/rplot%20%285%29.png)
 
 ![Difference: Predictors - Sums](../.gitbook/assets/rplot10.png)
 
@@ -376,15 +376,91 @@ model_data <- as.data.frame(model_data)
 
 Your object `model_data` should have the following structure.
 
-![](../.gitbook/assets/screen-shot-2019-10-21-at-11.21.07-pm.png)
+![](../.gitbook/assets/screen-shot-2019-10-21-at-11.23.53-pm.png)
 
+Simplify the objects you will use as the predictors and response by creating two new objects.  The `x_data` object are your predictors and coorespond to the mean values of each `lulc` variable at each adm.  The `y_data` is your response variable, in this case log of population.
 
+```text
+x_data <- model_data[ ,4:15]
+y_data <- model_data[ ,16]
+```
 
+First, tune your random forest model in order to determine which of the variables are important.  The `ntreeTry =`  argument specifies how many trees the model will estimate at the tuning step.  The `mtryStart =`  argument specifies how many variables will be tried at each split.  Other arguments are also important, but you can simply follow the following chunk of code to start.
 
+```text
+init_fit <- tuneRF(x = x_data, 
+                   y = y_data,
+                   plot = TRUE,
+                   mtryStart = length(x_data)/3,
+                   ntreeTry = length(y_data)/20,
+                   imrpove = 0.0001,
+                   stepFactor = 1.20,
+                   trace = TRUE,
+                   doBest = TRUE,
+                   nodesize = length(y_data)/1000,
+                   na.action = na.omit,
+                   importance = TRUE,
+                   proximity = TRUE,
+                   sampsize = min(c(length(y_data), 1000)),
+                   replace = TRUE)
+```
 
+After you get a result from your tuning step, check the importance scores from your model.  Use `importance(init_fit)` to have RStudio return measures for each variable.  Assign those scores to a vector and then subset using subscripting operators all variables that have a positive value.  Retain only those variables that have a positive importance score. 
 
+```text
+importance_scores <- importance(init_fit)
+pos_importance <- rownames(importance_scores)[importance_scores[ ,1] > 0]
+pos_importance
 
+x_data <- x_data[pos_importance]
+```
 
+After respecifying your random forest model, estimate it again.
+
+```text
+pop_fit <- tuneRF(x = x_data,
+                  y = y_data,
+                  plot = TRUE,
+                  mtryStart = length(x_data)/3,
+                  ntreeTry = length(y_data)/20,
+                  imrpove = 0.0001,
+                  stepFactor = 1.20,
+                  trace = TRUE,
+                  doBest = TRUE,
+                  nodesize = length(y_data)/1000,
+                  na.action = na.omit,
+                  importance = TRUE,
+                  proximity = TRUE,
+                  sampsize = min(c(length(y_data), 1000)),
+                  replace = TRUE)
+```
+
+Finally, use several of the parameters from `pop_fit` in the arguments of your final model.
+
+```text
+model <- randomForest(x = x_data,
+                      y = y_data,
+                      mtry=pop_fit$mtry,
+                      ntree = pop_fit$ntree,
+                      nodesize = length(y_data)/1000,
+                      importance = TRUE,
+                      proximity = TRUE,
+                      do.trace = FALSE)
+```
+
+Check the output from your model.
+
+```text
+print(model)
+plot(model)
+varImpPlot(model)
+```
+
+![Capacity of RF model to explain variance with its 500 trees](../.gitbook/assets/screen-shot-2019-10-21-at-11.40.59-pm.png)
+
+![Number of trees needed before Out of Bag Error stabilized](../.gitbook/assets/rplot.png)
+
+![Two measures of importance for each of the predictor variables](../.gitbook/assets/rplot01.png)
 
 
 

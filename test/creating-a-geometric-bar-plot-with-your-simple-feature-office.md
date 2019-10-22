@@ -107,7 +107,7 @@ Place the value that describes each administrative unit's share of the total pop
             size=2.0)
 ```
 
-![](../.gitbook/assets/rplot01%20%282%29.png)
+![](../.gitbook/assets/rplot01%20%283%29.png)
 
 The last step of creating our geometric bar plot is to add a `fill =`  argument to the `ggplot(aes())` command that will be used to map a color to each counties population total, based on its place along the continuous scale from maximum to minimum.  As we did with our spatial description of population, also add the `scale_fill_gradient()` command to define colors that will coorespond to the `low =` and `high =`  values.  Use your assignment operator to create a new ggplot object that will be plotted with spatial description of your LMIC.
 
