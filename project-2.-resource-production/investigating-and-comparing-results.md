@@ -462,5 +462,74 @@ varImpPlot(model)
 
 ![Two measures of importance for each of the predictor variables](../.gitbook/assets/rplot01.png)
 
+Confirm that the names in your random forest model match those found in your `rasterBrick`.
+
+```text
+names(lulc) <- c("water1", "dst0111" , "dst0401", "dst1301", "dst1401", "dst1501", "dst1601", "dst1901", "dst2001", "topo1", "slope1", "ntl1")
+```
+
+Now predict your population values using the model with the 12 different geospatial covariate layers.
+
+```text
+preds_rf <- raster::predict(lulc, model)
+```
+
+After you have predicted your population values for each gridcell, back transform the log of population to its original estimate.
+
+```text
+preds_rf_exp <- exp(preds_rf)
+```
+
+Next, extract all of the predicted values by assigning the ID for each adm unit where it is located.
+
+```text
+ncores <- detectCores() - 1
+beginCluster(ncores)
+preds_ttls_rf <- raster::extract(preds_rf_exp, lbr_adm3, df=TRUE)
+endCluster()
+```
+
+Aggregate all of the values by adm ID and sum.
+
+```text
+preds_area_totals_rf <- aggregate(. ~ ID, preds_ttls_rf, sum)
+```
+
+Bind the columns.
+
+```text
+lbr_adm3 <- bind_cols(lbr_adm3, preds_area_totals_rf)
+```
+
+Finally, `rasterize()` the value of the total estimates per adm and then calculate the gridcell proportionate share across the entire LMIC.  Confirm that `cellStats()` returns a value equal to the number of adms in your LMIC.
+
+```text
+preds_ttls <- rasterize(lbr_adm3, preds_rf, field = "layer")
+props  <- preds_rf_exp / preds_ttls
+cellStats(props, sum)
+```
+
+Again, `rasterize()` population values and then multiply the gridcell proportions by the population values to estimate each gridcells proportion of the total population per gridcell.
+
+```text
+pops <- rasterize(lbr_adm3, preds_rf, field = "pop15")
+gridcell_pops <- props * pops
+cellStats(gridcell_pops, sum)
+```
+
+Check `cellStats()` to confirm your totals match population values calculated from the WorldPop persons per pixel raster layer.
+
+Finally, subtract the raster layer with predicted values from your random forest model from the WorldPop ppp raster layer.  Calculate the sum of absolute value of differences between the two rasters.
+
+```text
+diff <- gridcell_pops - lbr_pop15
+cellStats(abs(diff), sum)
+
+rasterVis::plot3D(gridcell_pops)
+rasterVis::plot3D(diff)
+```
+
+What can you surmise?  Have you improved your predictive power by applying a maching learning approach?
+
 
 
