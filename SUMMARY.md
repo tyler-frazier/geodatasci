@@ -34,5 +34,11 @@
 
 ## Project 3. Accessibility to Health Care through Transportation Facilities
 
+## Assignment 3.  Investigating a Methodology
+
+* [Background](assignment-3.-investigating-a-methodology/background.md)
+* [Assignment](assignment-3.-investigating-a-methodology/assignment.md)
+* [Examples](assignment-3.-investigating-a-methodology/examples.md)
+
 ## Project 4. Demographic Analysis with Survey Data
 
