@@ -25,3 +25,7 @@ Data science is primarily concerned with the use of data to describe events occu
 
 Type your methodological investigation.  Title your document, add your name and cite your sources.  Identify each reference in a bibliography at the end of your document. Your review should be at least 1200 words in length. I will not include the title or reference information when verifying your work has met the word count.  Note your word count on the first page.  Do not include your title or reference information when calculating your word count.  Please print your literature review and place it in the box outside my office door no later than 10PM, Tuesday, November 12th.
 
+## Rubric
+
+![](../.gitbook/assets/screen-shot-2019-10-23-at-11.34.28-pm.png)
+
