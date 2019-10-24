@@ -27,7 +27,7 @@ Type your methodological investigation.  Title your document, add your name and 
 
 ## Rubric
 
-![Rubric for assignment 3](../.gitbook/assets/screen-shot-2019-10-23-at-11.34.28-pm.png)
+![](../.gitbook/assets/screen-shot-2019-10-23-at-11.39.22-pm.png)
 
 
 
