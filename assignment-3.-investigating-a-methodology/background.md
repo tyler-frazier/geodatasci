@@ -22,5 +22,3 @@ What hope does big data offer in its ability to capture a whole domain and provi
 
 
 
-![](../.gitbook/assets/screen-shot-2019-10-23-at-8.50.33-pm.png)
-
