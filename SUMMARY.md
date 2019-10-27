@@ -34,6 +34,8 @@
 
 ## Project 3. Accessibility to Health Care through Transportation Facilities
 
+* [De facto description of human settlements](project-3.-accessibility-to-health-care-through-transportation-facilities/de-facto-description-of-human-settlements.md)
+
 ## Assignment 3.  Investigating a Methodology
 
 * [Background](assignment-3.-investigating-a-methodology/background.md)
