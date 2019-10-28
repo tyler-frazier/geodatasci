@@ -111,9 +111,15 @@ Once you have calculated the value of your bandwidth \(in my case "sigma" result
 load("bw.RData")
 ```
 
+After you have estimated the value of the bandwidth for your spatial probability density function, then execute the function itself.
 
+```text
+your_density_image <- density.ppp(your_ppp, sigma = bw)
+```
 
-  
+The resulting object is a real valued pixel image, which is kind of like a raster layer, and it represents a function that describes the probability of the population density at each pixel throughout the entire space.
+
+![](../.gitbook/assets/sm_dens.png)
 
 
 
