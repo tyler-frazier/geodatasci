@@ -72,7 +72,34 @@ st_write(your_adm2_sf, "name_of_file.shp", delete_dsn=TRUE)
 your_adm2_with_mtools <- readShapeSpatial("name_of_file.shp")
 ```
 
-The `readShapeSpatial()` command is from the `maptools::` library and will create a SpatialPolygonsDataFrame in your workspace, which I have named above just `your_adm2_with_map_tools`.
+The `readShapeSpatial()` command is from the `maptools::` library and will create a `SpatialPolygonsDataFrame` in your workspace, which I have named above just `your_adm2_with_map_tools`.  You should only briefly need to use this command.  After creating your adm2\_with\_mtools object, use the `as(obj, "owin")` command to create a window object that will be used with the `rpoint()` function from the `spatstat::` library.  You can just call the new object `win`, and also have a look at it by executing `plot(win)`.
+
+```text
+win <- as(your_adm2_with_mtools, "owin")
+```
+
+For the next command, you will use this `win` object as the window or boundary for locating  a number of points equal to the total population of your adm2, and where each point represents one person.  In order to determine each persons location, use the spatial probability distribution of population decribed by your masked raster of your adm2.
+
+```text
+my_adm2_ppp <- rpoint(pop, f = as.im(my_masked_adm2_raster), win = win)
+```
+
+After creating your point pattern, have a look at it, by typing the name of your object in the R console.  You should notice that R recognizes your object that represents the geospatial distribution of all persons throughout your adm2 as a planar point pattern \(or `.ppp` class object\) as well as the number of points within that `ppp`.   Plot both the `win` and `ppp` objects together as a `.png`.
+
+```text
+png("your_file.pdf", width = add_width, height = add_height)
+plot(win, main = NULL)
+plot(your_ppp, cex = add_number, add = TRUE)
+dev.off()
+```
+
+The following image is one instance from a probability model \(based on 2015 data\) used to distribute all 124,388 persons geospatially throughout Sanniquelleh-Mahn.  I have plotted both my window and planar point patter as a `.png` graphics object and have set the `width =` and `height =` arguments to `2000` each, while the `cex =`  argument is set to `0.15`.  You will want to test some of the parameters with the output on your own computer to see what produces the best results.
+
+![All 2015 realized persons probabilistically distributed throughout Sanniquelleh-Mahn ](../.gitbook/assets/sm_pipo.png)
+
+
+
+
 
 
 
