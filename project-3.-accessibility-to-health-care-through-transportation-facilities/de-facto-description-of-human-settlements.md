@@ -97,9 +97,19 @@ The following image is one instance from a probability model \(based on 2015 dat
 
 ![All estimated 2015 persons probabilistically distributed throughout Sanniquelleh-Mahn ](../.gitbook/assets/sm_pipo.png)
 
+In order to best use this newly created object, we need to estimate a model that describes the spatial probability density function of this planar point pattern.  Spatial probability density function or kernel density estimation is a three dimension version of the density plot that we looked at in a previous project.  You may recall that the two dimension probability density function created a line or smoothed function that closely followed the histogram of our observations.  Now with a three dimension, spatial probability density function, we will estimate a density function that will match histograms of observations in both the x & y directions \(or longitude and latitude\).  The good news is, there is a function to do this for us, but it requires two steps.  The first step is to calculate the bandwidth that will be used in the `density.ppp()` function.  While the bandwidth produced will simply be a number, in order to calculate this number, over a three dimensional space, can be fairly computationally intense.  Fortunately, we have limited the scope of our study area, as well as the number of points located within that bounary, and it shouldn't take to terribly long.  The following command took about 15 minutes on my MacBook Air for the ~125,000 point pattern.
 
+```text
+bw <- bw.ppl(your_ppp)
+```
 
+Once you have calculated the value of your bandwidth \(in my case "sigma" resulted in a 0.003077435\) use the `save()` and `load()` commands, so you don't need to rerun `bw.ppl()` each time.
 
+```text
+#bw <- bw.ppl(sm_pipo)
+#save(bw, file = "bw.RData")
+load("bw.RData")
+```
 
 
 
