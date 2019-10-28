@@ -154,9 +154,19 @@ Run `plot(st_geometry(inside_polys))` and you should notice a plot produced with
 outside_lines <- st_difference(SLDFs, inside_polys)
 ```
 
+Use `plot(st_geometry(outside_lines))` to view the resulting difference from the two objects and notice that these are the contour lines that did not close since they intersected with the adm2 boundary.
 
+In order to fuse these unenclosed contour lines with the administrative boundary, I will use the `st_buffer()` command to offset each line, just a little bit, so as to make a cut in the adm2 border, after I intersect the two objects.  Also use the `st_cast()` command to convert the geometric collection of objects into individual polygons, where each one potentially represents one urbanized area.
 
+```text
+z <- st_buffer(outside_lines, 0.001)
+zz <- st_difference(adm2_sf, z)
+zzz <- st_cast(zz, "POLYGON")
+```
 
+You will notice that the resutant polygon, has been subdivided into many different polygons with a very small space where the unenclosed contour lines intersected the adm2 border.  While this is helpful in the regard that now we in fact have polygons representing each area, it also presents two subsequent problems.  First, we now have a very large polygon that represents all of Sanniquelleh-Mahn that had values below the selected contour line value.  Second, there are also polygons that resulted from urbanized areas intersecting and then reintersecting the adm2 border and thus .  We will need to execute two commands to resolve both of these issues.
+
+![](../.gitbook/assets/screen-shot-2019-10-28-at-12.02.21-am.png)
 
 
 
