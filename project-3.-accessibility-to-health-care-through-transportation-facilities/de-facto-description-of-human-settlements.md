@@ -119,7 +119,24 @@ your_density_image <- density.ppp(your_ppp, sigma = bw)
 
 The resulting object is a real valued pixel image, which is kind of like a raster layer, and it represents a function that describes the probability of the population density at each pixel throughout the entire space.
 
-![](../.gitbook/assets/sm_dens.png)
+![Spatial probability density function of Sanniquelleh-Mahn in 2015 ](../.gitbook/assets/sm_dens.png)
+
+As you may notice, the scale on the right hand side of our density image, provides a representation of where population densities are the highest, or in more common terms, where urbanization has occurred.  The goal of this part of the lab is to identify the boundaries of each uniform and continuous urban area and then to assign the summed population value to each of those polygons.  To start that process, you will need to convert your density image to a spatial grid, then back to an image, and finally to contour lines that we will use to begin creating our polygons.
+
+```text
+Dsg <- as(your_ppp, "SpatialGridDataFrame")  # convert to spatial grid class
+Dim <- as.image.SpatialGridDataFrame(Dsg)  # convert again to an image
+Dcl <- contourLines(Dim, levels = 1000000)  # create contour object
+SLDF <- ContourLines2SLDF(Dcl, CRS("+proj=longlat +datum=WGS84 +no_defs"))
+```
+
+Once you have your object named `SLDF`, which is a Spatial Lines Data Frame, convert it back to an `sf` object using the `st_as_sf()` command.  The resulting object will be a `MULTILINESTRING`.
+
+```text
+sf_multiline_obj <- st_as_sf(SLDF, sf)
+```
+
+By plotting the spatial grid data frame with the newly created multiline object on top, the goal of our exercise will begin to become more readily visible.
 
 
 
