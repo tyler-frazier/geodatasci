@@ -142,6 +142,18 @@ By plotting the spatial grid data frame with the newly created multiline object 
 
 
 
+You will notice that a number of the contour lines are closed and already prepared for conversion from multiline objects to polygons.  This is particularly true in the central areas, where a number of enclosed lines have been created.  On the contrary, the more densely populated area represented by the more red, orange and yellow collored gridcells, intersects directly with the edge of our administrative boundary and will present a more difficult challenge in order to create its polygon.  In order to create polygons that represent each indiividual urbanized area, we will need to isolate inside area polygons from outside area polygons.  First start with the `st_polygonize()` command to convert all of the closed polylines that are valid for conversion to polygons.
+
+```text
+inside_polys <- st_polygonize(SLDFs)
+```
+
+Run `plot(st_geometry(inside_polys))` and you should notice a plot produced with only the internal polygons.  To recapture the contour lines from our density plot that did not close, use the `st_difference()` command to isolate these linear elements.
+
+```text
+outside_lines <- st_difference(SLDFs, inside_polys)
+```
+
 
 
 
