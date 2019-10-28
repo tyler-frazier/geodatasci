@@ -50,5 +50,36 @@ your_adm2_pop15 <- mask(your_adm2_pop15, your_subset_district)
 pop <- floor(cellStats(your_adm2_pop15, 'sum'))
 ```
 
-Entering `pop` into the console in my case returns a value of 124388, which is the estimated population of Sanniquelleh-Mahn in 2015.
+Entering `pop` into the console in my case returns a value of 124388, which is the estimated population of Sanniquelleh-Mahn in 2015.  Also use the `pdf()` and `dev.off()` commands to produce a pdf file of your subset raster with the subset `sf` adm2 object added to the plot.
+
+```text
+png("sm_pop15.png", width = 800, height = 800)
+plot(your_masked_raster, main = NULL)
+plot(st_geometry(your_subset_sf), add = TRUE)
+dev.off()
+```
+
+The above script produces the following plot as a pdf file in your working directory.  In addition to seeking an adm2 subdivision that is between 100,000 and 200,000 persons, also notice that the area of my selected district is about .7 degree longitude by .6 degrees latitude.  Likewise, select an area that is less than 1 degree longitude by 1 degree latitude.  If you want to increase the size of the area being analyzed and likewise the population residing within that space, you will have an opportuntity to do that later, but for now, start small.
+
+![](../.gitbook/assets/sm_pop15%20%281%29.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
