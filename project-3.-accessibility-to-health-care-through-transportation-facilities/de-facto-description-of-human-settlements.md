@@ -95,7 +95,7 @@ dev.off()
 
 The following image is one instance from a probability model \(based on 2015 data\) used to distribute all 124,388 persons geospatially throughout Sanniquelleh-Mahn.  I have plotted both my window and planar point patter as a `.png` graphics object and have set the `width =` and `height =` arguments to `2000` each, while the `cex =`  argument is set to `0.15`.  You will want to test some of the parameters with the output on your own computer to see what produces the best results.
 
-![All 2015 realized persons probabilistically distributed throughout Sanniquelleh-Mahn ](../.gitbook/assets/sm_pipo.png)
+![All estimated 2015 persons probabilistically distributed throughout Sanniquelleh-Mahn ](../.gitbook/assets/sm_pipo.png)
 
 
 
