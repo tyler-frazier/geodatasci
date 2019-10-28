@@ -61,7 +61,22 @@ dev.off()
 
 The above script produces the following plot as a pdf file in your working directory.  In addition to seeking an adm2 subdivision that is between 100,000 and 200,000 persons, also notice that the area of my selected district is about .7 degree longitude by .6 degrees latitude.  Likewise, select an area that is less than 1 degree longitude by 1 degree latitude.  If you want to increase the size of the area being analyzed and likewise the population residing within that space, you will have an opportuntity to do that later, but for now, start small.
 
-![](../.gitbook/assets/sm_pop15%20%281%29.png)
+![Population per grid cell throughout Sanniquelleh-Mahn, Liberia](../.gitbook/assets/sm_pop15%20%281%29.png)
+
+For the next step, you will use a slightly older, but very powerful R package called `spatstat`, which is used for all kinds of spatial statistics.  Spatial statistics typically involves much more than simply descriptive statistics, analytical models, and inference, it typically also involves some description and analysis of points, lines and polygons in that space.  For example, one might want to know how to describe a pattern of points that exists throughout a plane, and how it compares to a similarly existing pattern of points that is considered completely spatially randomly dispersed.  Additionally, one might also want to know if there is a spatial relationship with certain points within a point pattern and other points within that point pattern based on attributes of those points or other geospatial features.  In many ways, spatial statistics is just like traditional statistics, with the exception that an additinal layer of spatial and potentially geospatial complexity has been added.  
+
+To start your basic spatial analysis, of your selected adm2, you will need to use the `st_write()` command to write your `sf` object as a shapefile back to your working directory, in order to reimport using a command that is compatible with `spatstat`.
+
+```text
+st_write(your_adm2_sf, "name_of_file.shp", delete_dsn=TRUE)
+your_adm2_with_mtools <- readShapeSpatial("name_of_file.shp")
+```
+
+The `readShapeSpatial()` command is from the `maptools::` library and will create a SpatialPolygonsDataFrame in your workspace, which I have named above just `your_adm2_with_map_tools`.
+
+
+
+  
 
 
 
