@@ -61,7 +61,7 @@ dev.off()
 
 The above script produces the following plot as a pdf file in your working directory.  In addition to seeking an adm2 subdivision that is between 100,000 and 200,000 persons, also notice that the area of my selected district is about .7 degree longitude by .6 degrees latitude.  Likewise, select an area that is less than 1 degree longitude by 1 degree latitude.  If you want to increase the size of the area being analyzed and likewise the population residing within that space, you will have an opportuntity to do that later, but for now, start small.
 
-![Population per grid cell throughout Sanniquelleh-Mahn, Liberia](../.gitbook/assets/sm_pop15%20%281%29.png)
+![Population per grid cell throughout Sanniquelleh-Mahn, Liberia](../.gitbook/assets/sm_pop15%20%283%29.png)
 
 For the next step, you will use a slightly older, but very powerful R package called `spatstat`, which is used for all kinds of spatial statistics.  Spatial statistics typically involves much more than simply descriptive statistics, analytical models, and inference, it typically also involves some description and analysis of points, lines and polygons in that space.  For example, one might want to know how to describe a pattern of points that exists throughout a plane, and how it compares to a similarly existing pattern of points that is considered completely spatially randomly dispersed.  Additionally, one might also want to know if there is a spatial relationship with certain points within a point pattern and other points within that point pattern based on attributes of those points or other geospatial features.  In many ways, spatial statistics is just like traditional statistics, with the exception that an additinal layer of spatial and potentially geospatial complexity has been added.  
 
@@ -211,11 +211,11 @@ plot(st_geometry(subpolys), add = TRUE)
 dev.off()
 ```
 
-Most of these polygons are fine to retain, so I'm going to use the `filter()` command to remove only those polygons with populations less than 10 persons.  You may want to increase this value based on your results.  A more thorough analysis might involve considering population density in setting this threshold, but for now let's just use an _ad hoc_ measure.  
+I'm going to use the `filter()` command to remove only those polygons with populations less than 750 persons.  You may want to increase or decrease this value based on your results.  A more thorough analysis might involve considering population density in setting this threshold, but for now just use an _ad hoc_ measure.  
 
 ```text
 subpolys_filtered <- subpolys %>%
-  filter(pop15 > 10)
+  filter(pop15 > 750)
 ```
 
 You can compare earlier results with the newly produced filtered subpolys.
@@ -226,6 +226,98 @@ plot(sm_dens, main = NULL)
 plot(st_geometry(subpolys_filtered), add = TRUE)
 dev.off()
 ```
+
+We have evalutated the outside polygons by area and population, now let's likewise evaluate the inside polygons we have already created by population.  To transform a geometric collection into individual polygons use the `st_geometric_extract()` command.  Follow that by again extracting population values then aggregating and summing their values by each polygons ID.  Finally, add those values as a column to your inside\_polys `sf` object.
+
+```text
+inside_polys <- st_collection_extract(inside_polys, "POLYGON")
+
+ips_extract <- raster::extract(sm_pop15, inside_polys, df = TRUE)
+
+ips_totals <- ips_extract %>%
+  group_by(ID) %>%
+  summarize(pop15 = sum(lbr_ppp_2015, na.rm = TRUE))
+
+inside_polys <- inside_polys %>%
+  add_column(pop15 = ips_totals$pop15)
+```
+
+As with the outside polygons, set a value to filter population densities that do not qualify as urbanized.
+
+```text
+inside_polys_filtered <- inside_polys %>%
+  filter(pop15 > 150)
+```
+
+We finally at the point where we will union the two sets of polygons, extract all population values and designate our de facto human settlements and urbanized areas.  First use the `st_union()` command to combine both sets of polygons into a single `sf` feature.
+
+```text
+uas <- st_union(inside_polys_filtered, subpolys_filtered)
+```
+
+Use the `st_cast()` command to transform any multipolygons into individual entities.
+
+```text
+urban_areas <- st_cast(uas, "POLYGON")
+```
+
+At this point, most of the columns in our `urban_areas` are nonsensical and can be simply removed.  Just be sure to keep the geometry.
+
+```text
+urban_areas[ ,1:19] <- NULL
+```
+
+Have a quick look at the urban area polygons and density.
+
+![](../.gitbook/assets/sm_pop15.png)
+
+Extract all population values and add them to your urban\_areas polygons.
+
+```text
+uas_extract <- raster::extract(sm_pop15, urban_areas, df = TRUE)
+
+uas_totals <- uas_extract %>%
+  group_by(ID) %>%
+  summarize(pop15 = sum(lbr_ppp_2015, na.rm = TRUE))
+
+urban_areas <- urban_areas %>%
+  add_column(pop15 = uas_totals$pop15)
+```
+
+Finally, use `ggplot()` to plot each of your de facto human settlements and urban areas.
+
+```text
+ggplot() +
+  geom_sf(data = sm,
+          size = 0.75,
+          color = "gray50",
+          fill = "gold3",
+          alpha = 0.15) +
+  geom_sf(data = urban_areas,
+          size = 0.25,
+          color = "gray50",
+          alpha = 0.5)
+```
+
+Use `ggsave()` to save your plot.
+
+![](../.gitbook/assets/sm.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
