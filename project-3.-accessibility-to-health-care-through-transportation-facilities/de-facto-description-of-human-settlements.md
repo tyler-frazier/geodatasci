@@ -121,7 +121,7 @@ The resulting object is a real valued pixel image, which is kind of like a raste
 
 ![Spatial probability density function of Sanniquelleh-Mahn in 2015 ](../.gitbook/assets/sm_dens.png)
 
-As you may notice, the scale on the right hand side of our density image, provides a representation of where population densities are the highest, or in more common terms, where urbanization has occurred.  The goal of this part of the lab is to identify the boundaries of each uniform and continuous urban area and then to assign the summed population value to each of those polygons.  To start that process, you will need to convert your density image to a spatial grid, then back to an image, and finally to contour lines that we will use to begin creating our polygons.
+As you may notice, the scale on the right hand side of our density image, provides a representation of where population densities are the highest, or in more common terms, where urbanization has occurred.  The goal of this part of the lab is to identify the boundaries of each uniform and continuous urban area and then to assign the summed population value to each of those polygons.  To start that process, you will need to convert your density image to a spatial grid, then back to an image, and finally to contour lines that we will use to begin creating our polygons.  A key part of the `contourLines()` command is the `levels =`  argument on line 3 below.  In my example, I have set the `levels = 1000000`, which is the equivalent of the 1000000 density estimate contour line in the plot above.  What that means, is that R will produce a line that is equivalent to that contour value across the entire probabilty density function of the population.  You will want to modify your `levels =`  arugment to coorespond with the values on your produced density plot.  The value you choose will represnt the threshold set that uniformily and continuously differentiates urban areas from non-urban areas.  Later you will reassess this threshold after considering each polygon's area as well as its population.
 
 ```text
 Dsg <- as(your_ppp, "SpatialGridDataFrame")  # convert to spatial grid class
@@ -138,7 +138,7 @@ sf_multiline_obj <- st_as_sf(SLDF, sf)
 
 By plotting the spatial grid data frame with the newly created multiline object on top, the goal of our exercise will begin to become more readily visible.
 
-
+![](../.gitbook/assets/rplot%20%287%29.png)
 
 
 
