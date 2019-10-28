@@ -164,9 +164,26 @@ zz <- st_difference(adm2_sf, z)
 zzz <- st_cast(zz, "POLYGON")
 ```
 
-You will notice that the resutant polygon, has been subdivided into many different polygons with a very small space where the unenclosed contour lines intersected the adm2 border.  While this is helpful in the regard that now we in fact have polygons representing each area, it also presents two subsequent problems.  First, we now have a very large polygon that represents all of Sanniquelleh-Mahn that had values below the selected contour line value.  Second, there are also polygons that resulted from urbanized areas intersecting and then reintersecting the adm2 border and thus .  We will need to execute two commands to resolve both of these issues.
+You will notice that the resutant polygon, has been subdivided into many different polygons with a very small space where the unenclosed contour lines intersected the adm2 border.  While this is helpful in the regard that now we in fact have polygons representing each area, it also presents two subsequent problems.  First, we now have a very large polygon that represents all of Sanniquelleh-Mahn that had values below the selected contour line value.  Second, there are also polygons that resulted from urbanized areas intersecting and then reintersecting the adm2 border and thus resulting in smaller pockets of areas that also have values below the selected density contour line.  We will need to execute two appraoches in resolving these two issues.
 
-![](../.gitbook/assets/screen-shot-2019-10-28-at-12.02.21-am.png)
+![Result from the difference of buffered lines intersecting with a polygon](../.gitbook/assets/screen-shot-2019-10-28-at-12.02.21-am.png)
+
+The large polygon that represents that entire area of the adm2 that was not within the contour line, is also the largest polygon in the simple feature collection.  To remove it, calculate the area of all polygons in the collection using `st_area()` and then `filter()` based on the size of the largest feature.  To simpify the calculation, set the class of the area variable to numeric when calculating the area.
+
+```text
+zzz$area <- as.numeric(st_area(zzz))
+```
+
+Now look at the data for your created sf object \(I have named it `zzz` in the above example\) and order the area from largest to smallest.
+
+![](../.gitbook/assets/screen-shot-2019-10-28-at-12.38.55-am.png)
+
+In this example, the largest polygon has an area of about 1.28 x 10^9 m^2.  Remove that polygon, but retain the rest.
+
+```text
+subpolys <- zzz %>%
+  filter(area < 250000000)
+```
 
 
 
