@@ -185,11 +185,47 @@ subpolys <- zzz %>%
   filter(area < 250000000)
 ```
 
+To evaluate the remaining polygons that were created from the intersection of the outside lines with your adm2 border, we will use the extracted population for each polygon.  First `extract()` the population values from your adm2 world pop raster and assign each polygons ID to each gridcell.  Next, aggregate the extracted values, group by polygon ID while also calculating the sum of all gridcells within each polygon.  Finally, add those values to your newly created subpolygon sf object \(that represents the intersection of the outside lines with the adm2 border\).  Since we are using a masked raster of your adm2 area, this single layer `extract()` command should take significantly less time than with the larger, stacked `rasterBrick` used in previous projects.
 
+```text
+subpolys_extract <- raster::extract(sm_pop15, subpolys, df = TRUE)
 
+subpolys_totals <- subpolys_extract %>%
+  group_by(ID) %>%
+  summarize(pop15 = sum(lbr_ppp_2015, na.rm = TRUE))
 
+subpolys <- subpolys %>%
+  add_column(pop15 = subpolys_totals$pop15)
+```
 
+Have a look at the `pop15` value for each polygon in your `subpolys` object.
 
+![](../.gitbook/assets/screen-shot-2019-10-28-at-12.50.22-am.png)
+
+Removing the largest polygon was very effective at removing all areas that represented densities below the selected contour line.  You may also want to plot the subpolys \(over the density function\) to consider location and size.
+
+```text
+png("subpolys.png", width = 1200, height = 1200)
+plot(sm_dens, main = NULL)
+plot(st_geometry(subpolys), add = TRUE)
+dev.off()
+```
+
+Most of these polygons are fine to retain, so I'm going to use the `filter()` command to remove only those polygons with populations less than 10 persons.  You may want to increase this value based on your results.  A more thorough analysis might involve considering population density in setting this threshold, but for now let's just use an _ad hoc_ measure.  
+
+```text
+subpolys_filtered <- subpolys %>%
+  filter(pop15 > 10)
+```
+
+You can compare earlier results with the newly produced filtered subpolys.
+
+```text
+png("subpolys_filtered.png", width = 1200, height = 1200)
+plot(sm_dens, main = NULL)
+plot(st_geometry(subpolys_filtered), add = TRUE)
+dev.off()
+```
 
 
 
