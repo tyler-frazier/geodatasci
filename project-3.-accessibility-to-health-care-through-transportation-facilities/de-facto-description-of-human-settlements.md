@@ -355,7 +355,7 @@ ggplot() +
   scale_color_gradient(low = "add_color", high = "add_color")
 ```
 
-![](../.gitbook/assets/sm2.png)
+![](../.gitbook/assets/sm2%20%282%29.png)
 
 ## Team Challenge Question
 
