@@ -316,7 +316,7 @@ ggplot() +
 
 Use `ggsave()` to save your plot.
 
-![](../.gitbook/assets/sm1.png)
+![](../.gitbook/assets/sm1%20%281%29.png)
 
 In addition to identifying the urban areas, also describe their population and density.  You should already have population as a variable in your `urban_areas` object, but now also add density.  You will recall that we used this same snippet in the previous exercise.  Be sure to load the `library(units)` before using the `set_units()` command.
 
