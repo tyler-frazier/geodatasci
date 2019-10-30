@@ -359,7 +359,7 @@ ggplot() +
 
 ## Team Challenge Question
 
-Follow the steps from above used to produce the plots describing Liberia, but instead each team member should use their own selected LMIC country.  Produce **a geospatial plot** that describes the _de facto_ boundaries of human settlements and urbanization throughout your selected \(and subset\) administrative area.  Use a sized and colored point to represent the continuum of values from minimum and maximumum of two continuous variables simulataneously.
+Follow the steps from above used to produce the plots describing Liberia, but instead each team member should use their own selected LMIC country.  Produce **a geospatial plot** that describes the _de facto_ boundaries of human settlements and urbanization throughout your selected \(and subset\) administrative area.  Use a sized and colored point to represent the continuum of values from minimum and maximumum of two continuous variables simultaneously.
 
 Meet with your group and prepare two different plots for the Friday informal group presentation \(at the end of class\).  Then as a group, upload all 5 team members plots to \#data100\_igps \(informal group presentations\) by Sunday night.
 
