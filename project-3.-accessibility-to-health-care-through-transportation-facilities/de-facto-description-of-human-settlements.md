@@ -324,7 +324,7 @@ In addition to identifying the urban areas, also describe their population and d
 your_sf_obj <- your_sf_object %>%
     mutate(add_name_here = st_area(your_sf_object) %>%
              set_units(km^2)) %>%
-    mutate(density = pop_variable_here / area_variable_name_here)
+    mutate(density = as.numeric(pop_variable_here / area_variable_name_here))
 ```
 
 Instead of assigning a geometric scale to the actual polygons, use a point that will be sized and assigned a color according to both population and density.  First `cast()` the centroid of each polygon as a new simple features object.
@@ -335,7 +335,29 @@ ua_cntr_pts <-  urban_areas %>%
   st_cast("MULTIPOINT")
 ```
 
-Use the `plot(st_geometry(ua_cntr_pts))` command to have a look 
+Again, use `ggplot()` to plot a map of de facto urban areas and human settlements where each uniform and continuous area is statistically described in terms of its population as well as its density.
+
+```text
+ggplot() +
+  geom_sf(data = adm2_sf,
+          size = 0.75,
+          color = "gray50",
+          fill = "gold3",
+          alpha = 0.15) +
+  geom_sf(data = urban_areas_sf,
+          fill = "lightblue",
+          size = 0.25,
+          alpha = 0.5) +
+  geom_sf(data = cntr_pts_sf,
+          aes(size = add_var_here, 
+              color = add_var_here),
+          show.legend = 'point') +
+  scale_color_gradient(low = "add_color", high = "add_color")
+```
+
+
+
+
 
 
 
