@@ -284,7 +284,22 @@ urban_areas <- urban_areas %>%
   add_column(pop15 = uas_totals$pop15)
 ```
 
-Finally, use `ggplot()` to plot each of your de facto human settlements and urban areas.
+Again, look at your `sf` object `urban_areas` by entering its name into the console.
+
+![](../.gitbook/assets/screen-shot-2019-10-29-at-11.50.30-pm.png)
+
+Compare the output when controlling for the number of unique polygons in your simple feature object.
+
+```text
+urban_areas %>%
+  unique()
+```
+
+![](../.gitbook/assets/screen-shot-2019-10-30-at-12.28.31-am.png)
+
+It seems somehow through the process of spatial modifcations and unions, I captured some repetitive polygons.  This might have an impact on plotting, so I will go ahead and assign the `unique()` set of simple features to the object, by simply overwritting it `urban_areas <- urban_areas %>% unique()`.
+
+Use `ggplot()` to plot each of your de facto human settlements and urban areas.
 
 ```text
 ggplot() +
@@ -294,14 +309,33 @@ ggplot() +
           fill = "gold3",
           alpha = 0.15) +
   geom_sf(data = urban_areas,
-          size = 0.25,
-          color = "gray50",
+          fill = "lightblue",
+          size = 0.45,
           alpha = 0.5)
 ```
 
 Use `ggsave()` to save your plot.
 
-![](../.gitbook/assets/sm.png)
+![](../.gitbook/assets/sm1.png)
+
+In addition to identifying the urban areas, also describe their population and density.  You should already have population as a variable in your `urban_areas` object, but now also add density.  You will recall that we used this same snippet in the previous exercise.  Be sure to load the `library(units)` before using the `set_units()` command.
+
+```text
+your_sf_obj <- your_sf_object %>%
+    mutate(add_name_here = st_area(your_sf_object) %>%
+             set_units(km^2)) %>%
+    mutate(density = pop_variable_here / area_variable_name_here)
+```
+
+Instead of assigning a geometric scale to the actual polygons, use a point that will be sized and assigned a color according to both population and density.  First `cast()` the centroid of each polygon as a new simple features object.
+
+```text
+ua_cntr_pts <-  urban_areas %>% 
+  st_centroid() %>% 
+  st_cast("MULTIPOINT")
+```
+
+Use the `plot(st_geometry(ua_cntr_pts))` command to have a look 
 
 
 
