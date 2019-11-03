@@ -365,6 +365,31 @@ Meet with your group and prepare two different plots for the Friday informal gro
 
 ## Individual Stretch Goal 1
 
+Go back and plot all of the subdivisions within your adm2, adm3 or adm4 and add their names so you can identify which subdivision is adjacent to the one you have already selected.  The following code will filter from my adm2 `sf` object all of the districts that are located within the county \(adm1\) named Nimba.  You may recall using the filter and plot like during Project 1.
+
+```text
+lbr_adm2 %>%
+  filter(NAME_1 == "Nimba") %>%
+  ggplot() +
+  geom_sf(size = .15) +
+  geom_sf_text(aes(label = NAME_2),
+               size = 2.5)
+```
+
+This will produce the following ggplot output.
+
+![](../.gitbook/assets/nm%20%281%29.png)
+
+
+
+
+
+
+
+
+
+## Individual Stretch Goal 2
+
 Zipf's Law
 
 
