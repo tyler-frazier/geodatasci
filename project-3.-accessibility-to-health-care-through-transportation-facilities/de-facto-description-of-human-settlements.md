@@ -479,6 +479,37 @@ in_polys[ ,1] <- NULL
 oi_polys[ ,1:15] <- NULL
 ```
 
+Use the `st_union()` command to combine the inside, enclosed polygons with the outside, intersecting polygons.
+
+```text
+all_polys <- st_union(in_polys, oi_polys)
+```
+
+Use convert the resulting geometric collection `sf` object by first extracting and then casting to individual polygons.  You will likely have duplicated geometries.  Use the `unique()` command to remove all duplicates from your simple feature object.  Uniquely identify your simple feature object to distinguish it from your originally selected adm2 or adm3.  In the following example, I have named the `sf` object `all_polys_sp` to distinguish Saclepea from Sanniquelleh-Mahn.
+
+```text
+all_polys <- st_collection_extract(all_polys, "POLYGON")
+all_polys <- st_cast(all_polys, "POLYGON")
+all_polys_sp <- all_polys %>%
+  unique()
+```
+
+Use the familiar snippet of code to extract your population values and group by each individually defined urban area while also summing the population totals.  Add this column to your `sf` object, while also creating a variable that describes `area` as well as `density`.
+
+```text
+all_polys_sp_ext <- raster::extract(sp_pop15, all_polys_sp, df = TRUE)
+
+all_polys_sp_ttls <- all_polys_sp_ext %>%
+  group_by(ID) %>%
+  summarize(pop15 = sum(lbr_ppp_2015, na.rm = TRUE))
+
+all_polys_sp <- all_polys_sp %>%
+  add_column(pop15 = all_polys_sp_ttls$pop15) %>%
+  mutate(area = as.numeric(st_area(all_polys_sp) %>%
+                             set_units(km^2))) %>%
+  mutate(density = as.numeric(pop15 / area))
+```
+
 
 
 
