@@ -441,6 +441,50 @@ Check your output by plotting a `png()` object to your working directory.  Don't
 
 ![Spatial probability density estimation of Saclepea, Liberia](../.gitbook/assets/sp_dsg_conts.png)
 
+Create polygons from the enclosed, inside lines using the `st_polygonize()` command.
+
+```text
+inside_polys <- st_polygonize(SLDFs)
+```
+
+Again use the `st_difference()` command to isolate unenclosed lines that intersect the border of your adm2 or adm3.
+
+```text
+outside_lines <- st_difference(SLDFs, inside_polys)
+```
+
+Then buffer, intersect and create new polygons.
+
+```text
+outside_buffers <- st_buffer(outside_lines, 0.001)
+outside_intersects <- st_difference(sp, outside_buffers)
+```
+
+Use the `st_cast()` command to convert all of the outside intersecting enclosed areas to polygons.
+
+```text
+oi_polys <- st_cast(outside_intersects, "POLYGON")
+```
+
+Use the `st_collection_extract()` command to convert all internal, enclosed geometric collections to polygons.
+
+```text
+in_polys <- st_collection_extract(inside_polys, "POLYGON")
+```
+
+Remove all columns that are not geometries.
+
+```text
+in_polys[ ,1] <- NULL
+oi_polys[ ,1:15] <- NULL
+```
+
+
+
+
+
+
+
 
 
 
