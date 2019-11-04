@@ -380,9 +380,66 @@ This will produce the following ggplot output.
 
 ![](../.gitbook/assets/nm%20%281%29.png)
 
+The central and most dominant urban area within Sanniquelleh-Mahn was along the south-western border of the district, not only presenting urban densities with the shared international border with Guinnea to the north, but also with the internal Liberian district to the south.  The name of this district in my case Saclepea.  Choose an adm2 that borders with the original one you selected and then continue to conduct an analysis that defines de facto urbanized areas.  Instead of using `area` and `population` as the `filter()` variables, this time we will simply use `density`.
 
+As before, use the pipe operators to filter your newly selected adm2 district.
 
+```text
+sp <- lbr_adm2 %>%
+  filter(NAME_2 == "Saclepea")
+```
 
+Again, `crop()`, `mask()`, and use `cellStats()` to define a variable that represents the adm2's population. 
+
+```text
+sp_pop15 <- crop(lbr_pop15, sp)
+sp_pop15 <- mask(sp_pop15, sp)
+
+pop <- floor(cellStats(sp_pop15, 'sum'))
+```
+
+Use the `st_write()` command from the `sf::` package to export your simple features object to your working directory then reimport it using the `readShapeSpatial()` command frmo the `maptools::` package.  You may get some warnings from R but use the `plot(win)` command to confirm your newly created `win` object plots fine.
+
+```text
+st_write(sp, "sp.shp", delete_dsn=TRUE)
+sp_mt <- readShapeSpatial("sp.shp")
+win <- as(sp_mt, "owin")
+```
+
+Create your planar point pattern object using the random point command from `spatstat::` with the newly created `sp_pop15` raster object as the basis for the spatial probability distribution and the `win` object as the window or boundary for those randomly placed points \(each one again representing one person\).
+
+```text
+sp_ppp <- rpoint(pop, f = as.im(sp_pop15), win = win)
+```
+
+Again use the `bw.ppl()` command to define the value of the bandwidth you will use in the spatial probability function that will describe population density throughout your newly selected adm2.  Also, again, use the `save()` and `load()` command to expedite your script after running the `bw.ppl()` command one time.
+
+```text
+#bw <- bw.ppl(sp_ppp)
+#save(bw, file = "bw_sp.RData")
+load("bw_sp.RData")
+```
+
+Use the `density.ppp()` command to produce a spatial probability density function from the window that serves as the boundary of your planar point pattern and your calculated band width.
+
+```text
+sp_dens <- density.ppp(sp_ppp, sigma = bw)
+```
+
+Again, convert your density function to a spatial grid data frame in order to extract the contour line that will be used in your extract.  Use the same value in your `levels =` argument from your previous adm2 object.  Convert your spatial lines data frame object to an `sf` object using the `st_as_sf()` command. 
+
+```text
+Dsg <- as(sp_dens, "SpatialGridDataFrame")  # convert to spatial grid class
+Dim <- as.image.SpatialGridDataFrame(Dsg)  # convert again to an image
+Dcl <- contourLines(Dim, levels = 1000000)  # create contour object
+SLDF <- ContourLines2SLDF(Dcl, CRS("+proj=longlat +datum=WGS84 +no_defs"))
+
+SLDFs <- st_as_sf(SLDF, sf)
+```
+
+Check your output by plotting a `png()` object to your working directory.  Don't forget to use `dev.off()` to close the graphical device after plotting the `png`.
+
+![Spatial probability density estimation of Saclepea, Liberia](../.gitbook/assets/sp_dsg_conts.png)
 
 
 
