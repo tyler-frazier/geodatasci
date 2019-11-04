@@ -510,9 +510,47 @@ all_polys_sp <- all_polys_sp %>%
   mutate(density = as.numeric(pop15 / area))
 ```
 
+Use the `filter()` command to remove all polygons that are below urban densities.  Order the data based on the `density` variable and compare each polygons `area` and `population`.  You may also have some non-sensicial extremely large densities in places where slivers of polygons remained and due to the size exagerrated the density measure.  I'm setting my maxium value to `250` but consider your max based on your output.  Executing the following `filter()` command is different from the original adm2 analysis you conducted, where you used both `area` and `population`.  Using the `density` variable as a filter will likely be more effective, but be sure to review and interpret your output and confirm it makes sense.
 
+```text
+all_polys_sp <- all_polys_sp %>%
+  filter(density > 75) %>%
+  filter(density < 250)
+```
 
+Again, create your center points for use in your ggplot.
 
+```text
+sp_cntr_pts <-  all_polys_sp %>% 
+  st_centroid() %>% 
+  st_cast("MULTIPOINT")
+```
+
+Produce your spatial plot that defines all de facto settlements and urban areas.
+
+```text
+ggplot() +
+  geom_sf(data = sp,
+          size = 0.75,
+          color = "gray50",
+          fill = "gold3",
+          alpha = 0.15) +
+  geom_sf(data = all_polys_sp,
+          fill = "lightblue",
+          size = 0.25,
+          alpha = 0.5) +
+  geom_sf(data = sp_cntr_pts,
+          aes(size = pop15,
+              color = density),
+          show.legend = 'point') +
+  scale_color_gradient(low = "yellow", high = "red") +
+  xlab("longitude") + ylab("latitude") +
+  ggtitle("Urbanized Areas throughout Saclepea, Liberia")
+```
+
+Review the output using `ggsave("sp.png", width = 10, height = 10)`.  Return to your analysis and modify the `density >` or `density <` arguments as needed.
+
+![](../.gitbook/assets/sp.png)
 
 
 
