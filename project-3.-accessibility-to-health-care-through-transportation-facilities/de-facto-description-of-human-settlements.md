@@ -552,9 +552,44 @@ Review the output using `ggsave("sp.png", width = 10, height = 10)`.  Return to 
 
 ![](../.gitbook/assets/sp.png)
 
+Finally, combine your earlier output describing your original adm2 with your newly produced spatial description.  Note how `sp` , `all_polys_sp` and `sp_cntr_pts` are distinguished from `sm` ,`all_polys_sm`, and `sm_cntr_pts`.
 
+```text
+ggplot() +
+  geom_sf(data = sp,
+          size = 0.75,
+          color = "gray50",
+          fill = "gold3",
+          alpha = 0.15) +
+  geom_sf(data = sm,
+          size = 0.75,
+          color = "gray50",
+          fill = "gold3",
+          alpha = 0.15) +
+  geom_sf(data = all_polys_sp,
+          fill = "lightblue",
+          size = 0.25,
+          alpha = 0.5) +
+  geom_sf(data = all_polys_sm,
+          fill = "lightblue",
+          size = 0.25,
+          alpha = 0.5) +
+  geom_sf(data = sp_cntr_pts,
+          aes(size = pop15,
+              color = density),
+          show.legend = 'point') +
+  geom_sf(data = sm_cntr_pts,
+          aes(size = pop15,
+              color = density),
+          show.legend = 'point') +
+  scale_color_gradient(low = "yellow", high = "red") +
+  xlab("longitude") + ylab("latitude") +
+  ggtitle("Urbanized Areas throughout Sanniquelleh-Mahn & Saclepea, Liberia")
+```
 
+Review the output using `ggsave("smsp.png", width = 12, height = 12)`.  Return to your original analysis for the first adm2 you selected and modify the `density >` or `density <` arguments as needed.
 
+![](../.gitbook/assets/smsp.png)
 
 
 
