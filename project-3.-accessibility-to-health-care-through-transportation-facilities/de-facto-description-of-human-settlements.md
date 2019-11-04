@@ -552,44 +552,97 @@ Review the output using `ggsave("sp.png", width = 10, height = 10)`.  Return to 
 
 ![](../.gitbook/assets/sp.png)
 
-Finally, combine your earlier output describing your original adm2 with your newly produced spatial description.  Note how `sp` , `all_polys_sp` and `sp_cntr_pts` are distinguished from `sm` ,`all_polys_sm`, and `sm_cntr_pts`.
+Finally, combine your earlier output describing your original adm2 with your newly produced spatial description.  Start by using the `st_union()` command to combine the two original `sf` objects.  Use the `summarize()` command to dissolve the two polygons into one.
+
+```text
+combined_adm2s <- sm %>%
+  st_union(sp) %>%
+  summarize()
+```
+
+Also combine your urban area polygons from both the first adm2 district and the second one you created.  Again use the `summarize()` command to dissolve polygons that share common boundaries into single entities, such as those that share a the border between the two administrative areas.  Use `st_cast()` to covnert all multipolygons into single polygons.
+
+```text
+combined_polys <- all_polys_sp %>% 
+  st_union(all_polys_sm) %>%
+  summarize() %>% 
+  st_cast("POLYGON")
+```
+
+Merge both of your raster objects into a single raster layer.
+
+```text
+comb_raster <- merge(sm_pop15, sp_pop15)
+```
+
+Use the `sf` object that combined the urban area polygons from both administrative subdivisions to extract all values from the merged raster layer.
+
+```text
+combined_ext <- raster::extract(comb_raster, combined_polys, df = TRUE)
+```
+
+Sum population totals by polygon.
+
+```text
+combined_ttls <- combined_ext %>%
+  group_by(ID) %>%
+  summarize(pop15 = sum(layer, na.rm = TRUE))
+```
+
+Add the totals as a column to your `sf` object and also create the `area` and `density` variables.
+
+```text
+combined_polys <- combined_polys %>%
+  add_column(pop15 = combined_ttls$pop15) %>%
+  mutate(area = as.numeric(st_area(combined_polys) %>%
+                             set_units(km^2))) %>%
+  mutate(density = as.numeric(pop15 / area))
+```
+
+Filter polygons based on `density`, `area` or `population` as needed.
+
+```text
+combined_polys <- combined_polys %>%
+  filter(density > 80) %>%
+  filter(density < 175)
+```
+
+Create the center points
+
+```text
+combined_pts <-  combined_polys %>% 
+  st_centroid() %>% 
+  st_cast("MULTIPOINT")
+```
+
+Use ggplot to produce your spatial description of all human settlements and urban areas throughout your two adm2s or adm3s.
 
 ```text
 ggplot() +
-  geom_sf(data = sp,
+  geom_sf(data = combined_adm2s,
           size = 0.75,
           color = "gray50",
           fill = "gold3",
           alpha = 0.15) +
-  geom_sf(data = sm,
-          size = 0.75,
-          color = "gray50",
-          fill = "gold3",
-          alpha = 0.15) +
-  geom_sf(data = all_polys_sp,
+  geom_sf(data = combined_polys,
           fill = "lightblue",
           size = 0.25,
           alpha = 0.5) +
-  geom_sf(data = all_polys_sm,
-          fill = "lightblue",
-          size = 0.25,
-          alpha = 0.5) +
-  geom_sf(data = sp_cntr_pts,
-          aes(size = pop15,
-              color = density),
-          show.legend = 'point') +
-  geom_sf(data = sm_cntr_pts,
+  geom_sf(data = combined_pts,
           aes(size = pop15,
               color = density),
           show.legend = 'point') +
   scale_color_gradient(low = "yellow", high = "red") +
   xlab("longitude") + ylab("latitude") +
   ggtitle("Urbanized Areas throughout Sanniquelleh-Mahn & Saclepea, Liberia")
+
 ```
 
-Review the output using `ggsave("smsp.png", width = 12, height = 12)`.  Return to your original analysis for the first adm2 you selected and modify the `density >` or `density <` arguments as needed.
+Review the output using `ggsave("combined.png", width = 12, height = 12)`.  Modify the `density >` or `density <` arguments as needed.
 
-![](../.gitbook/assets/smsp.png)
+![](../.gitbook/assets/combined.png)
+
+
 
 
 
