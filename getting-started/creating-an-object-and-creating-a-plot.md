@@ -35,7 +35,7 @@ We can see that our earlier use of the colon in `x <- 1:10` created an object na
 
 `plot(x,y)`
 
-![A plot of x increasing while y is decreasing](../.gitbook/assets/rplot01%20%282%29.png)
+![A plot of x increasing while y is decreasing](../.gitbook/assets/rplot01%20%283%29.png)
 
 We can continue to describe our plot by adding an argument to our command by specifying the plot type as a line and not simply points
 
@@ -99,7 +99,7 @@ symbols(east, north, squares = rep(.75,10), inches = FALSE)
 
 Following is one possible outcome produced by the randomly produced coordinates.  While the squares produced in your plot will be in different locations, the number of squares as well as the size of each, should be very similar.  Lets also consider the additional arguments in the `symbols()` command.  In the `squares =` argument within the command, I have also used the `rep()` function, which will repeat the length of each square, `.75` in this case, 10 times, or 1 time for each square.  I have also added the `inches = FALSE` argument so the units are considered to be similar to the axes.
 
-![Squares within a Defined Area](../.gitbook/assets/rplot01%20%285%29.png)
+![Squares within a Defined Area](../.gitbook/assets/rplot01%20%286%29.png)
 
 Now lets add some circles to our plot.  This time, instead of assigning an object a permanent value by randomly selecting from a series of numbers, lets randomly select values as part of creating the plot with the `symbol()` function.
 
@@ -139,7 +139,7 @@ symbols(sample(x, 10, replace = TRUE),
 
 ```
 
-![Squares with Two Types of Circles within a Defined Area](../.gitbook/assets/rplot03%20%282%29.png)
+![Squares with Two Types of Circles within a Defined Area](../.gitbook/assets/rplot03%20%283%29.png)
 
 Thus far we have only created R objects that are of the vector class.  We can review the class of one of the objects we have created by typing `class(east)` directly into the console and observe that R informs us that the object is a vector of integers.  Now let's create a new class of an object called a data frame that contains a series of rows and columns where each row represents an observation while each column represents a different variable.  We can start with the coordinates that represent the center point of each square.
 

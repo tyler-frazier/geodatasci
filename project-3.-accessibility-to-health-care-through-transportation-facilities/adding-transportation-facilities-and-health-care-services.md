@@ -77,11 +77,36 @@ other_hcfs <- adm_hcf %>%
   add_command_here(add_variable_here == "doctors" | add_variable_here == "dentist" | add_variable_here == "pharmacy")
 ```
 
- 
+ Add each health care facility type to your plot.
 
+```text
+ggplot() +
 
+...
+  
+  geom_sf(data = hospital,
+          size = add_size,
+          color = "color") +
+  geom_sf(data = clinic,
+          size = add_size,
+          color = "color") +
+  geom_sf(data = ohcf,
+          size = add_size,
+          color = "color") +
+  
+  ...
+  
+  ggtitle("Access to Health Care Serivces throughout Sanniquelleh-Mahn & Saclepea, Liberia")
 
+```
 
+The previous plot will produce the following output.
+
+![](../.gitbook/assets/rplot01%20%281%29.png)
+
+Finally, add the scale that describes the size and density of each urban area.  Produce the plot that describes access to health care services via transportation facilities throughout your selected and combined adm2 areas.
+
+![](../.gitbook/assets/rplot04%20%282%29.png)
 
 
 

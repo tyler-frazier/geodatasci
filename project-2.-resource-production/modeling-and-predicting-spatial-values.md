@@ -108,7 +108,7 @@ cellStats(population, sum)
 
 R should return the same total previously used when you calcualte `sum(your_adm2$pop15)`.
 
-![](../.gitbook/assets/rplot01%20%287%29.png)
+![](../.gitbook/assets/rplot01%20%288%29.png)
 
 ## Investigate Margins of Error
 
@@ -160,9 +160,9 @@ gmonrovia_pop <- crop(gmonrovia_pop, extGMN)
 
 Plot your Monrovia rasters.
 
-![Error in terms of Predicted Values - WorldPop estimates](../.gitbook/assets/rplot03%20%283%29.png)
+![Error in terms of Predicted Values - WorldPop estimates](../.gitbook/assets/rplot03%20%284%29.png)
 
-![](../.gitbook/assets/rplot04%20%282%29.png)
+![](../.gitbook/assets/rplot04%20%283%29.png)
 
 Finally, plot a three dimension map of the values, to gauge exactly how much variation was exhibited in the predicted values.  Install and load the `rgl::` and `rasterVis::` libraries in order to execute the following command.
 
