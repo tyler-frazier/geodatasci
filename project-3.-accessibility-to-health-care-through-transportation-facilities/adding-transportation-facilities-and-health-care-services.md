@@ -110,17 +110,14 @@ Finally, add the scale that describes the size and density of each urban area.  
 
 ## Project 3. Individual Deliverable
 
-Upload the spatial plot that describes the de facto location of human settlements and urban areas, the center lines of classified roadways and the location of health care facilities by type. 
+Upload the spatial plot that describes the _de facto_ location of human settlements and urban areas, the center lines of classified roadways and the location of health care facilities by type throughout your selected and combined adm2, adm3 or adm4 areas.
 
-Accompany your series of plots with a written statement provides answers to the following information. 
+Accompany your plot with a written statement that provides answers to the following information. 
 
-1. Total population of selected and combined adm2, adm3 or adm4 areas
-2. Total number of distinctly defined human settlements or urban areas
-3. A description of the distribution of sizes and densities of all human settlements and urban areas throughout your selected and combined adm2, adm3 or adm4 areas
-4. A description of the roadways and your estimate of the transportation networks level of service in comparison to the spatial distriubtion of human settlements and urban areas
-5. A description of health care facilities and your estimate of service accessibility in comparison to the spatial distriubtion of human settlements and urban areas
+1. Total population of selected and combined adm2, adm3 or adm4 areas and the total number of distinctly defined human settlements or urban areas
+2. A description of the distribution of sizes and densities of all human settlements and urban areas throughout your selected and combined adm2, adm3 or adm4 areas
+3. A description of the roadways and your estimate of the transportation networks level of service in comparison to the spatial distriubtion of human settlements and urban areas
+4. A description of health care facilities and your estimate of service accessibility in comparison to the spatial distriubtion of human settlements and urban areas
 
-Be prepared to Upload your deliverable to the slack channel \#data100\_project2 no later than 11:59PM on Sunday, October 20th.
-
-
+Each team member should be prepared to present their final draft results on Friday, November 15th during the informal group presentations.  Upload your finished product to the slack channel \#data100\_project3 no later than 11:59PM on Sunday, November 17th.
 
