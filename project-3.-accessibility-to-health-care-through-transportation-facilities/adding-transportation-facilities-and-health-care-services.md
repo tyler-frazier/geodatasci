@@ -108,7 +108,19 @@ Finally, add the scale that describes the size and density of each urban area.  
 
 ![](../.gitbook/assets/rplot04%20%282%29.png)
 
+## Project 3. Individual Deliverable
 
+Upload the spatial plot that describes the de facto location of human settlements and urban areas, the center lines of classified roadways and the location of health care facilities by type. 
+
+Accompany your series of plots with a written statement provides answers to the following information. 
+
+1. Total population of selected and combined adm2, adm3 or adm4 areas
+2. Total number of distinctly defined human settlements or urban areas
+3. A description of the distribution of sizes and densities of all human settlements and urban areas throughout your selected and combined adm2, adm3 or adm4 areas
+4. A description of the roadways and your estimate of the transportation networks level of service in comparison to the spatial distriubtion of human settlements and urban areas
+5. A description of health care facilities and your estimate of service accessibility in comparison to the spatial distriubtion of human settlements and urban areas
+
+Be prepared to Upload your deliverable to the slack channel \#data100\_project2 no later than 11:59PM on Sunday, October 20th.
 
 
 
