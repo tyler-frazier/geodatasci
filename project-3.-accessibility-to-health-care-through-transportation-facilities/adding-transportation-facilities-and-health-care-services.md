@@ -60,11 +60,30 @@ ggplot() +
   ggtitle("Roadways throughout your selected adminitrative units")
 ```
 
-The previous code will produce the following plot for the two Liberian administrative subdivision previously selected.
+The previous code will produce the following plot for the two Liberian administrative subdivisions that were previously selected and unioned into a single `sf` object.
 
 ![](../.gitbook/assets/rplot02%20%285%29.png)
 
+Go back to the HDX website for your LMIC and download the data that describes health care facilities.  Use the `read_sf()` command to load the data into RStudio.  Use `st_crop()` to crop the health care facilities to your selected adm2 or adm3 area.  Use `table()` to identify all of the different types of health care facilities.  Subset each of the health care facility types in the same manner you previously subset transportation facility classifications.
 
+```text
+hospitals <- adm_hcf %>%
+  add_command_here(add_variable_here == "hospital")
+
+clinics <- adm_hcf %>%
+  add_command_here(add_variable_here == "clinic")
+
+other_hcfs <- adm_hcf %>%
+  add_command_here(add_variable_here == "doctors" | add_variable_here == "dentist" | add_variable_here == "pharmacy")
+```
 
  
+
+
+
+
+
+
+
+
 
