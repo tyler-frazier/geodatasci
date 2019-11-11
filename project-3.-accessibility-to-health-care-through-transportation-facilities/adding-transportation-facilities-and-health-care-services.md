@@ -11,7 +11,7 @@ LMIC_roads  <- add_command_here("data_folder/LMIC_roads.shp")
 Using the polygon you created at the end of the previous exercise use the `st_crop()` command to crop your `LMIC_roads` object to just those roadways that are located within the adm2 or adm3 previously selected.
 
 ```text
-adm2_roads <- add_command_here(LMIC_roads, subset_adm2)
+adm2_roads <- add_command_here(LMIC_roads, unioned_adm2_borders)
 ```
 
 Use the `table()` command to review the different classifications of roads that populate your adm2.  Most likely the variable you will be interested in producing a table that describes the different discrete values is named `CATEGORY`.
@@ -23,15 +23,46 @@ add_command_here(object$variable)
 Take each of these different discrete outcomes within your roads `sf` object and use the `filter()` command to subset based on each different classification.
 
 ```text
-primary <- combined_rds %>%
-  filter(CATEGORY == "Primary Routes")
+primary <- adm2_roads %>%
+  add_command_here(VARIABLE == "Primary Routes")
 
-paved <- combined_rds %>%
-  filter(CATEGORY == "Paved")
+secondary <- adm2_roads %>%
+  add_command_here(VARIABLE == "Paved")
 
-tracks <- combined_rds %>%
-  filter(CATEGORY == "Tracks")
+tertiary <- adm2_roads %>%
+  add_command_here(VARIABLE == "Tracks")
 ```
+
+Use `ggplot()` to produce a plot that describes the location of all urban areas as well as the transportation network throughout your selected adm2.
+
+```text
+ggplot() +
+  geom_sf(data = combined_adm2s_border,
+          size = 0.75,
+          color = "gray50",
+          fill = "gold3",
+          alpha = 0.15) +
+  geom_sf(data = combined_urban_areas,
+          size = 0.75,
+          color = "gray50",
+          fill = "gold3",
+          alpha = 0.15) +
+  geom_sf(data = primary_roads,
+          size = set_size,
+          color = "color") +
+  geom_sf(data = seondary_roads,
+          size = set_size,
+          color = "color") +
+  geom_sf(data = tertiary_roads,
+          size = set_size,
+          color = "color") +
+  xlab("longitude") + ylab("latitude") +
+  ggtitle("Roadways throughout your selected adminitrative units")
+```
+
+The previous code will produce the following plot for the two Liberian administrative subdivision previously selected.
+
+![](../.gitbook/assets/rplot02%20%285%29.png)
 
 
 
