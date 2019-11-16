@@ -45,3 +45,8 @@
 
 ## Project 4. Demographic Analysis with Survey Data
 
+## Assignment 4. Part 1 - Present Your Results
+
+* [Background](assignment-4.-part-1-present-your-results/background.md)
+* [Assignment](assignment.md)
+
