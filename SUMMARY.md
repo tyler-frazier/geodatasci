@@ -45,8 +45,9 @@
 
 ## Project 4. Demographic Analysis with Survey Data
 
-## Assignment 4. Part 1 - Present Your Results
+## Assignment 4. Present your Results and Write a Proposal <a id="assignment-4.-part-1-present-your-results"></a>
 
 * [Background](assignment-4.-part-1-present-your-results/background.md)
-* [Assignment - Part 1](assignment-4.-part-1-present-your-results/assignment.md)
+* [Part 1.  Present your Results](assignment-4.-part-1-present-your-results/assignment.md)
+* [Part 2.  Write a Proposal](assignment-4.-part-1-present-your-results/part-2.-write-a-proposal.md)
 
