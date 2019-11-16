@@ -10,7 +10,7 @@ Over the course of this semester you have defined a development related problem,
 
 ### Step 1. Write an abstract and give your presentation a title
 
-Draft an abstract and give your presentation a title. Review and edit your abstract, which should be less than a page in length, single spaced. Typeset your abstract, including title, your name and the date you will present. Post your typeset abstract to slack channel data150 assignment4 by midnight Friday, November 22nd.
+Draft an abstract and give your presentation a title. Review and edit your abstract, which should be less than a page in length, single spaced. Typeset your abstract, including title, your name and the date you will present. Post your typeset abstract to slack channel data150\_assignment4 by midnight Friday, November 22nd.
 
 ### Step 2. Prepare your slides for presentation
 
@@ -21,7 +21,7 @@ Prepare to speak for 10 minutes and include a presentation slide that addresses 
 * Identify an area of the literature that requires further investigation. Discuss how data or models fail to describe, analyze or predict some essential element of your selected geospatial human development process. Align your central research question such that it addresses your defined research gap. Position this newly formed central research question in relation to both the broader and more specific questions you had previously articulated.
 * Propose a research plan that you will implement in order to answer your central research question. Focus on the design of the plan rather than cost. Keep in mind a 1 year time frame from the point of approval and funding to achieving planned goals and objectives.
 
-Post your slides to slack channel data150 assignment4 by midnight the day before your presentation.
+Post a final draft of your slides to slack channel data150\_assignment4 by midnight the day before your presentation.
 
 #### Step 3. Present your research during the colloquium
 
