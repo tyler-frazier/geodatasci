@@ -48,5 +48,5 @@
 ## Assignment 4. Part 1 - Present Your Results
 
 * [Background](assignment-4.-part-1-present-your-results/background.md)
-* [Assignment](assignment-4.-part-1-present-your-results/assignment.md)
+* [Assignment - Part 1](assignment-4.-part-1-present-your-results/assignment.md)
 
