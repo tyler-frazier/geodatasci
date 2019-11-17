@@ -2,7 +2,7 @@
 
 ## Summary
 
-The final assignment of this course has two parts. First, you will individually present the results of your research during our in-class colloquium on human development and data science. The colloquium will be held on December 3rd and 5th.
+The final assignment of this course has two parts. First, you will individually present the results of your research during our in-class colloquium on human development and data science. The colloquium will be held on Tuesday, December 3rd and Thursday, December 5th.
 
 ## Presentation
 
@@ -10,9 +10,9 @@ Over the course of this semester you have defined a development related problem,
 
 ### Step 1. Write an abstract and give your presentation a title
 
-Draft an abstract and give your presentation a title. Review and edit your abstract, which should be less than a page in length, single spaced. Typeset your abstract, including title, your name and the date you will present. Post your typeset abstract to slack channel data150\_assignment4 by midnight Friday, November 22nd.
+Draft an abstract and give your presentation a title. Review and edit your abstract, which should be less than a page in length, single spaced. Write your abstract, including title, your name and the date you will present. Post your abstract to slack channel data150\_assignment4 by midnight Friday, November 22nd.
 
-### Step 2. Prepare your slides for presentation
+### Step 2. Prepare the slides for your presentation
 
 Prepare to speak for 10 minutes and include a presentation slide that addresses each of the following elements from your research.
 
