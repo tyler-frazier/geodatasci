@@ -66,7 +66,7 @@ combined_matrix %>%
           soliddepth = -50, shadowdepth = -100)
 ```
 
-Using the `render_snapshop()` command, produce a similar type of image.
+Using the `render_snapshop()` command, produce a three dimesnional image similar to the following for your selected and combined adm2s.
 
 ```text
 render_snapshot(title_text = "Sanniquelleh-Mahn & Saclepea, Liberia", 
@@ -75,4 +75,10 @@ render_snapshot(title_text = "Sanniquelleh-Mahn & Saclepea, Liberia",
 ```
 
 ![](.gitbook/assets/rplot%20%281%29.png)
+
+The `sphere_shade(texture = ...)` command presents other options such as  `texture = "desert"` .  To review all of the texture options, type `?sphere_shade` in the console.
+
+
+
+
 
