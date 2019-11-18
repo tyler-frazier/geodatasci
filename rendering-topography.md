@@ -183,3 +183,16 @@ Next add your roads.
 
 ![](.gitbook/assets/rplot03%20%282%29.png)
 
+Then add your health care facilities.
+
+![](.gitbook/assets/rplot04%20%284%29.png)
+
+Finally, label the primary urban area.  You will need to modify the `x =`  and `y =`  argument to properly place the label.
+
+```text
+render_label(combined_matrix, "Ganta", textcolor ="white", linecolor = "white", 
+             x = 250, y = 575, z = 1000, textsize = 2.5, linewidth = 4, zscale = 10)
+```
+
+![](.gitbook/assets/rplot07%20%281%29.png)
+
