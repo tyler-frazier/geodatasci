@@ -12,7 +12,7 @@ library(sf)
 library(tidyverse)
 
 library(rayshader)
-#library(rayrender)
+library(rayrender)
 ```
 
 Use the `setwd()` command to make certain your working directory is set to the data folder where you saved your raster and shapefiles.  Read your raster file that describes the topography throughout your LMIC into RStudio.  Also read the shapefile of your adm2 or adm3s as a simple features object into RStudio.  Following are my examples for Liberia.
@@ -22,9 +22,15 @@ lbr_topo <- raster("lbr_srtm_topo_100m.tif")
 lbr_adm2  <- read_sf("gadm36_LBR_2.shp")
 ```
 
-With the polygon you previously created by unioning the two adm2s or adm3s you selected, use the `crop()` command to crop the raster describing the topography of your LMIC.
+With the polygon you previously created by unioning the two adm2s or adm3s you selected, use the `crop()` command to crop the raster describing the topography of your LMIC.  You could also `mask()` the topographical raster, but I am going to forego that step in favor of retaining the area within the bounding box used by the `sf` from my combined adm2.
+
+```text
+combined_topo <- crop(lbr_topo, combined_adm2s)
+```
 
   
+
+
 
 
 
