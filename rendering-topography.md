@@ -111,6 +111,18 @@ obj
 dev.off()
 ```
 
+After you have saved your `.png` graphics file to your working directory, use the `readPNG()` command from the `png::` library and import your image.  Once it has been imported to R, add the `add_overlay()` command, in order to overlay the dashed, gold border of your combined adm2s.
+
+```text
+overlay_img <- png::readPNG("combined.png")
+
+combined_matrix %>%
+  sphere_shade() %>%
+  add_water(detect_water(combined_matrix)) %>%
+  add_overlay(overlay_img, alphalayer = 0.95) %>%
+  plot_map()
+```
+
 ![](.gitbook/assets/rplot05%20%282%29.png)
 
 
