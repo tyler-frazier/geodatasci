@@ -74,5 +74,5 @@ render_snapshot(title_text = "Sanniquelleh-Mahn & Saclepea, Liberia",
                 title_color = "grey90")
 ```
 
-![](.gitbook/assets/rplot%20%289%29.png)
+![](.gitbook/assets/rplot%20%281%29.png)
 

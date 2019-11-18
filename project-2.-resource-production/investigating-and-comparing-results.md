@@ -273,7 +273,7 @@ plot(lbr_pop15)
 rgl.snapshot("diff", fmt = "png", top = TRUE )
 ```
 
-![Population: Predictors - Sums](../.gitbook/assets/rplot%20%285%29.png)
+![Population: Predictors - Sums](../.gitbook/assets/rplot%20%286%29.png)
 
 ![Difference: Predictors - Sums](../.gitbook/assets/rplot10.png)
 

@@ -138,7 +138,7 @@ sf_multiline_obj <- st_as_sf(SLDF, sf)
 
 By plotting the spatial grid data frame with the newly created multiline object on top, the goal of our exercise will begin to become more readily visible.
 
-![](../.gitbook/assets/rplot%20%287%29.png)
+![](../.gitbook/assets/rplot%20%288%29.png)
 
 
 
