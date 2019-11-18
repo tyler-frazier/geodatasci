@@ -78,6 +78,39 @@ render_snapshot(title_text = "Sanniquelleh-Mahn & Saclepea, Liberia",
 
 The `sphere_shade(texture = ...)` command presents other options such as  `texture = "desert"` .  To review all of the texture options, type `?sphere_shade` in the console.  Test each option out to determine which one best matches the physical geography of your selected area.
 
+Return to the plot produced at the end of project 3.  Use `ggplot()` to produce a border of your combined adm2s.  Set the size, linetype and color appropriate for a border.  Also set the `alpha = 0` such that the plot is transparent.  Notice at the end I have added several arguments that effectively remove the axes, the gridded background, labels and expands the plot itself to its boundary in order to maximize the total plot area.
+
+```text
+ggplot() +
+  geom_sf(data = combined_adm2s,
+          size = 1.5,
+          linetype = "11",
+          color = "gold",
+          alpha = 0) +
+  theme_void() + theme(legend.position="none") +
+  scale_x_continuous(expand=c(0,0)) +
+  scale_y_continuous(expand=c(0,0)) +
+  labs(x=NULL, y=NULL, title=NULL)
+```
+
+Use the script above to produce a similar plot for your selected adm2 within your LMIC.
+
+![](.gitbook/assets/rplot01%20%287%29.png)
+
+Now, instead of producing the plot in R, modify the first line of the code in order to assign the ggplot to an object.
+
+```text
+obj <- ggplot() + ...
+```
+
+
+
+
+
+
+
+
+
 
 
 

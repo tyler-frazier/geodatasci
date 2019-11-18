@@ -108,7 +108,7 @@ cellStats(population, sum)
 
 R should return the same total previously used when you calcualte `sum(your_adm2$pop15)`.
 
-![](../.gitbook/assets/rplot01%20%288%29.png)
+![](../.gitbook/assets/rplot01%20%289%29.png)
 
 ## Investigate Margins of Error
 
