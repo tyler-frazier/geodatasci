@@ -145,9 +145,41 @@ Modifying the `alphalayer =` argument will set the transparency of the combined 
 
 ![](.gitbook/assets/rplot06%20%282%29.png)
 
+Add the boundaries of your de facto urban areas to your `ggplot` object and again create your `.png` file.
 
+```text
+obj <- ggplot() +
+  geom_sf(data = combined_adm2s,
+          size = 5.0,
+          linetype = "11",
+          color = "gold",
+          alpha = 0) +
+  geom_sf(data = combined_polys,
+          size = 0.75,
+          color = "gray50",
+          fill = "gold3",
+          alpha = 0.5) +
+  theme_void() + theme(legend.position="none") +
+  scale_x_continuous(expand=c(0,0)) +
+  scale_y_continuous(expand=c(0,0)) +
+  labs(x=NULL, y=NULL, title=NULL)
 
+png("combined.png", width = 920, height = 1136, units = "px", bg = "transparent")
+obj
+dev.off()
+```
 
+Again, run the `readPNG()` command to reimport your `.png` file as an object.
 
+```text
+overlay_img <- png::readPNG("combined.png")
+```
 
+Produce your three-dimensional plot with borders and urban areas.
+
+![](.gitbook/assets/rplot02%20%284%29.png)
+
+Next add your roads.
+
+![](.gitbook/assets/rplot03%20%282%29.png)
 
