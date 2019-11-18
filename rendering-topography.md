@@ -103,9 +103,13 @@ Now, instead of producing the plot in R, modify the first line of the code in or
 obj <- ggplot() + ...
 ```
 
+Then use the `png()` command to create your graphic object.  Set the `width =` and `height =` to the same dimensions previously returned by the `raster_to_matrix()` command.  Set the `units =`  to pixels, and also set the `bg =` arugment to transparent, so only the lines themselve appear without any background in your `.png` file. 
 
-
-
+```text
+png("combined.png", width = 920, height = 1136, units = "px", bg = "transparent")
+obj
+dev.off()
+```
 
 
 
