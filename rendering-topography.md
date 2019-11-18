@@ -83,7 +83,7 @@ Return to the plot produced at the end of project 3.  Use `ggplot()` to produce 
 ```text
 ggplot() +
   geom_sf(data = combined_adm2s,
-          size = 1.5,
+          size = 4.5,
           linetype = "11",
           color = "gold",
           alpha = 0) +
@@ -111,7 +111,7 @@ obj
 dev.off()
 ```
 
-
+![](.gitbook/assets/rplot05%20%282%29.png)
 
 
 

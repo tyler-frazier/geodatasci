@@ -186,7 +186,7 @@ text(x = dwellings$east,
 
  Since label coordinates are the same as the center point for each square, reading the labels is confounded.  Instead of placing the label directly on top of the dwelling unit, add a few units north to the `y =` argument in order to displace each label a bit in the northerly direction.
 
-![Paths &amp; House Numbers](../.gitbook/assets/rplot05%20%282%29.png)
+![Paths &amp; House Numbers](../.gitbook/assets/rplot05%20%283%29.png)
 
 Now perhaps instead of traversing a path between each house sequentially, our traveling person selected on 3 of the dwellings and moved between each of those buildings.  First we will randomly select 3 numbers that will be used to identify the chosen homes.  This time, set the `replace =` argument to `FALSE` since our traveling person will only visit each dwelling unit one time.
 
