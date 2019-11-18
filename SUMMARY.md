@@ -43,11 +43,12 @@
 * [Assignment](assignment-3.-investigating-a-methodology/assignment.md)
 * [Examples](assignment-3.-investigating-a-methodology/examples.md)
 
-## Project 4. Demographic Analysis with Survey Data
+## Project 4. Further Analysis of Infrastructure and Services <a id="project-4.-demographic-analysis-with-survey-data"></a>
 
 ## Assignment 4. Present your Results and Write a Proposal <a id="assignment4"></a>
 
 * [Background](assignment4/background.md)
 * [Part 1.  Present your Results](assignment4/part1.md)
 * [Part 2.  Write a Proposal](assignment4/part2.md)
+* [Rendering Topography](rendering-topography.md)
 
