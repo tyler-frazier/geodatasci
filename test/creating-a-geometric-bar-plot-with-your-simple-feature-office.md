@@ -133,7 +133,7 @@ Return to the spatial plot that you created in the last exercise.  Copy the snip
             color="color", size=add_size, nudge_y = add_value) +
 ```
 
-![](../.gitbook/assets/rplot05.png)
+![](../.gitbook/assets/rplot05%20%281%29.png)
 
 Finally, install the package `ggpubr` and use the command `ggarrange()` to arrange your two plots together side by side.
 
