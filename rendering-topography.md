@@ -125,7 +125,25 @@ combined_matrix %>%
 
 ![](.gitbook/assets/rplot05%20%282%29.png)
 
+Likewise, add the `add_overlay()` command when producing your three-dimension plot.
 
+```text
+combined_matrix %>%
+  sphere_shade() %>%
+  add_water(detect_water(combined_matrix), color = "lightblue") %>%
+  add_shadow(ray_shade(combined_matrix, sunaltitude = 3, zscale = 33, lambert = FALSE), max_darken = 0.5) %>%
+  add_shadow(lamb_shade(combined_matrix, sunaltitude = 3, zscale = 33), max_darken = 0.7) %>%
+  add_shadow(ambientshadows, max_darken = 0.1) %>%
+  add_overlay(overlay_img, alphalayer = 0.95) %>%
+  plot_3d(combined_matrix, zscale = 20,windowsize = c(1000,1000), 
+          phi = 40, theta = 135, zoom = 0.75, 
+          background = "grey30", shadowcolor = "grey5", 
+          soliddepth = -50, shadowdepth = -100)
+```
+
+Modifying the `alphalayer =` argument will set the transparency of the combined adm2s border.  Increasing the `zoom =`  argument will move your perspective in the three-dimension plot further away from your rendered object.  Modifying the `phi =` and `theta =`  parameters will also alter the viewers perspective by orbiting the camera around the scene or changing the angle of the camera above the horizon.  Once you plot the image, again use the `render_snapshot()` to save your image.  If you would like to make some changes and replot, first run `rgl::rgl.clear()` to clear your existing rgl object.
+
+![](.gitbook/assets/rplot06%20%282%29.png)
 
 
 
