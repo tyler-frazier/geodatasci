@@ -28,7 +28,11 @@ With the polygon you previously created by unioning the two adm2s or adm3s you s
 combined_topo <- crop(lbr_topo, combined_adm2s)
 ```
 
-  
+ Next you will convert your cropped raster into a matrix using the `raster_to_matrix()` command from the `rayshader::` library of functions.  When executing this function, R will return the dimensions of the matrix created.  Take note of these dimensions, since you will later need them to specify the width and height, in pixels, of the image you will produce of your urban areas, roads and health care that you will then overlay your topography.
+
+![](.gitbook/assets/screen-shot-2019-11-18-at-12.05.00-am.png)
+
+
 
 
 
