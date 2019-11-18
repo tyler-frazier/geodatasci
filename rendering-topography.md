@@ -76,7 +76,9 @@ render_snapshot(title_text = "Sanniquelleh-Mahn & Saclepea, Liberia",
 
 ![](.gitbook/assets/rplot%20%281%29.png)
 
-The `sphere_shade(texture = ...)` command presents other options such as  `texture = "desert"` .  To review all of the texture options, type `?sphere_shade` in the console.
+The `sphere_shade(texture = ...)` command presents other options such as  `texture = "desert"` .  To review all of the texture options, type `?sphere_shade` in the console.  Test each option out to determine which one best matches the physical geography of your selected area.
+
+
 
 
 
