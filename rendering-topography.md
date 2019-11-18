@@ -200,10 +200,10 @@ render_label(combined_matrix, "Ganta", textcolor ="white", linecolor = "white",
 
 Produce a three-dimensional, topographic plot that describes the _de facto_ boundaries of urban areas, the center lines of classified roadways and the location of health care facilities by type throughout your selected and combined adm2, adm3 or adm4 areas.  Combine your plot with each of your team members, and provide a single written statement that compares all of the selected adm2 areas, while also considering the following.
 
-1. How has topography appeared to impact the development of urban areas
-2. How has topography appeared to have impacted the development of transportation facilities
-3. How has topography appeared to have impacted the location of health care facilities
-4. Has producing your three dimension map resulted in an interpretion that is different from your previous analysis  
+1. How has topography appeared to impact the development of urban areas?
+2. How has topography appeared to have impacted the development of transportation facilities?
+3. How has topography appeared to have impacted the location of health care facilities?
+4. Has producing your three-dimensional map resulted in an interpretion that is different from your previous analysis?
 
-Upload your group's finished product to the slack channel \#data100\_project4 no later than 11:59PM on Sunday, November 26th.  Be sure to keep these results, as your team will present extended, comparative results during the final group presentation, held on either December 4th or December 6th.
+Upload your group's finished product to the slack channel \#data100\_project4 no later than 5:00PM on Tuesday, November 26th.  Be sure to keep these results, as your team will also present extended, comparison of your selected administrative areas within each LMIC during the final group presentation, held on either December 4th or December 6th.
 
