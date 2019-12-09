@@ -49,7 +49,7 @@ To begin getting an understanding of how to use markdown, have a quick look at t
 
 {% embed url="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" %}
 
-For the final project, you will only be using headers, paragraph text and inserting images and possibly videos to your git-hub pages site.  After having a look at the markdown cheatsheet, return to the main page of your repository, which should look like the following.  After navigating to that location, click on the `settings` tab in the top right hand corner.
+For the final project, you will only be using headers, paragraph text and inserting images and some animations to your GitHub pages site.  After having a look at the markdown cheatsheet, return to the main page of your repository, which should look like the following.  After navigating to that location, click on the `settings` tab in the top right hand corner.
 
 ![](../.gitbook/assets/screen-shot-2019-12-08-at-10.32.39-pm.png)
 
@@ -57,15 +57,11 @@ Scroll down to the GitHub pages section under settings and change the page sourc
 
 ![](../.gitbook/assets/screen-shot-2019-12-08-at-10.24.15-pm.png)
 
-After setting the branch where your git-hub pages files will reside, also select the theme tab and choose one of the available themes.  I chose the theme `Caymen` for my page, but you are welcome to select any of the available themes for your final project.  After, selecting your theme and returning to the git-hub pages section, you should notice a web address appear where your site has been published.  It might take a moment or two for your webpage to appear, but it should readily accessible.
+After setting the branch where your GitHub pages files will reside, also select the theme tab and choose one of the available themes.  I chose the theme `Caymen` for my page, but you are welcome to select any of the available themes for your final project.  After, selecting your theme and returning to the GitHub Pages section, you should notice a web address appear where your site has been published.  It might take a few moments for your webpage to appear, but not more than 10 or 15 seconds.  Usually it updates and publishes almost immediately.
 
 ![](../.gitbook/assets/screen-shot-2019-12-08-at-10.40.01-pm.png)
 
-After clicking on the link, you should appear at your newly created webpage that you will use to publish the results from your investigation.
-
-{% embed url="https://wicked-problems.github.io/final\_project/" %}
-
-Now let's start making changes to your website using markdown.  For starters go back to the main page of your repository and select the upload files tab.
+After clicking on the link, the newly created webpage that you will use to publish the results from your investigation should appear.  To start making changes to your website, go back to the main page of your repository and select the upload files tab.
 
 ![](../.gitbook/assets/screen-shot-2019-12-08-at-10.59.08-pm.png)
 
@@ -77,15 +73,15 @@ I will begin by dragging and dropping a few of the plots produced that describe 
 
 ![](../.gitbook/assets/screen-shot-2019-12-08-at-11.04.22-pm.png)
 
-After dropping the files into my repository, the basic file structure looks like the following.
+After dropping the files into my repository, the basic file structure appears as follows.
 
 ![](../.gitbook/assets/screen-shot-2019-12-08-at-11.15.14-pm.png)
 
-Now let's go ahead and add the image `details.png` to your `README.md` file.  Go back to `README.md` and select the pen image in the upper right hand side of the screen to begin editing your markdown file.
+To add the image `details.png` to your `README.md` file, first select the `README.md` file, and then select the pen image in the upper right hand side of the screen to begin editing the content you already saved to your markdown file.
 
 ![](../.gitbook/assets/screen-shot-2019-12-08-at-11.17.44-pm.png)
 
-After opening up the markdown file editor, I will add the following lines of code to the file in order to add a second level header and the image `details.png` to my markdown file.  Don't forget to scroll down to the bottom of the page and click on the commit button to make sure the changes you have made to the file are properly committed to the repository.
+After opening up the markdown file editor, add a second level header by preceding the text with two `##` and then add your image by adding a `![]` in advance of the file name `details.png` , which is contained within `()` .  Don't forget to scroll down to the bottom of the page and click on the commit button to make sure the changes you have made to the file are properly committed to the repository.  If you do not commit your changes to your repository, your file will not have been saved nor published.
 
 ![](../.gitbook/assets/screen-shot-2019-12-08-at-11.25.56-pm.png)
 
