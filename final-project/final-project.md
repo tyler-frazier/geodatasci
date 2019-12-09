@@ -65,11 +65,21 @@ After clicking on the link, you should appear at your newly created webpage that
 
 {% embed url="https://wicked-problems.github.io/final\_project/" %}
 
+Now let's start making changes to your website using markdown.  For starters go back to the main page of your repository and select the upload files tab.
 
+![](../.gitbook/assets/screen-shot-2019-12-08-at-10.59.08-pm.png)
 
+This should bring you to a page that will enable you to upload the images you have produced from each of the previous projects.  The interface should appear similar to the following image.
 
+![](../.gitbook/assets/screen-shot-2019-12-08-at-10.58.00-pm.png)
 
- 
+I will begin by dragging and dropping a few of the plots produced that describe the administrative subdivisions of Liberia as well as the spatial distribution of it's population.
 
+![](../.gitbook/assets/screen-shot-2019-12-08-at-11.04.22-pm.png)
 
+After dropping the files into my repository, the basic file structure looks like the following.
+
+![](../.gitbook/assets/screen-shot-2019-12-08-at-11.15.14-pm.png)
+
+Now let's go ahead and add the image `details.png` to your `README.md` file.  Go back to `README.md` and select 
 
