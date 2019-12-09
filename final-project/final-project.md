@@ -103,5 +103,16 @@ Which will produce the following image as part of your webpage.
 
 {% embed url="https://wicked-problems.github.io/final\_project/" %}
 
+## Final Individual Deliverable
 
+Produce a webpage using GitHub pages and markdown that describes your investigation through the course of the semester.  Include in your final product sections that answer the following questions.
+
+1.  Describe the **political subdivisions** of your LMIC and selected administrative subdivisions.  Use a spatial description of the political subdivisions of your LMIC at the first, second and/or third administrative levels as appropriate and identify the location of your selected administrative subdivisions. Provide a detailed, spatial description of the political subdivisions that describe your selected administrative areas.
+2. Describe the **population** of your LMIC and selected administrative subdivisions.  Spatially describe the population distribution of your LMIC at the first, second and/or third administrative levels as appropriate.
+3. Provide the results from your analysis of your LMIC's population including validation of the predicted spatial distribution of population values at different scales and your interpretation of relevant model results.
+4. Provide results from your description of the _de facto_ location of **human settlements** and urban areas, the center lines of classified **roadways** and the location of **health care facilities** by type throughout your selected and combined adm2, adm3 or adm4 areas.
+
+Include with the relevants plots your interpretation and analysis as well as supplemental tables and charts that further support your findings.  Be comprehensive in your approach to developing your webpage.  If you transitioned from country or location to another country or location due to technical issues, simply provide some justification as to why and how that transition took place.
+
+Upload a link to your individual final project to the slack channel \#data100\_project4 no later than 5:00PM on Tuesday, November 26th.  Your team will present an extended, comparison of your selected administrative areas within each LMIC, during the final group presentation, held on either December 4th or December 6th.
 
