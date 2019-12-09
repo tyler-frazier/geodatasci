@@ -85,5 +85,13 @@ Now let's go ahead and add the image `details.png` to your `README.md` file.  Go
 
 ![](../.gitbook/assets/screen-shot-2019-12-08-at-11.17.44-pm.png)
 
+After opening up the markdown file editor, I will add the following lines of code to the file in order to add a second level header and the image `details.png` to my markdown file.  Don't forget to scroll down to the bottom of the page and click on the commit button to make sure the changes you have made to the file are properly committed to the repository.
+
+![](../.gitbook/assets/screen-shot-2019-12-08-at-11.25.56-pm.png)
+
+After committing the changes and waiting a few moments, changes will appear to have been made to the published webpage.
+
+![](../.gitbook/assets/screen-shot-2019-12-08-at-11.28.27-pm.png)
+
 
 
