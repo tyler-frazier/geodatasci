@@ -91,5 +91,17 @@ After committing the changes and waiting a few moments, your changes will appear
 
 After adding your map that describes the political subdivisions of your LMIC, also add your description of population as spatially distributed at different adm levels.
 
+![](../.gitbook/assets/screen-shot-2019-12-09-at-3.25.56-am.png)
+
+If you created a animated video, such as a `.mp4` file that rotates and describes population in three dimensions, you will need to convert that file to a `.gif` in order to include in your project webpage.  This is fairly easily accomplished by using an online conversion tool.  I simply entered "online conversion of mp4 to gif mac" into google, and google returned several possible options, such as [https://ezgif.com/video-to-gif](https://ezgif.com/video-to-gif), among many.  After converting your `.mp4` to a `.gif` , upload the file to your repository and include it in your markdown file.
+
+![](../.gitbook/assets/screen-shot-2019-12-09-at-3.34.14-am.png)
+
+Which will produce the following image as part of your webpage.
+
+![](../.gitbook/assets/pop.gif)
+
+
+
 
 
