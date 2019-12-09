@@ -101,7 +101,7 @@ Which will produce the following image as part of your webpage.
 
 ![](../.gitbook/assets/pop.gif)
 
-
+{% embed url="https://wicked-problems.github.io/final\_project/" %}
 
 
 
