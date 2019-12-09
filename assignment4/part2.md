@@ -1,6 +1,6 @@
 # Part 2.  Write a Research Proposal
 
-This is the second part of the final assignment. Your research proposal should meet a minimum word count of 4500 words, not including references or titles.  Be certain to cite all sources and include a bibliography of references. Include figures, captions and formulas as needed. Please e-mail your signed proposal as a single pdf document to me at tjfrazier@wm.edu prior to the deadline of 5:00 PM on May 8th.
+This is the second part of the final assignment. Your research proposal should meet a minimum word count of 4500 words, not including references or titles.  Be certain to cite all sources and include a bibliography of references. Include figures, captions and formulas as needed. Please e-mail your signed proposal as a single pdf document to me at tjfrazier@wm.edu prior to the deadline of 5:00 PM on December 18th.
 
 ## Summary
 
