@@ -39,7 +39,7 @@ This should bring you to a new page where you are able to create a new file.  Go
 
 After typing the simple markdown script, scroll to the bottom of the page and click on the green commit button, to commit your file to your repository.
 
- 
+![](../.gitbook/assets/screen-shot-2019-12-08-at-10.06.32-pm.png)
 
 
 
