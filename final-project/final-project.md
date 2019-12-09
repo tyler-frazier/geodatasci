@@ -85,9 +85,11 @@ After opening up the markdown file editor, add a second level header by precedin
 
 ![](../.gitbook/assets/screen-shot-2019-12-08-at-11.25.56-pm.png)
 
-After committing the changes and waiting a few moments, changes will appear to have been made to the published webpage.
+After committing the changes and waiting a few moments, your changes will appear to the published webpage.
 
 ![](../.gitbook/assets/screen-shot-2019-12-08-at-11.28.27-pm.png)
+
+After adding your map that describes the political subdivisions of your LMIC, also add your description of population as spatially distributed at different adm levels.
 
 
 
