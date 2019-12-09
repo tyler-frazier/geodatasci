@@ -33,9 +33,13 @@ After creating your repository, go to the main page for your repository.  You sh
 
 ![](../.gitbook/assets/screen-shot-2019-12-08-at-9.56.08-pm.png)
 
-This should bring you to a new page where you are able to create a new file.  Enter a name for your new file, which should be called `README.md` in order for it to be properly found by git-hub pages.  Then add a `header` and one line describing the content of this file.  You will use markdown as your scripting language for producing your final project.  It is a relatively simple language than enables for producing webpages fairly easily.  For example to create the first level header in your markdown file, simple type `#` followed by the header text.  
+This should bring you to a new page where you are able to create a new file.  Enter a name for your new file, which should be called `README.md` in order for it to be properly found by git-hub pages.  Then add a `header` and one line describing the content of this file. You will use markdown as your scripting language for producing your final project.  It is a relatively simple language than enables for producing webpages fairly easily.  For example to create the first level header in your markdown file, simple type `#` followed by the header text.  
 
 ![](../.gitbook/assets/screen-shot-2019-12-08-at-10.32.57-pm.png)
+
+You can also preview the output from your markdown file, by clicking on the preview changes tab.
+
+![](../.gitbook/assets/screen-shot-2019-12-08-at-10.33.05-pm.png)
 
 After typing the simple markdown script, scroll to the bottom of the page and click on the green commit button, to commit your file to your repository.
 
@@ -47,13 +51,21 @@ To begin getting an understanding of how to use markdown, refer to the following
 
 For the final project, you will only be using headers, paragraph text and inserting images and possibly videos to your git-hub pages site.  After having a look at the markdown cheatsheet, return to the main page of your repository, which should look like the following.  After navigating to that location, click on the `settings` tab in the top right hand corner.
 
-![](../.gitbook/assets/screen-shot-2019-12-08-at-10.13.34-pm.png)
+![](../.gitbook/assets/screen-shot-2019-12-08-at-10.32.39-pm.png)
 
 Scroll down to the GitHub pages section under settings and change the page source from `none` to `master_branch`.
 
 ![](../.gitbook/assets/screen-shot-2019-12-08-at-10.24.15-pm.png)
 
-After setting the branch where your git-hub pages files will reside, also select the theme tab and choose one of the available themes.  I chose the theme `Caymen` for my page, but you are welcome to select any of the available themes for your final project.
+After setting the branch where your git-hub pages files will reside, also select the theme tab and choose one of the available themes.  I chose the theme `Caymen` for my page, but you are welcome to select any of the available themes for your final project.  After, selecting your theme and returning to the git-hub pages section, you should notice a web address appear where your site has been published.  It might take a moment or two for your webpage to appear, but it should readily accessible.
+
+![](../.gitbook/assets/screen-shot-2019-12-08-at-10.40.01-pm.png)
+
+After clicking on the link, you should appear at your newly created webpage that you will use to publish the results from your investigation.
+
+{% embed url="https://wicked-problems.github.io/final\_project/" %}
+
+
 
 
 
