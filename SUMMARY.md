@@ -46,14 +46,11 @@
 ## Project 4. Further Analysis of Infrastructure and Services <a id="project-4.-demographic-analysis-with-survey-data"></a>
 
 * [Rendering Topography](rendering-topography.md)
+* [Final Project](final-project-1.md)
 
 ## Assignment 4. Present your Results and Write a Proposal <a id="assignment4"></a>
 
 * [Background](assignment4/background.md)
 * [Part 1.  Present your Results](assignment4/part1.md)
 * [Part 2.  Write a Research Proposal](assignment4/part2.md)
-
-## Final Project
-
-* [Final Project](final-project/final-project.md)
 
