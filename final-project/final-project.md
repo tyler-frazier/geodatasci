@@ -114,5 +114,5 @@ Produce a webpage using GitHub pages and markdown that describes your investigat
 
 Include with the relevants plots your interpretation and analysis as well as supplemental tables and charts that further support your findings.  Be comprehensive in your approach to developing your webpage.  If you transitioned from country or location to another country or location due to technical issues, simply provide some justification as to why and how that transition took place.
 
-Upload a link to your individual final project to the slack channel \#data100\_project4 no later than 5:00PM on Tuesday, November 26th.  Your team will present an extended, comparison of your selected administrative areas within each LMIC, during the final group presentation, held on either December 4th or December 6th.
+Post a link to your GitHub Pages site to the slack channel \#data100\_project4 no later than 5PM on Wednesday, December 18th.
 
