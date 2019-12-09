@@ -81,5 +81,9 @@ After dropping the files into my repository, the basic file structure looks like
 
 ![](../.gitbook/assets/screen-shot-2019-12-08-at-11.15.14-pm.png)
 
-Now let's go ahead and add the image `details.png` to your `README.md` file.  Go back to `README.md` and select 
+Now let's go ahead and add the image `details.png` to your `README.md` file.  Go back to `README.md` and select the pen image in the upper right hand side of the screen to begin editing your markdown file.
+
+![](../.gitbook/assets/screen-shot-2019-12-08-at-11.17.44-pm.png)
+
+
 
