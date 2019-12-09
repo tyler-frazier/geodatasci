@@ -53,3 +53,7 @@
 * [Part 1.  Present your Results](assignment4/part1.md)
 * [Part 2.  Write a Research Proposal](assignment4/part2.md)
 
+## Final Project
+
+* [Final Project](final-project/final-project.md)
+
