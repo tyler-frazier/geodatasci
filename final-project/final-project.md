@@ -31,9 +31,15 @@ Now, go ahead and create your first repository.  I will name my repository `fina
 
 After creating your repository, go to the main page for your repository.  You should see a quick setup script under the `code` tab.  Click on `create a new file` under the quick set-up at the top of the page.
 
+![](../.gitbook/assets/screen-shot-2019-12-08-at-9.56.08-pm.png)
 
+This should bring you to a new page where you are able to create a new file.  Go ahead and enter a name for your new file.  Then add a `header` and one line describing the content of this file.  You will use markdown as your scripting language for producing your final project.  It is a relatively simple language than enables for producing webpages fairly easily.  For example to create the first level header in your markdown file, simple type `#` followed by the header text.  
 
-  
+![](../.gitbook/assets/screen-shot-2019-12-08-at-10.05.59-pm.png)
+
+After typing the simple markdown script, scroll to the bottom of the page and click on the green commit button, to commit your file to your repository.
+
+ 
 
 
 
