@@ -1,19 +1,19 @@
 ---
 description: >-
-  Create a git-hub pages site and populate it with the results from your
-  geospatial data science investigation on your selected administrative
-  subdivision within your LMIC.
+  Create a GitHub Pages site and populate it with the results from your
+  geospatial data science investigation on your selected LMIC and administrative
+  subdivision(s).
 ---
 
 # Final Project
 
-For the final project in this course you will create a Git-hub pages site using a fairly simple programming language called markdown and populate that site with content you have created through the course of this semester.  Upon completing your github pages site, you will post a link to your website on the slack channel \#data100\_final.
+For the final project in this course you will create a **GitHub Pages** site using a fairly simple programming language called markdown and populate that site with content you have created through the course of this semester.  Upon completing your GitHub Pages site, post a link to your website on the slack channel \#data100\_final prior to the deadline of 5PM on Wednesday, December 18th.
 
-To begin go to the git-hub webpage and create a new account.  Git-hub is found at the web address[ ](https://github.com)[https://github.com](https://github.com).  Sign up for a new account.
+To begin go to [https://github.com](https://github.com) and create a new account.  You should see a website that is very similar to the following image.
 
 ![](../.gitbook/assets/screen-shot-2019-12-08-at-9.15.32-pm.png)
 
-After clicking on the sign up link, create your account by designating your usename, e-mail address and password.  In order to simulate the process of signing up, I am using the username `wicked-problems.`  My real git-hub account is [https://github.com/tyler-frazier](https://github.com/tyler-frazier), please feel free to follow me.
+After clicking on the sign up link, create your account by designating your username, e-mail address and password.  In order to simulate the process of signing up, I am using the username `wicked-problems.`  My real GitHub account is [https://github.com/tyler-frazier](https://github.com/tyler-frazier), and you are welcome to follow me, although it is not necessary for this final project.
 
 ![](../.gitbook/assets/screen-shot-2019-12-08-at-9.08.29-pm.png)
 
