@@ -15,10 +15,10 @@
 * [Extracting Populations from a Raster and Aggregating to each Unit](test/extracting-populations-from-a-raster-and-aggregating-to-each-unit.md)
 * [Creating a Geometric Bar Plot with your Simple Feature object](test/creating-a-geometric-bar-plot-with-your-simple-feature-office.md)
 
-## Assignment 1.  Developing an Annotated Bibliography
+## Assignment 1.  Developing an Annotated Bibliography <a id="assignment1"></a>
 
-* [Assignment](assignment-1.-developing-an-annotated-bibliography/assignment.md)
-* [Examples](assignment-1.-developing-an-annotated-bibliography/examples.md)
+* [Assignment](assignment1/assignment.md)
+* [Examples](assignment1/examples.md)
 
 ## Project 2. Investigating Land Use and Land Cover <a id="project-2.-resource-production"></a>
 
