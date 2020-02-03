@@ -198,6 +198,8 @@ Meet with your group and prepare to present the best two plots for the Friday in
 
 Go to the [HDX](https://data.humdata.org) website, find and download the shapefiles for your selected country.  Compare their administrative subdivisions to those obtained from GADM.  Are they the same?  Are there any differences?  Which source do you think more closely describes the local political reality within your selected LMIC?  Do the HDX shapefiles work?
 
+Alternatively, do the same using the [geoBoundaries](https://www.geoboundaries.org) website, which is housed right here at William & Mary.  When comparing GADM, HDX and geoBoundaries, be sure to identify the source of the data you are presenting.  Are these administrative boundaries primary or secondary sources?  Are you able to identify who produced the data?  How did each repository obtain the data they are sharing with you?
+
 ## Individual Stretch Goal 2
 
 Create a new `ggplot() +` as you did before.  This time `filter` your `lbr_adm1` object by using the `>%>` \(pipe\) operator and using the assignment operator to create a new sf object that includes only the county named Montserrado.  Inside the `filter()` command you will need to specify the `admin1name = "Montserrado".` Then continue to use the `>%>` operator with your `lbr_adm2` object again filtering based on the `admin1Name == "Montserrado"` .  Follow that `>%>` with your `ggplot()`, `geom_sf()` and `geom_sf_text()` commands to plot the geometries and labels for both the first and second level administrative subdivisions of Montserrado, Liberia.
