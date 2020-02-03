@@ -56,5 +56,3 @@
 
 ## Additional Information
 
-* [Background](additional-information/background.md)
-
