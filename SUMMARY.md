@@ -17,7 +17,6 @@
 
 ## Assignment 1.  Developing an Annotated Bibliography
 
-* [Background](assignment-1.-developing-an-annotated-bibliography/background.md)
 * [Assignment](assignment-1.-developing-an-annotated-bibliography/assignment.md)
 * [Examples](assignment-1.-developing-an-annotated-bibliography/examples.md)
 
@@ -54,4 +53,8 @@
 * [Background](assignment4/background.md)
 * [Part 1.  Present your Results](assignment4/part1.md)
 * [Part 2.  Write a Research Proposal](assignment4/part2.md)
+
+## Additional Information
+
+* [Background](additional-information/background.md)
 
