@@ -17,7 +17,7 @@
 
 ## Assignment 1.  Developing an Annotated Bibliography <a id="assignment1"></a>
 
-* [Assignment](assignment1/assignment.md)
+* [Assignment](assignment1/annobib.md)
 * [Examples](assignment1/examples.md)
 
 ## Project 2. Investigating Land Use and Land Cover <a id="project-2.-resource-production"></a>
