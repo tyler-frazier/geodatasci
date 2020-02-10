@@ -9,11 +9,11 @@
 * [Creating and Plotting Objects](getting-started/creating-an-object-and-creating-a-plot.md)
 * [Getting started with GitHub](getting-started/getting-started-with-github.md)
 
-## Project 1.  Administrative Units, Population and Description <a id="test"></a>
+## Project 1.  Administrative Units, Population and Description <a id="descript_pop"></a>
 
-* [Projecting, Plotting and Labelling Administrative Subdivisions](test/intro_spatdata.md)
-* [Extracting Populations from a Raster and Aggregating to each Unit](test/extract_pops.md)
-* [Creating a Geometric Bar Plot with your Simple Feature object](test/creating-a-geometric-bar-plot-with-your-simple-feature-office.md)
+* [Projecting, Plotting and Labelling Administrative Subdivisions](descript_pop/intro_spatdata.md)
+* [Extracting Populations from a Raster and Aggregating to each Unit](descript_pop/extract_pops.md)
+* [Creating a Geometric Bar Plot with your Simple Feature object](descript_pop/creating-a-geometric-bar-plot-with-your-simple-feature-office.md)
 
 ## Assignment 1.  Developing an Annotated Bibliography <a id="assignment1"></a>
 
