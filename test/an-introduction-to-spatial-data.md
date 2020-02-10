@@ -202,7 +202,7 @@ Alternatively, do the same using the [geoBoundaries](https://www.geoboundaries.o
 
 ## Individual Stretch Goal 2
 
-Create a new `ggplot() +` as you did before.  This time `filter` your `lbr_adm1` object by using the `>%>` \(pipe\) operator and using the assignment operator to create a new sf object that includes only the county named Montserrado.  Inside the `filter()` command you will need to specify the `admin1name = "Montserrado".` Then continue to use the `>%>` operator with your `lbr_adm2` object again filtering based on the `admin1Name == "Montserrado"` .  Follow that `>%>` with your `ggplot()`, `geom_sf()` and `geom_sf_text()` commands to plot the geometries and labels for both the first and second level administrative subdivisions of Montserrado, Liberia.
+Create a new `ggplot() +` as you did before.  This time `filter` your `lbr_adm1` object by using the `%>%` \(pipe\) operator and using the assignment operator to create a new sf object that includes only the county named Montserrado.  Inside the `filter()` command you will need to specify the `admin1name = "Montserrado".` Then continue to use the `%>%` operator with your `lbr_adm2` object again filtering based on the `admin1Name == "Montserrado"` .  Follow that `%>%` with your `ggplot()`, `geom_sf()` and `geom_sf_text()` commands to plot the geometries and labels for both the first and second level administrative subdivisions of Montserrado, Liberia.
 
 ```r
 new_sf_obj <- lbr_adm1 %>%
