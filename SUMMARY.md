@@ -11,8 +11,8 @@
 
 ## Project 1.  Administrative Units, Population and Description <a id="test"></a>
 
-* [Projecting, Plotting and Labelling Administrative Subdivisions](test/an-introduction-to-spatial-data.md)
-* [Extracting Populations from a Raster and Aggregating to each Unit](test/extracting-populations-from-a-raster-and-aggregating-to-each-unit.md)
+* [Projecting, Plotting and Labelling Administrative Subdivisions](test/intro_spatdata.md)
+* [Extracting Populations from a Raster and Aggregating to each Unit](test/extract_pops.md)
 * [Creating a Geometric Bar Plot with your Simple Feature object](test/creating-a-geometric-bar-plot-with-your-simple-feature-office.md)
 
 ## Assignment 1.  Developing an Annotated Bibliography <a id="assignment1"></a>
