@@ -13,7 +13,7 @@
 
 * [Projecting, Plotting and Labelling Administrative Subdivisions](descript_pop/intro_spatdata.md)
 * [Extracting Populations from a Raster and Aggregating to each Unit](descript_pop/extract_pops.md)
-* [Creating a Geometric Bar Plot with your Simple Feature object](descript_pop/creating-a-geometric-bar-plot-with-your-simple-feature-office.md)
+* [Creating a Geometric Bar Plot with your Simple Feature object](descript_pop/geombar_plot.md)
 
 ## Assignment 1.  Developing an Annotated Bibliography <a id="assignment1"></a>
 

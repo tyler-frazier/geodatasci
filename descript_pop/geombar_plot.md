@@ -159,7 +159,9 @@ ggsave("liberia.png", width = 20, height = 10, dpi = 200)
 
 ## Project 1. Individual Deliverable
 
-Upload the combined spatial description and geometric bar plot of your selected LMIC to the slack channel \#data100\_project1 no later than 11:59PM on Saturday, September 28th.
+Upload the combined spatial description and geometric bar plot of your selected LMIC to your GitHub repository.  Create a link in your `README.md` file that connects to a webpage that presents your results.  Describe your plot, how you produced it, and any modifications you needed to make.  If you produced any of the stretch goals, include those in your Project 1 individual deliverable.  What observations are you able to make about the spatial description of your LMIC's population?    
+
+Share a link to your Project 1 webpage on the slack channel \#data100\_project1 no later than 11:59PM on Saturday, September 28th.
 
 ## Individual Stretch Goal 1
 
