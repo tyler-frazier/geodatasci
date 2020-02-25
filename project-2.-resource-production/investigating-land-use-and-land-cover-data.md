@@ -4,7 +4,7 @@ For the next lab you will use land use and land cover data to describe and analy
 
 Once you have created your `lulc` folder within your `data` folder, open google and search for the 3 digit ISO code for your seleted low or middle income country.  I simply type _ISO code Liberia_ and hit return in google and the result **LBR**.  Once you have determined your 3 digit ISO code, copy the following webaddress and paste it into your internet browser, BUT modify the last part of the path \(i.e. /ISO/\) and replace it with your LMIC's ISO code.
 
-[ftp://ftp.worldpop.org.uk/GIS/Covariates/Global\_2000\_2020/](ftp://ftp.worldpop.org.uk/GIS/Covariates/Global_2000_2020/ISO/)
+[ftp://ftp.worldpop.org.uk/GIS/Covariates/Global\_2000\_2020/](ftp://ftp.worldpop.org.uk/GIS/Covariates/Global_2000_2020/)
 
 After entering the path into your browser, you may be asked to enter your name and password in order to access the file transfer protocal \(ftp\) site at ftp.worldpop.uk.org.  Choose guest and then attempt to connect.
 
