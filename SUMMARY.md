@@ -22,7 +22,7 @@
 
 ## Project 2. Investigating Land Use and Land Cover <a id="investigate"></a>
 
-* [Acquiring, Modifying and Describing the Data](investigate/invest_lulc.md)
+* [Acquiring, Modifying and Describing the Data](investigate/landuse_cover.md)
 * [Modeling & Predicting Spatial Values](investigate/modeling-and-predicting-spatial-values.md)
 * [Investigating and Comparing Results](investigate/investigating-and-comparing-results.md)
 
