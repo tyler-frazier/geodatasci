@@ -20,11 +20,11 @@
 * [Assignment](assignment1/annobib.md)
 * [Examples](assignment1/examples.md)
 
-## Project 2. Investigating Land Use and Land Cover <a id="project-2.-resource-production"></a>
+## Project 2. Investigating Land Use and Land Cover <a id="investigate"></a>
 
-* [Acquiring, Modifying and Describing the Data](project-2.-resource-production/invest_lulc.md)
-* [Modeling & Predicting Spatial Values](project-2.-resource-production/modeling-and-predicting-spatial-values.md)
-* [Investigating and Comparing Results](project-2.-resource-production/investigating-and-comparing-results.md)
+* [Acquiring, Modifying and Describing the Data](investigate/invest_lulc.md)
+* [Modeling & Predicting Spatial Values](investigate/modeling-and-predicting-spatial-values.md)
+* [Investigating and Comparing Results](investigate/investigating-and-comparing-results.md)
 
 ## Assignment 2.  Writing a Literature Review
 
