@@ -24,7 +24,7 @@
 
 * [Acquiring, Modifying and Describing the Data](investigate/landuse_cover.md)
 * [Modeling & Predicting Spatial Values](investigate/spat_model_predict.md)
-* [Investigating and Comparing Results](investigate/investigating-and-comparing-results.md)
+* [Investigating and Comparing Results](investigate/invest_compare.md)
 
 ## Assignment 2.  Writing a Literature Review
 
