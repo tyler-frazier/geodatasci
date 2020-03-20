@@ -23,7 +23,7 @@
 ## Project 2. Investigating Land Use and Land Cover <a id="investigate"></a>
 
 * [Acquiring, Modifying and Describing the Data](investigate/landuse_cover.md)
-* [Modeling & Predicting Spatial Values](investigate/modeling-and-predicting-spatial-values.md)
+* [Modeling & Predicting Spatial Values](investigate/spat_model_predict.md)
 * [Investigating and Comparing Results](investigate/investigating-and-comparing-results.md)
 
 ## Assignment 2.  Writing a Literature Review
