@@ -35,7 +35,7 @@
 ## Project 3. Accessibility to Health Care through Transportation Facilities <a id="access"></a>
 
 * [De facto description of human settlements and urban areas](access/defacto_descript.md)
-* [Adding transportation facilities & health care services](access/adding-transportation-facilities-and-health-care-services.md)
+* [Adding transportation facilities & health care services](access/transport_health.md)
 
 ## Assignment 3.  Investigating a Methodology
 
