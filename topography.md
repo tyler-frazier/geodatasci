@@ -205,5 +205,5 @@ Produce a three-dimensional, topographic plot that describes the _de facto_ boun
 3. How has topography appeared to have impacted the location of health care facilities?
 4. Has producing your three-dimensional map resulted in an interpretion that is different from your previous analysis?
 
-Upload your group's finished product to the slack channel \#data100\_project4 no later than 5:00PM on Tuesday, November 26th.  Your team will present an extended, comparison of your selected administrative areas within each LMIC, during the final group presentation, held on either December 4th or December 6th.
+Upload your group's finished product to the slack channel \#data100\_project4 no later than midnight on Thursday, April 30th.  Your team will present an extended, comparison of your selected administrative areas within each LMIC, during the final group presentation, held on May 1st.
 
