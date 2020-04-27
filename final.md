@@ -117,5 +117,5 @@ Include in your final project deliverable individual sections that address the f
 
 If you transitioned from one country or location to another country or location due to computational or data related issues, please incorporate a justification as to why and how that transition took place.  While you are welcome to update results from previous project exercises in order to unify your final project results, it is not necessary, and will not negatively impact your final project grade.  On the contrary, unfinished parts of previous project exercises should be completed prior to incorporation into your final project deliverable.
 
-Post a link to your **GitHub Pages** site to the slack channel \#data100\_project4 no later than **5PM** on **Wednesday, December 18th**.
+Post a link to your **GitHub Pages** site to the slack channel \#data100\_project4 no later than **5PM** on **Wednesday, May 13th**.
 
